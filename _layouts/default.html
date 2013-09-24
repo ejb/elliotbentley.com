@@ -6,28 +6,22 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
 
     </head>
     <body>
 
-        <div class="container">
           <div class="site">
             <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/#lab">lab</a>
-              <a class="extra" href="/#blog">blog</a>
-              <a class="extra" href="http://elliotbentley.com/">about</a>
+              <div class="title"><a href="/">{{ site.name }}</a> > brief notes on tech by <a href="http://twitter.com/elliot_bentley">elliot bentley</a> </div>
             </div>
      
                 {{ content }}
 
-          </div>
-        </div> <!-- /container -->
-
+          </div> <!-- site -->
     </body>
 </html>
