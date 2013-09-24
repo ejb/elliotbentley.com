@@ -10,9 +10,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body {
   background-color: #FFF;
-  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier","Courier New",monospace;
   text-align: left;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.3em;
   max-width: 600px;
   margin: 0 auto;
@@ -59,7 +59,7 @@ pre, code {
 @media (max-width: 600px) {
     body {
         width: auto;
-        padding: 2em;
-        font-size: 12px;
+        padding: 1em;
+/*        font-size: 12px;*/
     }
 }
