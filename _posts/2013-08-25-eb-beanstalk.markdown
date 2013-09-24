@@ -1,8 +1,6 @@
 ---
 layout: post
 title:  "How to set up a cronjob on Amazon Elastic Beanstalk"
-date:   2013-08-25 11:27:13
-categories: jekyll update
 ---
 
 It took me weeks to understand the arcane rituals needed to schedule a cronjob on Elastic Beanstalk. This guide explains how to set a cron schedule automatically when an app is deployed.
