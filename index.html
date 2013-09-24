@@ -1,0 +1,21 @@
+---
+layout: default
+title: ebcode -- Elliot Bentley's code blog
+---
+
+<div id="home">
+    <ul id="lab" class="lab">
+        <li>Random Meetup Finder <span class="links">(<a href="/">live</a>/<a href="/">source</a>)</span>
+            <p>Displays a random group from Meetup.com based on location.</p>
+        </li>
+        <li>Day One Map <span class="links">(<a href="/">live</a>/<a href="/">source</a>)</span>
+            <p>Turns your Day One journal into a dynamic map.</p>
+        </li>
+    </ul>
+
+  <ul id="blog" class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
