@@ -28,6 +28,11 @@ h1 {
     font-weight: bold;
 }
 
+.home h2 {
+    margin-top: 2em;
+    font-weight: bold;
+}
+
 a {
     color: inherit;
 }
