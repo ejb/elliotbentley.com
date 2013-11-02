@@ -49,6 +49,10 @@ em {
     font-style: italic;
 }
 
+strong {
+    font-weight: bold;
+}
+
 
 pre {
     overflow-x: scroll;
@@ -59,6 +63,22 @@ pre {
 pre, code {
     background: #EEE;
     
+}
+
+img {
+    max-width: 100%;
+}
+
+#post ul {
+    margin: 1em 0;
+}
+
+#post li {
+    margin: 0.5em 0;
+}
+
+#post li:before {
+    content: '- ';
 }
 
 @media (max-width: 600px) {
