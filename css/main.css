@@ -17,11 +17,12 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 2em 0;
-  color: black;
+  color: rgb(94, 94, 94);
 }
 
 p,h1,li {
     margin-top: 1em;
+    line-height: 1.6em;
 }
 
 h1 {
