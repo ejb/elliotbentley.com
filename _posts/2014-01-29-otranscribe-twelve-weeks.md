@@ -5,9 +5,9 @@ title:  "oTranscribe, twelve weeks in"
 
 It's been around three months since [I launched oTranscribe](http://ejb.github.io/2013/10/03/otranscribe.html), my first major side project. Having developed an ’MVP’ over the course of around a month, I spent a weekend on branding and officially launched the app on November 2, 2013.
 
-Bolstered by positive feedback on the journalism subreddit, I signed up to do a talk at Hacks/Hackers London. I was incredibly nervous, and was almost thrown off halfway when I heard giggling - but this turned out to be in response to someone in the audience gasping: "this is amazing!"
+Bolstered by positive feedback on the [journalism subreddit](http://www.reddit.com/r/Journalism/comments/1qb5dx/im_developing_a_web_app_to_make_transcribing/), I signed up to do a talk at [Hacks/Hackers London](http://www.meetup.com/HacksHackersLondon/). I was incredibly nervous, and was almost thrown off halfway when I heard giggling - but this turned out to be in response to someone in the audience gasping: "this is amazing!"
 
-My Twitter followers doubled during the course of the presentation, and many people came over to ask questions afterwards. The next day, Sarah Marshall of Journalism.co.uk wrote a short piece on oTranscribe, and hits really began to take off.
+@oTranscribe's twitter followers doubled during the course of the presentation, and the next day, Sarah Marshall of Journalism.co.uk wrote a [short piece](http://www.journalism.co.uk/news/journalist-creates-web-app-for-audio-transcription/s2/a555258/) on oTranscribe. The two combined effectively kickstarted oTranscribe, bringing in hundreds of users and spreading the word.
 
 Subsequently, oTranscribe has been featured on [The Next Web](http://thenextweb.com/apps/2014/01/08/otranscribe-simple-useful-free-web-app-transcription), [Lifehacker](http://lifehacker.com/otranscribe-is-a-free-keyboard-friendly-transcription-1498812713) and [The Guardian](http://www.theguardian.com/media/2014/jan/22/ten-tools-for-digital-and-citizen-journalists-on-the-go), though my favourite article is probably the one that [Wannabe Hacks](http://wannabehacks.co.uk/2013/12/19/otranscribe-a-new-tool-to-help-make-transcribing-audio-easier/) published.
 
@@ -47,4 +47,4 @@ Video support, meanwhile, was surprisingly easy to implement - with the notable 
 
 Following the app's international growth, I also hope to have the interface translated. Watch this space. 
 
-Even without these additions, I think oTranscribe has already been proven to be incredibly useful to a large number of people, and I've been blown away by the positive feedback I've received. It's been a truly fantastic twelve weeks.
+Even without these additions, I think oTranscribe has already proven to be incredibly useful to a large number of people; I've been blown away by the positive feedback the app has received. And for myself personally, It's been a truly fantastic twelve weeks.
