@@ -3,7 +3,7 @@ layout: post
 title:  "oTranscribe, twelve weeks in"
 ---
 
-It's been around three months since [I launched oTranscribe](http://ejb.github.io/2013/10/03/otranscribe.html), my first major side project. I developed an ’MVP’ over the course of around a month and then spent a weekend on branding, officially launched the app on November 2, 2013.
+It's been around three months since [I launched oTranscribe](http://ejb.github.io/2013/10/03/otranscribe.html), my first major side project. I developed an ’MVP’ over the course of around a month and then spent a weekend on branding, officially launching the app on November 2, 2013.
 
 Progress has been slow but steady. Bolstered by positive feedback on the [journalism subreddit](http://www.reddit.com/r/Journalism/comments/1qb5dx/im_developing_a_web_app_to_make_transcribing/), I signed up to do a talk at [Hacks/Hackers London](http://www.meetup.com/HacksHackersLondon/). I was incredibly nervous, and was almost thrown off halfway when I heard giggling - but this turned out to be in response to someone in the audience gasping: "this is amazing!"
 
