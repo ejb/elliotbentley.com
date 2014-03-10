@@ -68,6 +68,12 @@ pre, code {
 
 img {
     max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+#post p, #post li {
+    font-family: merriweather, sans-serif;
 }
 
 #post ul {
@@ -79,7 +85,7 @@ img {
 }
 
 #post li:before {
-    content: '- ';
+    content: ' •  ';
 }
 
 @media (max-width: 600px) {
@@ -92,4 +98,7 @@ img {
         line-height: 1.2em;
     }
     
+    #post p {
+        line-height: 1.6em;
+    }
 }
