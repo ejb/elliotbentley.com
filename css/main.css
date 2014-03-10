@@ -94,11 +94,5 @@ img {
         padding: 1em;
 /*        font-size: 12px;*/
     }
-    p,h1,li {
-        line-height: 1.2em;
-    }
-    
-    #post p {
-        line-height: 1.6em;
-    }
+
 }
