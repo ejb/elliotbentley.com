@@ -44,6 +44,9 @@ a {
 
 .header {
     margin-bottom: 2em;
+    background: rgb(94, 94, 94);
+    padding: 1em;
+    color: white;
 }
 
 em {
@@ -63,6 +66,7 @@ pre {
 
 pre, code {
     background: #EEE;
+    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier","Courier New",monospace;
     
 }
 
@@ -71,8 +75,10 @@ img {
     margin: 0 auto;
     display: block;
 }
-
-#post p, #post li {
+h1 {
+    font-size: 1.5em;
+}
+h1, #post p, #post li {
     font-family: merriweather, sans-serif;
 }
 
