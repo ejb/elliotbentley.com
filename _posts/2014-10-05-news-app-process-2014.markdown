@@ -5,15 +5,15 @@ title:  "My 2014 news app development process"
 
 A large part of my job at the Wall Street Journal is producing "news apps", small JavaScript-based programmes, often interactive infographics. They may be designed to supplement a written news story, or sometimes stand alone.
 
-A few examples: [Europe Without Flights: A Paper Timetable Adventure
-](http://graphics.wsj.com/europe-timetable-adventure/), [The London Taxi Challenge
-](http://graphics.wsj.com/london-taxi-challenge/) and the mega-sized [WWI legacies project](http://online.wsj.com/ww1/).
+A few examples: [Europe Without Flights: A Paper Timetable Adventure](http://graphics.wsj.com/europe-timetable-adventure/), [The London Taxi Challenge](http://graphics.wsj.com/london-taxi-challenge/) and the mega-sized [WWI legacies project](http://online.wsj.com/ww1/).
 
 I thought it might be interesting to write up some notes on my current development process. Please bear in mind that this is merely a snapshot of my current workflow, and is constantly evolving. I'm more than open to any suggestions or criticisms.
 
 ## Rapid prototyping
 
-Once we have a basic idea for an interactive mapped out -- sketched on paper, in Illustrator or perhaps just verbally -- I'll begin developing a very basic prototype. Typically I'll start by loading up [JS Bin](http://jsbin.com/) and focus on working out the most technically complex components. Later on I'll switch to a local HTML file, and even later to the standard WSJ template. I may do some serious cleaning up of the code, but I'll rarely throw away prototype code altogether.
+Once we have a basic idea for an interactive mapped out -- sketched on paper, in Illustrator or perhaps just verbally -- I'll begin developing a very basic prototype. Typically I'll start by loading up [JS Bin](http://jsbin.com/) and focus on working out the most technically complex components.
+
+Later on I'll switch to a local HTML file, and even later to the standard WSJ template. I may do some serious cleaning up of the code, but I'll rarely throw away prototype code altogether.
 
 ![Scottish referendum results prototype](/assets/workflow-2014/scotland-prototype.png)
 
