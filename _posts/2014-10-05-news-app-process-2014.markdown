@@ -1,9 +1,9 @@
-﻿---
+---
 layout: post
-title: "My 2014 news app development process"
+title:  "My 2014 news app development process"
 ---
 
-A large part of my job at the Wall Street Journal is producing "news apps", small JavaScript-based programmes, often interactive infographics, designed to supplement a written news story, or sometimes stand alone. A few examples: [Europe Without Flights: A Paper Timetable Adventure
+A large part of my job at the Wall Street Journal is producing "news apps", small JavaScript-based programmes, often interactive infographics. They may be designed to supplement a written news story, or sometimes stand alone. A few examples: [Europe Without Flights: A Paper Timetable Adventure
 ](http://graphics.wsj.com/europe-timetable-adventure/), [European Parliament Elections 2014: Results
 ](http://graphics.wsj.com/european-elections-2014/) and the mega-sized [WWI legacies project](http://online.wsj.com/ww1/).
 
