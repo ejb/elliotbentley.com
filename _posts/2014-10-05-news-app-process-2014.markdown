@@ -3,11 +3,13 @@ layout: post
 title:  "My 2014 news app development process"
 ---
 
-A large part of my job at the Wall Street Journal is producing "news apps", small JavaScript-based programmes, often interactive infographics. They may be designed to supplement a written news story, or sometimes stand alone. A few examples: [Europe Without Flights: A Paper Timetable Adventure
-](http://graphics.wsj.com/europe-timetable-adventure/), [European Parliament Elections 2014: Results
-](http://graphics.wsj.com/european-elections-2014/) and the mega-sized [WWI legacies project](http://online.wsj.com/ww1/).
+A large part of my job at the Wall Street Journal is producing "news apps", small JavaScript-based programmes, often interactive infographics. They may be designed to supplement a written news story, or sometimes stand alone.
 
-I thought it might be interesting to write up some notes on my current development process. Please bear in mind that this is merely a snapshot of my current workflow, and could easily change within a matter of weeks. I'm more than open to any suggestions or criticisms.
+A few examples: [Europe Without Flights: A Paper Timetable Adventure
+](http://graphics.wsj.com/europe-timetable-adventure/), [The London Taxi Challenge
+](http://graphics.wsj.com/london-taxi-challenge/) and the mega-sized [WWI legacies project](http://online.wsj.com/ww1/).
+
+I thought it might be interesting to write up some notes on my current development process. Please bear in mind that this is merely a snapshot of my current workflow, and is constantly evolving. I'm more than open to any suggestions or criticisms.
 
 ## Rapid prototyping
 
@@ -19,7 +21,7 @@ Once we have a basic idea for an interactive mapped out -- sketched on paper, in
 
 ## JavaScript coding style
 
-To keep things neat and avoid using the global namespace, I will usually wrap every function (and key variables) into a single object. I've yet to be convinced of the usefulness of client-side package managers such as require.js and Bower, but I'm to have my mind changed.
+To keep things neat and avoid using the global namespace, I will usually wrap every function (and key variables) into a single object. I've yet to be convinced of the usefulness of client-side package managers such as require.js and Bower, but I'm happy to have my mind changed.
 
 I use jQuery and Modernizr in every project, and when necessary D3 or Leaflet (more on these below). [Handlebars](http://handlebarsjs.com/), a dynamic templating library, can be useful on larger projects.
 
@@ -31,17 +33,19 @@ So far, I haven't found a CSS framework that does anything but get in my way; bu
 
 ## Data formatting
 
-Having data in a separate CSV or JSON file - separating the 'model' from the 'view', to use programmer jargon - is common practice, but I find that even in runtime it's important to keep data centralised in a single location. In future, I'd like to experiment with more object-oriented structures and turn every data 'row' into an object with helper functions.
+Having data in a separate CSV or JSON file - separating the 'model' from the 'view', to use programmer jargon - is common practice, but I find that even at runtime it's important to keep data centralised in a single location. In future, I'd like to experiment with more object-oriented structures and turning every data 'row' into an object with helper functions.
 
 I use Shan Carter's excellent [Mr Data Converter](http://shancarter.github.io/mr-data-converter/) to quickly transform Excel-based documents into manipulatable data formats. For more dynamic or complicated datasets, I'll often do some server-side processing to reduce the pressure on the client side. This is often the first thing I'll do on a project, since establishing a clear data structure early on is crucial.
 
 ## Mapping
 
-[CartoDB](http://cartodb.com/] is a handy service for throwing together interactive maps based on simple datasets. However, getting my hands dirty with [Leaflet.js](http://leafletjs.com/) (which CartoDB is built on) is essential for something more bespoke. D3.js - which can do a *lot* more than just maps - can be useful for producing a nice clean SVG maps.
+[CartoDB](http://cartodb.com/] is a handy service for throwing together interactive maps based on simple datasets. However, getting my hands dirty with [Leaflet.js](http://leafletjs.com/) (which CartoDB is built on) is essential for something more bespoke. D3.js - which can be used for a *lot* more than just maps - is a good option when in need of nice clean vector maps of countries and regions.
 
-## Mobile first design
+## Mobile-first design
 
-Producing media-rich interactives that work well on mobile is, I've found, far easier said than done, and I'm still experimenting and refining my own strategies. A key part of a mobile-first approach is to keep things as simple as possible; avoiding dense or complex layouts, sticky elements and (most crucial) a reliance on hover/click events. Fundamentally, the mobile design must be taken into consideration from the start, dogmatically sticking to mobile devices for initial sketches and prototypes. In an ideal situation, there should never be a need for that dreaded question: "But how does it work on mobile?"
+Producing media-rich interactives that work well on mobile is, I've found, far easier said than done. I'm still experimenting and refining my strategies. A key part of a mobile-first approach is to keep things as simple as possible; avoiding dense or complex layouts, sticky elements and (most crucial) a reliance on hover/click events.
+
+Fundamentally, the mobile design must be taken into consideration from the start, dogmatically sticking to mobile screens for initial sketches and prototypes. In an ideal situation, there should never be a need for that dreaded question: "But how does it work on mobile?"
 
 Scrolling list and card formats are easy mobile-friendly options (think mail apps, Twitter or the Facebook 'stream') but apps like Tinder and Facebook Paper prove that there can be alternative structures. The real challenge is to get them working in the treacherous environment of a mobile browser.
 
