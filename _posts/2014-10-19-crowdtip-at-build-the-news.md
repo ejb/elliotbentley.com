@@ -12,7 +12,7 @@ This weekend I took part in The Times' Build The News hackathon as part of a has
 
 Our winning entry was **CrowdTip**, an alternative commenting platform designed to engage readers in the editorial decision-making process.
 
-It consists primarily of a widget embedded into news articles, with buttons representing different areas future coverage could explore.
+It consists primarily of a widget embedded into news articles, with buttons presenting different areas future coverage could explore. Pressing one of these immediately submits a vote.
 
 ![Widget screenshot](/assets/crowdtip/widget.png)
 
