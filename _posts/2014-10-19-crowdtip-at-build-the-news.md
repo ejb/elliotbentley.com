@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "CrowdTip: Our winning hack at Build The News 2"
+redirect_from: "/2014/10/19/btn.html"
 ---
 
 ![Our group presenting. Photo by Matt Taylor](/assets/crowdtip/group.jpg)

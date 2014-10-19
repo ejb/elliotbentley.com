@@ -1,3 +1,5 @@
 name: ejb.github.io
 pygments: true
 baseurl: ''
+gems:
+- jekyll-redirect-from
