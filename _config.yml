@@ -1,4 +1,6 @@
 name: ejb.github.io
+url: ejb.github.io
+description: 'brief notes & experiments by @elliot bentley'
 pygments: true
 baseurl: ''
 gems:

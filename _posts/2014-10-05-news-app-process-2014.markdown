@@ -39,7 +39,7 @@ I use Shan Carter's excellent [Mr Data Converter](http://shancarter.github.io/mr
 
 ## Mapping
 
-[CartoDB](http://cartodb.com/] is a handy service for throwing together interactive maps based on simple datasets. However, getting my hands dirty with [Leaflet.js](http://leafletjs.com/) (which CartoDB is built on) is essential for something more bespoke. D3.js - which can be used for a *lot* more than just maps - is a good option when in need of nice clean vector maps of countries and regions.
+[CartoDB](http://cartodb.com/) is a handy service for throwing together interactive maps based on simple datasets. However, getting my hands dirty with [Leaflet.js](http://leafletjs.com/) (which CartoDB is built on) is essential for something more bespoke. D3.js - which can be used for a *lot* more than just maps - is a good option when in need of nice clean vector maps of countries and regions.
 
 ## Mobile-first design
 
