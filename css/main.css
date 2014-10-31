@@ -96,6 +96,9 @@ h1, h2, #post p, #post li {
     content: ' •  ';
 }
 
+#post sup {
+    line-height: 0;
+}
 
 #post .footnotes {
     margin-top: 3em;
