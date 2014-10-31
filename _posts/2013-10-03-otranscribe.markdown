@@ -5,7 +5,7 @@ title:  "Introducing oTranscribe"
 
 For the past few weeks, I've been working on a web app called **[oTranscribe](http://otranscribe.com/)**. It's designed to take the pain out of transcibing recorded interviews by integrating an audio player with a text editor.
 
-[![image]({{ site.url }}/assets/otranscribe.png)](http://otranscribe.com/)
+[<img src="/assets/otranscribe.png">](http://otranscribe.com/)
 
 Key features:
 - **Save time when transcribing** - no need to switch between an audio player and text editor.
