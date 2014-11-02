@@ -8,6 +8,7 @@ For the past few weeks, I've been working on a web app called **[oTranscribe](ht
 [<img src="/assets/otranscribe.png">](http://otranscribe.com/)
 
 Key features:
+
 - **Save time when transcribing** - no need to switch between an audio player and text editor.
 - **Never lose your work** - your transcript is automatically saved, even if you close the window.
 - **Convenient keyboard controls** to pause/resume, skip forward/back and even insert a timestamp.
