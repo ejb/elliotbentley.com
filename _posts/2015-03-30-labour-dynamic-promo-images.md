@@ -14,7 +14,7 @@ The server-side code, if written in PHP, presumably works something like this:
     <?php
     $url = $_SERVER['REQUEST_URI'];
     $url_components = explode( 'graphic/', $url );
-    if ($url_components[0]) {
+    if ($url_components[1]) {
         $image_url = 'http://storage.googleapis.com/voting-record/'+$url_components[0];
     } else {
         $image_url = 'http://action.labour.org.uk/page/-/Images/votingrecordgeneric.png';
