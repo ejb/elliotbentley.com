@@ -1,7 +1,7 @@
 name: ejb.github.io
 url: ejb.github.io
 description: 'brief notes & experiments by @elliot bentley'
-pygments: true
+highlighter: rouge
 baseurl: ''
 markdown: kramdown
 gems:

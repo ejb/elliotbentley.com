@@ -67,8 +67,9 @@ pre {
 }
 
 pre, code {
-    background: #EEE;
+    background: #f6f6f6;
     font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier","Courier New",monospace;
+    font-size: 13px;
     
 }
 
