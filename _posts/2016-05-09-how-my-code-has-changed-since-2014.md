@@ -61,7 +61,7 @@ makeArc('current-poll-arc', eudata, "Tot", (1.65));
 
 Trick question! `height` is actually controlled by a fifth argument, which is absent in this case.
 
-**Now:** I try to give each function a clear purpose. Sometimes it can be a 'pure function', which takes an input and returns an output without modifying anything else (a good model for 'data wrangling' functions). Or a function might return a closure, which allows me to keep all related variables inside of the original function. Other times I will avoid writing functions altogether and rely on battle-tested libraries such as [Moment](http://momentjs.com), which handles date interpretation, querying, modification and formatting.
+**Now:** I try to give each function a clear purpose. Sometimes it can be a 'pure function', which takes an input and returns an output without modifying anything else (a good model for 'data wrangling' functions). Or a function might return a [closure](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures), which allows me to keep all related variables inside of the original function. Other times I will avoid writing functions altogether and rely on battle-tested libraries such as [Moment](http://momentjs.com), which handles date interpretation, querying, modification and formatting.
 
 For functions that take more than a couple of arguments, I pass in objects, which make it far clearer what each argument is:
 
@@ -130,7 +130,7 @@ data = data.filter(function(r){
 
 These are initially a little harder to get one's head around, but eventually result in much clearer code than huge `for` loops with tonnes of `if` statements. Only once these operations are finished do I begin to start generating HTML.
 
-**Next:** If I were to start using ES6, I could make use of 'fat arrow functions' in my anonymous functions (of which there are many when using said array methods). Fat arrow functions not only save a few characters, but also maintain the scope of their parent, which is very handy when using object-oriented programming involving [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
+**Next:** If I were to start using ES6, I could make use of ['fat arrow functions'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Arrow_functions) in my anonymous functions (of which there are many when using said array methods). Fat arrow functions not only save a few characters, but also maintain the scope of their parent, which is very handy when using object-oriented programming involving [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
 
 
 
