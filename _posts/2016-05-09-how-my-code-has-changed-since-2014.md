@@ -3,9 +3,9 @@ layout: post
 title: "2014’s JavaScript versus today’s (or: How my old code holds up today)"
 ---
 
-It's been over two years now since I started at the Wall Street Journal. One of the most tangible results of those two years has been a dramatic improvement in the quality of the code I write.
+It's been over two years now since I started at the Wall Street Journal -- back when I went from an amateur enthusiast programmer to a 'professional'.
 
-Most of my projects have been bespoke client-side apps with short shelf lives, which provides an opportunity to experiment and quickly learn what works (and what doesn't!).
+One of the most tangible results of these two years is that my code is cleaner and clearer than ever before. Most of my projects have been bespoke client-side apps with short shelf lives, which have provided opportunities to experiment and quickly learn what works (and what doesn't!).
 
 Here's how the code I wrote for interactive graphics in early 2014 compares to the code I write now.
 
