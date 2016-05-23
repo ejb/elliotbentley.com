@@ -11,7 +11,7 @@ Because most of these need to be accessible at several points in a script, the t
 
 Credit where credit is due: I was introduced to this idea by my colleague [Jason French](https://twitter.com/jasonleefrench/). I've since adopted it and use it regularly. This is my attempt at formalising it.
 
-## My solution: object-oriented programming
+## A solution: object-oriented programming
 
 Think of a D3 chart or visualisation as a ‘widget’ on the page. This provides a number of benefits:
 
