@@ -9,6 +9,8 @@ Code written using D3 is difficult to manage. Even in a simple line chart, there
 
 Because most of these need to be accessible at several points in a script, the temptation is to structure the entire thing in one giant function. Many examples on [bl.ocks.org](http://bl.ocks.org) are essentially unstructured, which makes the concepts nice and clear but in real-world code can lead to an unmanageable mess.
 
+Credit where credit is due: I was introduced to this idea by my colleague [Jason French](https://twitter.com/jasonleefrench/). I've since adopted it and use it regularly. This is my attempt at formalising it.
+
 ## My solution: object-oriented programming
 
 Think of a D3 chart or visualisation as a ‘widget’ on the page. This provides a number of benefits:
