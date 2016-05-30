@@ -206,6 +206,8 @@ A few things worth emphasising here:
 - `draw` needs to be able to work both on initial load and on updates.
 - If you wanted to have method instances which trigged animations (for example, [transitioning axes](https://bl.ocks.org/mbostock/1166403)), you would need to make `draw` more complex and not simple wipe the element clean each time.
 
+_Update 30 May 2016:_ Here's an example of [a more complicated chart using the constructor pattern](http://bl.ocks.org/nstrayer/37a503dd1db369a8f7e3ce21757e19ee), courtesy of Nick Strayer.
+
 ## Watch out for anonymous functions
 
 The only catch with using constructor functions is that the value of `this` will change inside of anonymous functions -- which, in D3, are everywhere.
