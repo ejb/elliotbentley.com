@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "2014’s JavaScript versus today’s (or: How my old code holds up today)"
+title: "How my JavaScript has changed after two years at the Wall Street Journal"
 ---
+
+_This blog post was previously titled ‘2014’s JavaScript versus today’s (or: How my old code holds up today)’, but three weeks later I decided I didn't like that name._
 
 It's been over two years now since I started at the Wall Street Journal -- back when I went from an amateur enthusiast programmer to a 'professional'.
 
@@ -43,6 +45,8 @@ Chart.prototype.createSVG = function() {
     // d3 stuff goes here
 }
 {% endhighlight %}
+
+_Update: By popular request, I've since written a [full blog post on using the D3 constructor pattern](http://ejb.github.io/2016/05/23/a-better-way-to-structure-d3-code.html)._
 
 **Next:** We've yet to universally adopt a build system for interactive graphics at WSJ, but I've been experimenting with module-loading systems such as [RequireJS](http://requirejs.org) and [Webpack](https://webpack.github.io) in my own time. They both allow one to split out JS code into smaller files and then `require` them inline -- as one can in PHP, Python or basically any other halfway-sane language -- and encourages cleaner, self-contained code.
 

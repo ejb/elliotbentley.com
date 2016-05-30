@@ -4,5 +4,7 @@ description: 'brief notes & experiments by @elliot bentley'
 highlighter: rouge
 baseurl: ''
 markdown: kramdown
+kramdown:
+  input: GFM
 gems:
 - jekyll-redirect-from
