@@ -115,7 +115,7 @@ var seats = data.reduce(function(prev,curr) {
 });
 
 // create new filtered array
-var filtered = data.filter(function(d,i) {
+var filtered = processed.filter(function(d,i) {
     return d.visible;
 });
 ```
@@ -135,7 +135,7 @@ const processed = data.map(d => {
 const seats = data.reduce((prev,curr) => prev + curr.seats);
 
 // create new filtered array
-const filtered = data.filter(d => d.visible);
+const filtered = processed.filter(d => d.visible);
 ```
 
 Crazy, right? ES6 is a whole new world.
