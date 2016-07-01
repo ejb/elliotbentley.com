@@ -9,7 +9,7 @@ I've now been involved in the development of several live result graphics: the [
 
 For the Brexit referendum just gone, I tried to follow [my own advice from last year](http://ejb.github.io/2015/05/08/2015-election-live-election-graphic.html) by doing the following:
 
-- Starting development of the server-side data-fetching/processing code before anything else, and working out its hosting infrastructure relatively early on. Despite this preparating, there was still a last-minute change to hosting of the results data file.
+- Starting development of the server-side data-fetching/processing code before anything else, and working out its hosting infrastructure relatively early on. Despite this preparation, there was still a last-minute change to hosting of the results data file.
 - Using [momentjs](http://momentjs.com) for handling parsing and rendering of dates, thus skirting any potential timezone issues. Thankfully there were no issues this time round.
 - Writing the code as a series of completely isolated modules (more on this below). This was certainly true of the JavaScript bits, but the CSS -- especially the grid-layout homepage widget -- was somewhat trickier to modify on-the-fly.
 
