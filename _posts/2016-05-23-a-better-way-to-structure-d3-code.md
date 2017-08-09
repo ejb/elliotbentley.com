@@ -3,6 +3,8 @@ layout: post
 title: "A better way to structure D3 code"
 ---
 
+_**Check out the [updated version of this blog post](http://ejb.github.io/2017/08/09/a-better-way-to-structure-d3-code-es6-version.html) updated for D3 v4 and ES6 class syntax.**_
+
 _Note: This blog post is aimed at beginner-to-intermediate users of the [D3 JavaScript library](https://d3js.org). If you want to skip straight to the good stuff, check out the [accompanying example on bl.ocks.org](https://bl.ocks.org/ejb/79698ac221dbcff637b1930a387a9416)._
 
 Code written using D3 is difficult to manage. Even in a simple line chart, there will be almost a dozen important variables such as (deep breath): width, height, margins, SVG, x-scale, x-axis generator function, x-axis SVG group, x-scale, y-axis generator function, y-axis SVG group, line generator function, path element and (most important of all) a data array/object. And that's just the bare minimum.
