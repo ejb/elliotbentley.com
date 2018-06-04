@@ -102,7 +102,7 @@ A related format is to allow the reader to run a live simulation in their browse
 
 ![](/assets/interactives/measles.png)
 
-[The above Guardian piece](https://www.theguardian.com/society/ng-interactive/2015/feb/05/-sp-watch-how-measles-outbreak-spreads-when-kids-get-vaccinated) simulates a measles outbreak across ten populations with varying rates of vaccination. The web graphics make the results are starkly clear in a way that percentages alone could not convey. In Nathan Yau's ['Years You Have Left to Live, Probably'](http://flowingdata.com/2015/09/23/years-you-have-left-to-live-probably/), a simple line chart ("probability of living to next year") is made more poignant with 'lives' that die at random and then pile up.
+[The above Guardian piece](https://www.theguardian.com/society/ng-interactive/2015/feb/05/-sp-watch-how-measles-outbreak-spreads-when-kids-get-vaccinated) simulates a measles outbreak across ten populations with varying rates of vaccination. The web graphics make the results starkly clear in a way that percentages alone could not convey. In Nathan Yau's ['Years You Have Left to Live, Probably'](http://flowingdata.com/2015/09/23/years-you-have-left-to-live-probably/), a simple line chart ("probability of living to next year") is made more poignant with 'lives' that die at random and then pile up.
 
 These simulations don't have to use imaginary data. ['The Birthday Paradox'](https://pudding.cool/2018/04/birthday-paradox/) uses data from previous visitors to the page to test the probability of shared birthdays.
 
