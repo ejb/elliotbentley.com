@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What interactives can do (that articles can't)"
+title: "What interactives can do (that articles can’t)"
 ---
 
 It's a tough time for interactives. Last year saw debates around whether the format is [dead](https://medium.com/@dominikus/the-end-of-interactive-visualizations-52c585dcafcb) (or [not](https://www.vis4.net/blog/2017/03/in-defense-of-interactive-graphics/)) and it's difficult not to notice an industry-wide trend away from interactive graphics using live code and towards static images and [ai2html](http://ai2html.org).
