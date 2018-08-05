@@ -4,6 +4,8 @@ title: "oTranscribe needs a new home"
 author: elliotbentley
 ---
 
+**Update:** [oTranscribe is joining MuckRock and DocumentCloud](/2018/08/05/otranscribe-muckrock-documentcloud.html)
+
 How would you like to run an open source project used by thousands of journalists, academics and writers?
 
 My [humble little web app](https://ejb.github.io/2013/10/03/otranscribe.html) turns five this year. I still get a thrill whenever someone tells me it’s helped them in their work, but [I’m kind of done with it](https://ejb.github.io/2017/06/17/excitement-and-terror-of-a-successful-side-project.html). I’m struggling to find the motivation to maintain and upgrade its codebase. With over 100,000 monthly users relying on oTranscribe, I don’t want to do a sloppy job or let it rot away.
