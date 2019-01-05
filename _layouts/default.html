@@ -45,7 +45,24 @@
 
           <div class="site">
             <div class="header">
-              <div class="title"><a href="/">{{ site.name }}</a> > brief notes & experiments by <a href="http://twitter.com/elliot_bentley">@elliot bentley</a> </div>
+              <div class="title"><a href="/">{{ site.name }}</a></div>
+              
+              {% if page.title == 'Elliot Bentley' %}
+                <nav>
+                  <ul>
+                    <li>
+                      <a href='#portfolio'>
+                        Portfolio
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              {% else %}
+                <div>{{ page.title }}</div>
+              {% endif %}
+              
+  
+              
             </div>
      
                 {{ content }}

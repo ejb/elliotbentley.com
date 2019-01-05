@@ -1,31 +1,40 @@
 ---
 layout: default
-title: tech by ejb
+title: Elliot Bentley
 ---
 
 <div class="home">
 
+  <section>
     <h2>blog posts</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li>> <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+    <div>
+      Latest post:
+      <a href="{{ site.posts[0].url }}">
+        {{ site.posts[0].title }}
+      </a>
+    </div>
+  </section>
 
-  <h2>open source apps & tools</h2>
-  <ul>
-      <li>> <a href="https://github.com/OpenNewsLabs/forward-ferret">Forward Ferret</a> (WSJ/Times) - A command-line application for processing UK election data</li>
-      <li>> <a href="https://github.com/WSJ/scroll-watcher">scrollWatcher</a> (WSJ) - A small JavaScript library for scroll-based data-driven graphics</li>
-      <li>> <a href="https://github.com/ejb/linkeynote">linkeynote</a> - Turn a list of URLs into a slick presentation</li>
-      <li>> <a href="http://wsj.github.io/pinpoint/">Pinpoint</a> (WSJ) - JavaScript library for creating beautifully simple maps in seconds</li>
-      <li>> <a href="https://github.com/WSJ/the-meta-tag-checker">The Meta Tag Checker</a> (WSJ) - Easy-to-configure social-media meta tag checker and validator</li>
-      <li>> <a href="https://github.com/ejb/progressor.js">progressor.js</a> - Lightweight, customisable progress bars for HTML5 video & audio</li>
-      <li>> <a href="http://otranscribe.com/">oTranscribe</a> - Web app for transcribing audio interviews</li>
-      <li>> <a href="https://kanjivoice.s3.amazonaws.com/index.htm">KanjiVoice</a> - Test Kanji readings using the Web Speech API</li>
-      <li>> <a href="http://ejb.github.io/RandomMeetup/">RandomMeetup</a> - Displays a random group from Meetup.com based on location</li>
-      <li>> <a href="https://github.com/ejb/DayOneMap/">DayOneMap</a> - Turn your Day One journal into a dynamic map</li>
-  </ul>
-  
+  <section id="contact">
+    <h2>Contact me</h2>
+    <ul>
+      <li><a href="https://github.com/ejb">GitHub</a></li>
+      <li><a href="https://twitter.com/elliot_bentley">Twitter</a></li>
+      <li><a href="mailto:mail@elliotbentley.com">Email</a></li>
+    </ul>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <ul>
+    {% for piece in site.data.portfolio %}
+      <li>
+        <a href="{{piece.url}}">{{ piece.title }}</a> {{piece.description}}
+      </li>
+    {% endfor %}
+    </ul>
+    
+  </section>
   
 
 </div>
