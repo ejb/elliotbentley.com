@@ -1,19 +1,26 @@
 [
   {
     "title": "How Money Flowed (and Ebbed) at GE",
-    "url": "https://www.wsj.com/graphics/how-money-flowed-and-ebbed-at-ge/"
-  },
-  {
-    "title": "How Facial Recognition Software Works",
-    "url": "https://www.wsj.com/graphics/how-facial-recognition-works/"
+    "url": "https://www.wsj.com/graphics/how-money-flowed-and-ebbed-at-ge/",
+    "description": "A giant, vertical streamograph rendered using D3.",
+    "major": true
   },
   {
     "title": "Midterm Elections 2018: Live Results",
-    "url": "https://www.wsj.com/graphics/midterm-elections-2018-results/"
+    "url": "https://www.wsj.com/graphics/midterm-elections-2018-results/",
+    "description": "I led a team who worked on this results page, plus live graphics embedded within the WSJ homepage, app and election night liveblog. My biggest contribution to the codebase was the ‘Pachinko’, a novel data visualisation that uses animation in a fun way.",
+    "major": true
   },
   {
     "title": "4,925 Tweets: Elon Musk's Twitter Habit, Dissected",
-    "url": "https://graphics.wsj.com/elon-musk-twitter-habit-analysis/"
+    "url": "https://graphics.wsj.com/elon-musk-twitter-habit-analysis/",
+    "description": "Does what it says on the tin. I worked closely with Scott and Samarth to find the right format for their analysis. We settled on a trendy ‘tap story’ format with lot of charts and embedded tweets.",
+    "major": true
+  },
+  {
+    "title": "How Facial Recognition Software Works",
+    "url": "https://www.wsj.com/graphics/how-facial-recognition-works/",
+    "major": true
   },
   {
     "title": "Lives Lost in Three Decades of School Shootings",

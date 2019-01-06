@@ -6,5 +6,5 @@ baseurl: ''
 markdown: kramdown
 kramdown:
   input: GFM
-gems:
+plugins:
 - jekyll-redirect-from

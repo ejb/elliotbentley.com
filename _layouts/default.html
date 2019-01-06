@@ -30,10 +30,10 @@
 
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.url }}/css/main.css">
+        <link rel="stylesheet" href="/css/main.css">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="{{ site.url }}/css/syntax.css">
+        <link rel="stylesheet" href="/css/syntax.css">
         
         <!-- Custom font -->
         <script src="//use.edgefonts.net/merriweather.js"></script>
@@ -55,6 +55,11 @@
                         Portfolio
                       </a>
                     </li>
+                    <li>
+                      <a href='#portfolio'>
+                        Portfolio
+                      </a>
+                    </li>
                   </ul>
                 </nav>
               {% else %}
@@ -65,7 +70,11 @@
               
             </div>
      
-                {{ content }}
+            {{ content }}
+            
+            <footer>
+              Hand-coded with <3 in Brooklyn, NY.
+            </footer>
 
           </div> <!-- site -->
     </body>

@@ -1,0 +1,42 @@
+---
+layout: default
+title: Elliot Bentley
+---
+
+<div class="">
+
+  <h2>Portfolio</h2>
+  
+  
+  {% assign major_works = site.data.portfolio | where_exp: "item", "item.major == true" %}
+  {% assign minor_works = site.data.portfolio | where_exp: "item", "item.major != true" %}
+
+  {% for piece in major_works %}
+  <section class="box-cont">
+    <h2 >{{ piece.title }}</h2>
+    <p>{{piece.description}}</p>
+    <div class="screenshot-gallery">
+      <ul class="screenshot-gallery-inner">
+        <img src="/assets/portfolio/ge-1.png">
+        <img src="/assets/portfolio/ge-1.png">
+        <img src="/assets/portfolio/ge-1.png">
+        <div class="spacer"></div>
+      </ul>
+    </div>
+    <a href="{{piece.url}}" class="full-width-link">View on WSJ.com <small>(may require subscription)</small></a>
+  </section>
+  {% endfor %}
+
+
+  <section class="box-cont">
+    <ul>
+    {% for piece in minor_works %}
+      <li>
+        <a href="{{piece.url}}">{{ piece.title }}</a> {{piece.description}}
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
+  
+
+</div>
