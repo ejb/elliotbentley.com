@@ -44,31 +44,14 @@
     <body>
 
           <div class="site">
-            <div class="header">
-              <div class="title"><a href="/">{{ site.name }}</a></div>
-              
-              {% if page.title == 'Elliot Bentley' %}
-                <nav>
-                  <ul>
-                    <li>
-                      <a href='#portfolio'>
-                        Portfolio
-                      </a>
-                    </li>
-                    <li>
-                      <a href='#portfolio'>
-                        Portfolio
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              {% else %}
-                <div>{{ page.title }}</div>
+            <header class="splash">
+              <div class="title">
+                <a href="/">{{ site.name }}</a>
+              </div>
+              {% if page.title != 'Elliot Bentley' %}
+                » {{ page.title }}
               {% endif %}
-              
-  
-              
-            </div>
+            </header>
      
             {{ content }}
             

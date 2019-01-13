@@ -34,15 +34,44 @@ a {
     color: inherit;
 }
 
-.header, .date {
+#post .date {
     color: #AAA;
 }
 
-.header {
-    margin-bottom: 2em;
-    background: rgb(94, 94, 94);
-    padding: 1em;
-    color: white;
+.site {
+  height: 100vh;
+  overflow-x: hidden;
+  perspective: 1px;
+}
+
+header {
+  font-size: 30px;
+  line-height: 1;
+  padding: 20vh 15px;
+}
+
+header a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+header.splash {
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+header.splash:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) translateY(-50%) scale(2.5);
+  z-index: -1;
+	background: url('/assets/shoes.jpeg');
+  background-size: cover;
+  background-position-y: center;
 }
 
 em {
@@ -146,8 +175,12 @@ footer {
 
 
 /*
-BLOG POSTS
+BLOG CSS
 */
+
+#post {
+  background: white;
+}
 
 #post p, #post li {
     font-family: merriweather, sans-serif;
@@ -209,6 +242,12 @@ BLOG POSTS
 }
 
 @media (min-width: 600px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .home {
     display: grid;
     grid-template-columns: 1fr 1fr;
