@@ -152,7 +152,7 @@ footer {
 
 .screenshot-gallery-inner {
   display: flex;
-  height: 60vh;
+  height: 80vh;
   margin-right: 15px;
   padding: 0 15px 0 0 !important;
 }
@@ -168,6 +168,12 @@ footer {
   width: 1px;
   height: 20px;
   flex-shrink: 0;
+}
+
+.portfolio h2 {
+  line-height: 1.4em;
+  margin-bottom: -7.5px;
+  font-weight: 600;
 }
 
 

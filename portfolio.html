@@ -3,7 +3,7 @@ layout: default
 title: Portfolio
 ---
 
-<div class="">  
+<div class="portfolio">  
   
   {% assign major_works = site.data.portfolio | where_exp: "item", "item.major == true" %}
   {% assign minor_works = site.data.portfolio | where_exp: "item", "item.major != true" %}
