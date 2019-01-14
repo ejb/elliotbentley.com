@@ -1,12 +1,9 @@
 ---
 layout: default
-title: Elliot Bentley
+title: Portfolio
 ---
 
-<div class="">
-
-  <h2>Portfolio</h2>
-  
+<div class="">  
   
   {% assign major_works = site.data.portfolio | where_exp: "item", "item.major == true" %}
   {% assign minor_works = site.data.portfolio | where_exp: "item", "item.major != true" %}

@@ -43,10 +43,9 @@ a {
 }
 
 header {
-  font-size: 30px;
   line-height: 1;
-  padding: 20vh 15px 2vh 15px;
-/*  background: linear-gradient(45deg, #c802fd, #47d2cb);*/
+  font-size: 20px;
+  padding: 15px 0 5px 15px;
 }
 
 header a {
@@ -54,11 +53,22 @@ header a {
   font-weight: 700;
   z-index: 2;
   position: relative;
+  text-shadow: white 0 0 4px;
 }
 
 header.splash {
   position: relative;
+  overflow: hidden;
+  font-size: 30px;
+  padding: 10vh 15px 2vh 15px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  header.splash canvas {
+    display: none;
+  }
+}
+
 
 
 em {

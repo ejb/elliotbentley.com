@@ -44,15 +44,18 @@
     <body>
 
           <div class="site">
+            {% if page.url == "/" %}
             <header class="splash">
               <div class="title">
                 <a href="/">{{ site.name }}</a>
               </div>
-              {% if page.title != 'Elliot Bentley' %}
-                » {{ page.title }}
-              {% endif %}
             </header>
-     
+            {% else %}
+            <header>
+               <a href="/">{{ site.name }}</a> » {{ page.title }}
+            </header>
+            {% endif %}
+   
             {{ content }}
             
             <footer>
