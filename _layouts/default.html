@@ -42,7 +42,7 @@
 
     </head>
     <body>
-
+      
           <div class="site">
             {% if page.url == "/" %}
             <header class="splash">
@@ -52,7 +52,14 @@
             </header>
             {% else %}
             <header>
-               <a href="/">{{ site.name }}</a> » {{ page.title }}
+              
+               <a href="/">{{ site.name }}</a> »
+                {% if page.layout == 'post' %}
+                  <a href="/blog.html">Blog</a>
+                {% else %}
+                  {{ page.title }}
+                {% endif %}
+              </a>
             </header>
             {% endif %}
    

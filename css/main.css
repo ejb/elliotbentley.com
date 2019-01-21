@@ -119,6 +119,11 @@ h1 {
   margin: 0;
 }
 
+.box-cont ul.link-list li:first-child {
+  margin: 0;
+}
+
+
 .box-cont h2 {
   font-size: 20px;
 }
@@ -130,9 +135,25 @@ h1 {
   text-decoration: none;
 }
 
+.full-width-link::after {
+  content: ' »';
+  position: absolute;
+  right: 15px;
+  color: #bbb;
+}
+
 .full-width-link small {
   font-size: 80%;
   color: #777;
+}
+
+.contact-list {
+  display: flex;
+}
+
+.contact-list li {
+  margin: 0;
+  margin-right: 15px;
 }
 
 footer {
@@ -183,11 +204,21 @@ BLOG CSS
 
 #post {
   background: white;
+  padding: 15px 15px;
+  margin-top: 15px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
 }
 
 #post p, #post li {
     font-family: merriweather, sans-serif;
 }
+
+#post h1 {
+  margin: 0;
+  line-height: 1.3em;
+}
+
 
 #post h2 {
     margin-top: 2em;
