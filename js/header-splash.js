@@ -77,7 +77,6 @@ var circles = {
     if (pc > 0.01) {
       opacity = 1 - (pc + 0.01);
     }
-    c.fillStyle = 'rgba(0, 0, 0, ' + opacity + ')';
 
     c.rotate(index/10*Math.PI/180);
     
@@ -88,7 +87,15 @@ var circles = {
       const circles = Array.from({length: 10});
       const fraction = 1 / circles.length;
       circles.forEach((_, i) => {
-        const rotation = ((i+mod) / circles.length) * (Math.PI * 2);
+        const pcThroughRotation = (i+mod) / circles.length;
+        const rotation = pcThroughRotation * (Math.PI * 2);
+        
+        const r = Math.abs(Math.cos(pcThroughRotation * Math.PI)) * 255 * pc;
+        const g = Math.abs(Math.cos(pcThroughRotation * Math.PI - (Math.PI/3))) * 255 * pc;
+        const b = Math.abs(Math.cos(pcThroughRotation * Math.PI - (2*Math.PI/3))) * 255 * pc;
+        c.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+        
+
         const radius = (distance / 10) * (pc + 0.1);
         c.beginPath();
         c.rotate(rotation);
