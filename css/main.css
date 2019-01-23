@@ -50,10 +50,18 @@ header {
 
 header a {
   text-decoration: none;
-  font-weight: 700;
   z-index: 2;
   position: relative;
   text-shadow: white 0 0 4px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+
+header .site-name {
+  font-weight: 700;
 }
 
 header.splash {
@@ -107,6 +115,9 @@ h1 {
   margin-top: 7.5px;
   background: white;
   position: relative;
+  
+  display: flex;
+  flex-direction: column;
 }
 
 .box-cont h2 {
@@ -134,6 +145,10 @@ h1 {
   border-top: 1px solid #bbb;
   padding: 1em;
   text-decoration: none;
+}
+
+.full-width-link:hover {
+  background: #EEE;
 }
 
 .full-width-link::after {
@@ -166,6 +181,11 @@ h1 {
   display: block;
   text-align: center;
 }
+
+.contact-list a:hover {
+  background: #EEE;
+}
+
 
 
 footer {
@@ -330,6 +350,9 @@ BLOG CSS
   }
   .screenshot-gallery .spacer {
     display: none;
+  }
+  .full-width-link {
+    margin-top: auto;
   }
 
 }
