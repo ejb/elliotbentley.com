@@ -1,8 +1,10 @@
 /**
  * Setup the canvas element
  */
+var requestId = 0;
 function setup()
 {
+  console.log('setup')
   canvas_wrapper = document.querySelector('header.splash');
   dpr = (window.devicePixelRatio || 1);
   w = canvas_wrapper.offsetWidth;
@@ -15,7 +17,8 @@ function setup()
 	c = canvas.getContext('2d');
 
   index = 0;
-  window.requestAnimationFrame(render);
+  window.cancelAnimationFrame(requestId);
+  requestId = window.requestAnimationFrame(render);
 }
 
 
@@ -23,19 +26,42 @@ var render = function()
 {
   var y = window.scrollY;
   var height = canvas_wrapper.offsetHeight;
-  var pc = (y / height);
+  var pc = Math.abs(y / height);
   pc *= (2-pc);
   var time = Date.now() - start;
   circles.draw(c, pc, time, index);
   index += 1;
-  window.requestAnimationFrame(render);
+  requestId = window.requestAnimationFrame(render);
 
 }
 
-function resized()
-{
-  setup();
-}
+var windowWidth = window.innerWidth;
+var resized = debounce(function() {
+  if (windowWidth !== window.innerWidth) {
+    setup();
+  }
+  windowWidth = window.innerWidth;
+}, 250);
+
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
 
 var squares = {
   setup: function(w, h) {
