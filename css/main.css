@@ -145,6 +145,7 @@ h1 {
 .full-width-link small {
   font-size: 80%;
   color: #777;
+  display: inline-block;
 }
 
 .contact-list {
@@ -154,7 +155,17 @@ h1 {
 .contact-list li {
   margin: 0;
   margin-right: 15px;
+  flex-grow: 1;
 }
+
+.contact-list a {
+  border: 1px solid #bbb;
+  padding: 8px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
 
 footer {
   padding: 20px 0;
@@ -166,27 +177,29 @@ footer {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 15px;
-  padding: 0 15px;
+  padding: 0 10vw;
   scroll-snap-type: x mandatory;
 /*  scroll-padding-left: 15px;*/
 }
 
 .screenshot-gallery-inner {
   display: flex;
-  height: 80vh;
-  margin-right: 15px;
+  margin-right: 10vw;
   padding: 0 15px 0 0 !important;
 }
 
 .screenshot-gallery img {
-  height: 100%;
+  width: 80vw;
+  min-width: 80vw;
+  align-self: center;
   border: 1px solid #eee;
   margin-right: 15px;
   scroll-snap-align: center;
+  min-height: 150vw;
 }
 
 .screenshot-gallery .spacer {
-  width: 1px;
+  width: 10vw;
   height: 20px;
   flex-shrink: 0;
 }

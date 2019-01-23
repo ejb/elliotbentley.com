@@ -2,29 +2,70 @@
   {
     "title": "How Money Flowed (and Ebbed) at GE",
     "url": "https://www.wsj.com/graphics/how-money-flowed-and-ebbed-at-ge/",
-    "description": "A giant, vertical streamograph rendered using D3.",
-    "major": true
+    "description": "A giant, vertical streamograph rendered using D3. I’m most proud of this piece for the mobile-friendly solution to incorporating annotations into such a dense chart.",
+    "major": true,
+    "media": [{
+      "type": "image",
+      "url": "/assets/portfolio/ge-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/ge-2.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/ge-3.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/ge-4.jpg"
+    }]
   },
   {
     "title": "Midterm Elections 2018: Live Results",
     "url": "https://www.wsj.com/graphics/midterm-elections-2018-results/",
     "description": "I led a team who worked on this results page, plus live graphics embedded within the WSJ homepage, app and election night liveblog. My biggest contribution to the codebase was the ‘Pachinko’, a novel data visualisation that uses animation in a fun way.",
-    "major": true
+    "major": true,
+    "media": [{
+      "type": "image",
+      "url": "/assets/portfolio/elex18-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/elex18-2.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/elex18-3.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/elex18-4.jpg"
+    }]
   },
   {
     "title": "4,925 Tweets: Elon Musk's Twitter Habit, Dissected",
     "url": "https://graphics.wsj.com/elon-musk-twitter-habit-analysis/",
-    "description": "Does what it says on the tin. I worked closely with Scott and Samarth to find the right format for their analysis. We settled on a trendy ‘tap story’ format with lot of charts and embedded tweets.",
-    "major": true
+    "description": "I worked closely with Scott and Samarth to find the right format for this analysis of Elon Musk’s tweets. We settled on a trendy ‘tap story’ with lot of charts and embedded tweets.",
+    "major": true,
+    "media": [{
+      "type": "image",
+      "url": "/assets/portfolio/musk-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/musk-2.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/musk-3.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/musk-4.jpg"
+    }]
   },
   {
     "title": "How Facial Recognition Software Works",
     "url": "https://www.wsj.com/graphics/how-facial-recognition-works/",
-    "major": true
+    "major": true,
+    "description": "This interactive explainer uses a JavaScript library called <a href='https://github.com/auduno/clmtrackr'>clmtracker</a> for live face-tracking and rudimentary emotion detection. It used browser media APIs that were cutting-edge at the time but, due to security-driven changes in browsers, it no longer works like it did."
   },
   {
     "title": "Lives Lost in Three Decades of School Shootings",
-    "url": "https://www.wsj.com/graphics/three-decades-of-school-shootings-lives-lost/"
+    "url": "https://www.wsj.com/graphics/three-decades-of-school-shootings-lives-lost/",
+    "description": ""
   },
   {
     "url": "http://www.wsj.com/graphics/build-your-own-trading-bot/",
