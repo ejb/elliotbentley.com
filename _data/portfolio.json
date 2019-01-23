@@ -60,7 +60,20 @@
     "title": "How Facial Recognition Software Works",
     "url": "https://www.wsj.com/graphics/how-facial-recognition-works/",
     "major": true,
-    "description": "This interactive explainer uses a JavaScript library called <a href='https://github.com/auduno/clmtrackr'>clmtracker</a> for live face-tracking and rudimentary emotion detection. It used browser media APIs that were cutting-edge at the time but, due to security-driven changes in browsers, it no longer works like it did."
+    "description": "This interactive explainer uses a JavaScript library called <a href='https://github.com/auduno/clmtrackr'>clmtracker</a> for live face-tracking and rudimentary emotion detection. It uses web media APIs that were cutting-edge at the time and so may no longer work correctly in some browsers.",
+    "media": [{
+      "type": "image",
+      "url": "/assets/portfolio/facerec-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/facerec-2.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/facerec-3.jpg"
+    }, {
+      "type": "image",
+      "url": "/assets/portfolio/facerec-4.jpg"
+    }]
   },
   {
     "title": "Lives Lost in Three Decades of School Shootings",

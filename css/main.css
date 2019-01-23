@@ -106,6 +106,7 @@ h1 {
   border-bottom: 1px solid #bbb;
   margin-top: 7.5px;
   background: white;
+  position: relative;
 }
 
 .box-cont h2 {
@@ -304,6 +305,31 @@ BLOG CSS
   .box-cont {
     border: 1px solid #bbb;
   }
+  header.splash {
+    padding-top: 20vh;
+  }
     
+  .contact-list {
+    flex-direction: column;
+  }
+  .contact-list li {
+    margin: 0;
+  }
+  .contact-list li:first-child {
+    margin-bottom: 15px;
+  }
+  .screenshot-gallery {
+    scroll-snap-type: none;
+    margin: 0 15px 15px 15px;
+    padding: 0 0 15px 0;
+  }
+  .screenshot-gallery img {
+    width: 200px;
+    min-width: auto;
+    min-height: 400px;
+  }
+  .screenshot-gallery .spacer {
+    display: none;
+  }
 
 }
