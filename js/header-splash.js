@@ -119,7 +119,7 @@ var circles = {
         const r = Math.abs(Math.cos(pcThroughRotation * Math.PI)) * 255 * pc;
         const g = Math.abs(Math.cos(pcThroughRotation * Math.PI - (Math.PI/3))) * 255 * pc;
         const b = Math.abs(Math.cos(pcThroughRotation * Math.PI - (2*Math.PI/3))) * 255 * pc;
-        c.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+        c.fillStyle = `rgba(${r.toFixed(0)}, ${g.toFixed(0)}, ${b.toFixed(0)}, ${opacity})`;
         
 
         const radius = (distance / 10) * (pc + 0.1);
