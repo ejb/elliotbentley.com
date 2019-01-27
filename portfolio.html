@@ -8,6 +8,8 @@ title: Portfolio
   {% assign major_works = site.data.portfolio | where_exp: "item", "item.major == true" %}
   {% assign minor_works = site.data.portfolio | where_exp: "item", "item.major != true" %}
 
+  <p class="intro-text">I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations.</p>
+
   {% for piece in major_works %}
   <section class="box-cont">
     <h2 >{{ piece.title }}</h2>

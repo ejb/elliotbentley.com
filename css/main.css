@@ -71,8 +71,17 @@ header.splash {
   padding: 10vh 15px 2vh 15px;
 }
 
+header.splash .animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
-  header.splash canvas {
+  header.splash .animation {
     display: none;
   }
 }
@@ -231,6 +240,11 @@ footer {
   font-weight: 600;
 }
 
+.intro-text {
+  padding: 0 15px 7.5px;
+  color: #333;
+}
+
 
 /*
 BLOG CSS
@@ -354,5 +368,6 @@ BLOG CSS
   .full-width-link {
     margin-top: auto;
   }
+  
 
 }
