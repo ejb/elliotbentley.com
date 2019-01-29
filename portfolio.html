@@ -37,22 +37,23 @@ title: Portfolio
     </ul>
   </section>
   
+  <script src="js/intersection-observer.js"></script>
   <script src="js/lazyload.min.js"></script>
-    <script>
-      (function() {
-          // The "lazyLazy" instance of lazyload is used (kinda improperly)
-          // to check when the .screenshot-gallery divs enter the viewport
-          var lazyLazy = new LazyLoad({
-              elements_selector: ".screenshot-gallery",
-              // When the .horzContainer div enters the viewport...
-              callback_set: function(el) {
-                  // ...instantiate a new LazyLoad on it
-                  var oneLL = new LazyLoad({
-                      container: el
-                  });
-              }
-          });
-      })();
-    </script>
+  <script>
+    (function() {
+        // The "lazyLazy" instance of lazyload is used (kinda improperly)
+        // to check when the .screenshot-gallery divs enter the viewport
+        var lazyLazy = new LazyLoad({
+            elements_selector: ".screenshot-gallery",
+            // When the .horzContainer div enters the viewport...
+            callback_set: function(el) {
+                // ...instantiate a new LazyLoad on it
+                var oneLL = new LazyLoad({
+                    container: el
+                });
+            }
+        });
+    })();
+  </script>
 
 </div>
