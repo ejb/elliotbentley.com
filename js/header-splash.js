@@ -6,14 +6,14 @@ class HeaderAnimation {
   }
   setup() {
     // set up (or reset) canvas element
-    const dpr = (window.devicePixelRatio || 1);
+    this.element.innerHTML = '';
     this.width = this.element.offsetWidth;
     this.height = this.element.offsetHeight;
     this.startTime = Date.now();
     const canvas = document.createElement('canvas');
     canvas.setAttribute('style', 'position: absolute; top: 0; left: 0;');
-    canvas.width = this.width * dpr;
-    canvas.height = this.height * dpr;
+    canvas.width = this.width;
+    canvas.height = this.height;
     this.element.appendChild(canvas);
   	this.context = canvas.getContext('2d');
     this.index = 0;
@@ -86,7 +86,7 @@ class HeaderAnimation {
 document.addEventListener("DOMContentLoaded", function(event) { 
   const element = document.querySelector('header.splash');
   const animation = new HeaderAnimation(element);
-  const windowWidth = window.innerWidth;
+  let windowWidth = window.innerWidth;
   window.addEventListener('resize', debounce(function() {
     if (windowWidth !== window.innerWidth) {
       animation.setup();
