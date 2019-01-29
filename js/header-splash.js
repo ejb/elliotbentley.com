@@ -28,6 +28,12 @@ var render = function()
   var height = canvas_wrapper.offsetHeight;
   var pc = Math.abs(y / height);
   pc *= (2-pc);
+  if (pc <= 0) {
+    pc = 0;
+  }
+  if (pc >= 1) {
+    pc = 1;
+  }
   var time = Date.now() - start;
   circles.draw(c, pc, time, index);
   index += 1;
