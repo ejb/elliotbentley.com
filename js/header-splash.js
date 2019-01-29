@@ -5,6 +5,7 @@ class HeaderAnimation {
     this.setup();
   }
   setup() {
+    // set up (or reset) canvas element
     const dpr = (window.devicePixelRatio || 1);
     this.width = this.element.offsetWidth;
     this.height = this.element.offsetHeight;
@@ -20,6 +21,9 @@ class HeaderAnimation {
     this.requestId = window.requestAnimationFrame(this.render.bind(this));
   }
   render() {
+    // runs on a loop, calculating the y position,
+    // time passed so far
+    // and passes it to drawCircles
     const y = window.scrollY;
     const height = this.element.offsetHeight;
     let pc = Math.abs(y / height);
@@ -37,6 +41,9 @@ class HeaderAnimation {
     
   }
   drawCircles(c, pc, time, index) {
+    // loops through circles, places them in current location
+    // and uses trigonometry to work out the require colour
+    // (who knew GCSE maths would come in handy one day?)
     c.setTransform(1, 0, 0, 1, 0, 0);
     c.clearRect(0, 0, this.width + 10, this.height + 10);
     c.translate(this.width/2, this.height/2);
