@@ -17,7 +17,13 @@ title: Portfolio
     <div class="screenshot-gallery">
       <ul class="screenshot-gallery-inner">
         {% for asset in piece.media %}
-        <img data-src="{{asset.url}}">
+          {% if asset.type == 'video' %}
+          <video muted autoplay loop>
+            <source src="{{asset.url}}" type="video/webm">
+          </video>
+          {% else %}
+            <img data-src="{{asset.url}}">
+          {% endif %}
         {% endfor %}
         <div class="spacer"></div>
       </ul>

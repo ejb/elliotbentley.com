@@ -218,7 +218,8 @@ footer {
   padding: 0 15px 0 0 !important;
 }
 
-.screenshot-gallery img {
+.screenshot-gallery img,
+.screenshot-gallery video {
   width: 80vw;
   min-width: 80vw;
   align-self: center;
@@ -357,7 +358,8 @@ BLOG CSS
     margin: 0 15px 15px 15px;
     padding: 0 0 15px 0;
   }
-  .screenshot-gallery img {
+  .screenshot-gallery img,
+  .screenshot-gallery video {
     width: 200px;
     min-width: auto;
     min-height: 400px;
