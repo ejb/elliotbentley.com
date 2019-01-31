@@ -10,9 +10,6 @@
       "poster": "/assets/portfolio/ge-1.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/ge-1.jpg"
-    }, {
-      "type": "image",
       "url": "/assets/portfolio/ge-2.jpg"
     }, {
       "type": "image",
@@ -33,9 +30,6 @@
       "poster": "/assets/portfolio/elex18-1.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/elex18-1.jpg"
-    }, {
-      "type": "image",
       "url": "/assets/portfolio/elex18-2.jpg"
     }, {
       "type": "image",
@@ -54,9 +48,6 @@
       "type": "video",
       "url": "/assets/portfolio/musk-video",
       "poster": "/assets/portfolio/musk-1.jpg"
-    }, {
-      "type": "image",
-      "url": "/assets/portfolio/musk-1.jpg"
     }, {
       "type": "image",
       "url": "/assets/portfolio/musk-2.jpg"
