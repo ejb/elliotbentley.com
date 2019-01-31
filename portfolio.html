@@ -18,9 +18,9 @@ title: Portfolio
       <ul class="screenshot-gallery-inner">
         {% for asset in piece.media %}
           {% if asset.type == 'video' %}
-          <video muted autoplay loop>
-            <source src="{{asset.url}}.webm" type="video/webm">
-            <source src="{{asset.url}}.mp4" type="video/mp4">
+          <video muted autoplay loop poster="{{asset.poster}}">
+            <source data-src="{{asset.url}}.webm" type="video/webm">
+            <source data-src="{{asset.url}}.mp4" type="video/mp4">
           </video>
           {% else %}
             <img data-src="{{asset.url}}">
@@ -56,7 +56,8 @@ title: Portfolio
             callback_set: function(el) {
                 // ...instantiate a new LazyLoad on it
                 var oneLL = new LazyLoad({
-                    container: el
+                    container: el,
+                    elements_selector: "img, video"
                 });
             }
         });

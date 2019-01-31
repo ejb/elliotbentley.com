@@ -6,7 +6,8 @@
     "major": true,
     "media": [{
       "type": "video",
-      "url": "/assets/portfolio/ge-video"
+      "url": "/assets/portfolio/ge-video",
+      "poster": "/assets/portfolio/ge-1.jpg"
     }, {
       "type": "image",
       "url": "/assets/portfolio/ge-1.jpg"
@@ -28,7 +29,8 @@
     "major": true,
     "media": [{
       "type": "video",
-      "url": "/assets/portfolio/elex18-video"
+      "url": "/assets/portfolio/elex18-video",
+      "poster": "/assets/portfolio/elex18-1.jpg"
     }, {
       "type": "image",
       "url": "/assets/portfolio/elex18-1.jpg"
@@ -50,7 +52,8 @@
     "major": true,
     "media": [{
       "type": "video",
-      "url": "/assets/portfolio/musk-video"
+      "url": "/assets/portfolio/musk-video",
+      "poster": "/assets/portfolio/musk-1.jpg"
     }, {
       "type": "image",
       "url": "/assets/portfolio/musk-1.jpg"
