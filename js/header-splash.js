@@ -84,7 +84,7 @@ class HeaderAnimation {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-  const element = document.querySelector('header.splash');
+  const element = document.querySelector('header.splash .animation');
   const animation = new HeaderAnimation(element);
   let windowWidth = window.innerWidth;
   window.addEventListener('resize', debounce(function() {
