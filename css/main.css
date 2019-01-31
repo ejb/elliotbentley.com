@@ -361,7 +361,7 @@ BLOG CSS
   .screenshot-gallery img,
   .screenshot-gallery video {
     width: 200px;
-    min-width: auto;
+    min-width: 200px;
     min-height: 400px;
   }
   .screenshot-gallery .spacer {
