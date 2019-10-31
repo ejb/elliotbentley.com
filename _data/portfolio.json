@@ -79,14 +79,39 @@
     }]
   },
   {
+    "title": "What ‘Women’s Work’ Looks Like Now",
+    "url": "https://www.wsj.com/graphics/what-womens-work-looks-like/",
+    "description": "Women make up about half of the U.S. workforce today, but many jobs remain largely segregated along gender lines. A look at the fields where women have made the most inroads, and the least."
+  },
+  {
+    "url": "https://www.wsj.com/graphics/company-tracking-employees/",
+    "title": "Meet ‘Chet.’ His Employer Knows What Time He Woke Up Today.",  
+    "description": "Follow a day in the life of our fictional American office worker as his company tracks what he does, where he goes and whom he meets"
+  },
+  {
+    "url": "https://www.wsj.com/articles/there-are-five-different-races-in-streaming-tv-heres-where-apple-fits-in-11554120001",
+    "title": "There Are Five Different Races in Streaming TV. Here’s Where Apple Fits In.",  
+    "description": "In the U.S., Silicon Valley and media titans are competing in categories from subscription entertainment to hardware to online-TV bundles"
+  },
+  {
+    "url": "https://www.wsj.com/graphics/apple-still-hasnt-fixed-its-macbook-keyboard-problem/",
+    "title": "Appl Still Hasn’t Fixd Its MacBook Kyboad Problm",
+    "description": "Apple’s third-generation butterfly keyboard was supposed to fix all the previous defects but buyers are still having problems"
+  },
+  {
+    "url": "https://www.wsj.com/graphics/how-fast-5g-mobile-internet-feels/",
+    "title": "How Fast 5G Mobile Internet Feels",
+    "description": "Watching videos, loading Fortnite and downloading music is about to get a lot faster"
+  },
+  {
     "title": "Lives Lost in Three Decades of School Shootings",
     "url": "https://www.wsj.com/graphics/three-decades-of-school-shootings-lives-lost/",
     "description": ""
   },
   {
     "url": "http://www.wsj.com/graphics/build-your-own-trading-bot/",
-    "title": "Bull’s Birthday",
-    "description": "How stocks are doing eight years after hitting their crisis-era low."
+    "title": "Build Your Own Trading Bot",
+    "description": "Can you beat the market using the WSJ's trading simulator?"
   },
   {
     "url": "http://www.wsj.com/graphics/bulls-birthday-march-9-2017/",
