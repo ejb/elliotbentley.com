@@ -23,20 +23,25 @@ let firstPage = allPosts.slice(0, 2);
 <style>
 
   @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
   body {
     color: white;
     background: #333;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Crimson Text', serif;
     font-size: 24px;
-    text-shadow: 0 1px 2px #333;
+    text-shadow: 0 1px 2px rgba(20,20,20,0.1);
     
   }
   h2 {
     text-transform: uppercase;
-    font-weight: 400;
-    font-size: 0.75em;
+    font-weight: 600;
+    font-size: 0.85em;
     letter-spacing: 0.1em;
+    font-family: 'Jost', sans-serif;
+    opacity: 0.2;
+    mix-blend-mode: difference;
+    margin-bottom: 1em;
   }
   a, a:visited {
     color: white;
@@ -46,14 +51,14 @@ let firstPage = allPosts.slice(0, 2);
     max-width: 800px;
     margin: 0 auto;
     padding: 10px;
+    margin-top: 0.7em;
+    opacity: 0.75;
   }
   section {
     margin-bottom: 2.5em;
   }
   p {
     margin-top: 0;
-  }
-  p {
     line-height: 1.4em;
   }
   ul, li {
@@ -99,7 +104,7 @@ let firstPage = allPosts.slice(0, 2);
     <main class="wrapper">
 
       <section>
-        <p>I'm a <a href="/portfolio">visual journalist</a> at the Wall Street Journal since 2014 and more recently an <a href="https://pawprints.itch.io/">amateur game developer</a>.</p>
+        <p>I'm a <a href="/portfolio">visual journalist</a> and <a href="https://pawprints.itch.io/">amateur game developer</a>. I've worked at The Wall Street Journal’s graphics department since 2014.</p>
         <p>In 2013 I created <a href="https://otranscribe.com">oTranscribe</a>, a web app for transcription that’s  used by thousands of people. It's now operated by <a href="https://www.muckrock.com">MuckRock</a>.
       </section>
 
