@@ -1,0 +1,138 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+import PostPreview from '../components/PostPreview.astro';
+import Pagination from '../components/Pagination.astro';
+import BackgroundAnimation from '../components/BackgroundAnimation.svelte';
+
+// page
+let title = 'Elliot Bentley';
+let description = 'Visual Journalist & Game Dev';
+
+// collection
+// note: we want to show first 3 posts here, but we don’t want to paginate at /1, /2, /3, etc.
+// so we show a preview of posts here, but actually paginate from $posts.astro
+import authorData from '../data/authors.json';
+
+// let allPosts = Astro.fetchContent('./post/*.md');
+let allPosts = [];
+allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+let firstPage = allPosts.slice(0, 2);
+---
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
+
+  body {
+    color: white;
+    background: #333;
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+    text-shadow: 0 1px 2px #333;
+    
+  }
+  h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+  }
+  a, a:visited {
+    color: white;
+    text-underline-offset: 0.1em;
+  }
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  section {
+    margin-bottom: 2.5em;
+  }
+  p {
+    margin-top: 0;
+  }
+  p {
+    line-height: 1.4em;
+  }
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  li {
+    margin-bottom: 0.7em;
+  }
+  .contact ul {
+    display: flex;
+  }
+  .contact li {
+    margin-right: 1em;
+  }
+  @media (min-width: 850px) {
+    .portfolios, .blog {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+</style>
+
+<html>
+  <head>
+    <title>{title}</title>
+    <MainHead
+      title={title}
+      description={description}
+      image={}
+      canonicalURL={Astro.request.canonicalURL.href}
+    />
+  </head>
+
+  <body>
+
+    <BackgroundAnimation:load />
+
+    <Nav />
+
+    <main class="wrapper">
+
+      <section>
+        <p>I'm a <a href="/portfolio">visual journalist</a> at the Wall Street Journal since 2014 and more recently an <a href="https://pawprints.itch.io/">amateur game developer</a>.</p>
+        <p>In 2013 I created <a href="https://otranscribe.com">oTranscribe</a>, a web app for transcription that’s  used by thousands of people. It's now operated by <a href="https://www.muckrock.com">MuckRock</a>.
+      </section>
+
+      <section class="portfolios">
+        <h2>My Work</h2>
+        <ul>
+          <li><a href="/portfolio">Visual journalism</a></li>
+          <li><a href="https://pawprints.itch.io/">Game development</a></li>
+        </ul>
+      </section>
+
+      <section class="blog">
+        <h2>Blog</h2>
+        <ul>
+          <li>Latest post: <a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
+          <li><a href="/blog">More blog posts »</a></li>
+        </ul>
+      </section>
+
+      <section class="contact">
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="https://twitter.com/elliot_bentley">Twitter</a></li>
+          <li><a href="https://github.com/ejb">GitHub</a></li>
+          <li><a href="">LinkedIn</a></li>
+          <li><a href="mailto:mail@elliotbentley.com">Email</a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      Made in Brooklyn with &lt;3
+    </footer>
+  </body>
+</html>
