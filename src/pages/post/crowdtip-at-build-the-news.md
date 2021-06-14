@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-10-19
+layout: ../../layouts/post.astro
 title:  "CrowdTip: Our winning hack at Build The News 2"
 redirect_from: "/2014/10/19/btn.html"
 ---

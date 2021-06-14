@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2015-03-30
+layout: ../../layouts/post.astro
 title:  "Dynamic promo image meta tags in Labour's 'voting record' app"
 ---
 

@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-11-02
+layout: ../../layouts/post.astro
 title:  "oTranscribe's first birthday"
 ---
 

@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-01-31
+layout: ../../layouts/post.astro
 title:  "My first ever JavaScript library, Progressor.js"
 ---
 

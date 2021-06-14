@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2016-05-09
+layout: ../../layouts/post.astro
 title: "How my JavaScript has changed after two years at the Wall Street Journal"
 ---
 
@@ -21,7 +22,7 @@ As my projects have grown in scope and ambition, so too has the corresponding co
 
 Here's an abstracted version:
 
-{% highlight js %}
+```js
 var App = {};
 App.config = {
     // keep config variables up top
@@ -44,7 +45,7 @@ var Chart = function(opts) {
 Chart.prototype.createSVG = function() {
     // d3 stuff goes here
 }
-{% endhighlight %}
+```
 
 _Update: By popular request, I've since written a [full blog post on using the D3 constructor pattern](http://ejb.github.io/2016/05/23/a-better-way-to-structure-d3-code.html)._
 
@@ -58,10 +59,10 @@ As a beginner, I assumed there's only one way to write functions. They're just b
 
 Occasionally they would take long lists of arguments, which can then be confusing to modify later. For example, if I wanted provide a height when running `makeArc` in this one case, which argument would I change?
 
-{% highlight js %}
+```js
 // Taken from: http://graphics.wsj.com/european-elections-2014/
 makeArc('current-poll-arc', eudata, "Tot", (1.65));
-{% endhighlight %}
+```
 
 Trick question! `height` is actually controlled by a fifth argument, which is absent in this case.
 
@@ -69,7 +70,7 @@ Trick question! `height` is actually controlled by a fifth argument, which is ab
 
 For functions that take more than a couple of arguments, I pass in objects, which make it far clearer what each argument is:
 
-{% highlight js %}
+```js
 // Example from https://github.com/WSJ/scroll-watcher
 scrollWatcher({
     parent: '.outer',
@@ -77,7 +78,7 @@ scrollWatcher({
         $('.inner').text('Scrolled '+scrollPercent+'% through the parent.');
     }
 });
-{% endhighlight %}
+```
 
 **Next:** ES6, the next version of JavaScript, provides a few nice features such as [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), a better way of writing constructor objects. The downside is that, since most browsers don't yet suppose these cutting-edge features, it's necessary to ‘transpile’ (‘convert’ in awful tech-jargon) the code into older language using an automated tool.
 
@@ -97,7 +98,7 @@ Aka 'data wrangling', this is the bit of the code that turns an imported JSON or
 
 Here's a particularly nasty example. With code like this, it'd be easy to introduce a correction-worthy mistake.
 
-{% highlight js %}
+```js
 // Taken from: http://graphics.wsj.com/european-elections-2014/
 $('.curr-party').each(function() {
     $this = $(this);
@@ -113,13 +114,13 @@ $('.curr-party').each(function() {
         }
     }
 });
-{% endhighlight %}
+```
 
 The data would sometimes be stored within [HTML data attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes), rather than an in-memory JS object; which in retrospect is utter madness.
 
 **Now:** I've recently started using [ES5 array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods) such as `forEach`, `filter` and `map`, now [supported in all current browsers](http://caniuse.com/#feat=es5).
 
-{% highlight js %}
+```js
 // Taken from http://graphics.wsj.com/ecb-meeting-euro-reaction/
 data.forEach(function(row,i){
     row.date = moment(row.date,'DD/MM/YY HH:mm');
@@ -130,7 +131,7 @@ data.forEach(function(row,i){
 data = data.filter(function(r){
     return (r.date.isAfter(showMeetingsSince));
 });
-{% endhighlight %}
+```
 
 These are initially a little harder to get one's head around, but eventually result in much clearer code than huge `for` loops with tonnes of `if` statements. Only once these operations are finished do I begin to start generating HTML.
 
@@ -144,7 +145,7 @@ These are initially a little harder to get one's head around, but eventually res
 
 Much of the time, however, I would concatenate strings and use jQuery very liberally. Here's a relatively benign chunk of concatenation code -- but if it required an `if` statement, this would get hairy fast:
 
-{% highlight js %}
+```js
 // Taken from http://graphics.wsj.com/scotland-referendum-results/
 var data = d.overall;
 var ryes = Math.round(data.yesPercent*10)/10;
@@ -154,25 +155,23 @@ html += '<div class="inner-bar-two" style="width: '+data.unknownPercent+'%;"></d
 html += '<div class="yes-text">Yes: <b>'+ryes+'%</b> <div class="vnumber">'+data.yesVotes+' votes</div></div>';
 html += '<div class="no-text">No: <b>'+rno+'%</b> <div class="vnumber">'+data.noVotes+'</div></div>';
 $('.nationwide-results .outer-bar').html(html);
-{% endhighlight %}
+```
 
 **Now:** I've since learnt the error of my ways: concatenating more than a short string is a recipe for disaster and should be avoided at all costs. Instead, I use the [Mustache](https://github.com/janl/mustache.js/) library with abandon, introducing it early in the project before the temptation to start concatenating becomes too strong. 
 
 Here's a Mustache template from [Barrel Breakdown](http://graphics.wsj.com/oil-barrel-breakdown/):
 
-{% highlight handlebars %}
-{% raw %}
+```handlebars
 <p class="country-name">{{country}}</p>
 <p class="country-fact">{{factType}}: {{fact}}</p>
 <p class="article-text">{{plainText}}</p>
 <p class="more-info">Show full breakdown</p>
 <div class="more-info-chart" style="display: none;"></div>
-{% endraw %}
-{% endhighlight %}
+```
 
 And the corresponding JavaScript:
 
-{% highlight js %}
+```js
 var template = $('#country-item-template').html();
 var model = {
     country: country,
@@ -182,7 +181,7 @@ var model = {
     fact: fact.toFixed(1)+'% of barrel cost'
 };
 $t.html( Mustache.render(template, model) );
-{% endhighlight %}
+```
 
 I've gotten into the habit of using Mustache over Handlebars because (a) it has a smaller page-weight, (b) the templates can be rendered server-side using the Mustache PHP library if necessary and (c) I don't need most of Handlebars' fancy features.
 

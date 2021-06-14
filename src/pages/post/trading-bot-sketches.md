@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2017-06-25
+layout: ../../layouts/post.astro
 title:  "Designing an algorithmic trading simulator"
 ---
 

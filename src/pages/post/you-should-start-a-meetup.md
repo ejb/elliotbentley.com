@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2015-02-22
+layout: ../../layouts/post.astro
 title:  "You should start a meetup group."
 ---
 

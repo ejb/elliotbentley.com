@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2015-03-24
+layout: ../../layouts/post.astro
 title:  "Open sourcing The Meta Tag Checker from WSJ"
 ---
 

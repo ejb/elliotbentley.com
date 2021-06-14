@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2018-06-03
+layout: ../../layouts/post.astro
 title: "What interactives can do (that articles can’t)"
 image: "/assets/interactives/measles.png"
 author: elliotbentley

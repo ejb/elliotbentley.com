@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-03-09
+layout: ../../layouts/post.astro
 title:  "The world in the palm of your hand: Getting mobile map visualisations right"
 ---
 

@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2017-06-17
+layout: ../../layouts/post.astro
 title:  "The 😃 and 😰 of a successful side project"
 ---
 

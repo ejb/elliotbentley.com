@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2015-03-21
+layout: ../../layouts/post.astro
 title:  "Rethinking digital maps at The Wall Street Journal"
 ---
 

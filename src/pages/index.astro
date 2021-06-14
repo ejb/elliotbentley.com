@@ -19,8 +19,7 @@ import authorData from '../data/authors.json';
 import portfolio from '../data/portfolio.json';
 const portfolioItems = portfolio.filter(d => d.major).slice(0, 3);
 
-// let allPosts = Astro.fetchContent('./post/*.md');
-let allPosts = [];
+let allPosts = Astro.fetchContent('./post/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 let firstPage = allPosts.slice(0, 2);
 ---
@@ -182,9 +181,11 @@ let firstPage = allPosts.slice(0, 2);
       <section class="blog">
         <h2>Blog Posts</h2>
         <ul>
-          <li><a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
-          <li><a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
-          <li><a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
+          {firstPage.map(p => {
+            return (<li>
+              <a href={p.url}>{p.title}</a>
+            </li>)
+          })}
           <li><a href="/blog" class="ps-link">More blog posts »</a></li>
         </ul>
       </section>

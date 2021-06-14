@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2016-05-23
+layout: ../../layouts/post.astro
 title: "A better way to structure D3 code"
 ---
 

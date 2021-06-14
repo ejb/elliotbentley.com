@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-01-29
+layout: ../../layouts/post.astro
 title:  "oTranscribe, twelve weeks in"
 ---
 

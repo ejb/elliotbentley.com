@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2018-08-05
+layout: ../../layouts/post.astro
 title: "oTranscribe is joining MuckRock and DocumentCloud"
 author: elliotbentley
 ---

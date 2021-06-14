@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2013-09-24
+layout: ../../layouts/post.astro
 title:  "Trying out Google Glass"
 ---
 

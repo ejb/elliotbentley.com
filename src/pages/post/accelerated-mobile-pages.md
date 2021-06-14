@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2015-10-10
+layout: ../../layouts/post.astro
 title:  "How Google Accelerated Mobile Pages work: best practices and Google's might"
 ---
 

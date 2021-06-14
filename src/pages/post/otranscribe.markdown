@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2013-10-03
+layout: ../../layouts/post.astro
 title:  "Introducing oTranscribe"
 ---
 

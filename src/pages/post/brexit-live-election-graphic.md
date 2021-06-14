@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2016-07-01
+layout: ../../layouts/post.astro
 title:  "Further lessons from building a live referendum results graphic"
 ---
 

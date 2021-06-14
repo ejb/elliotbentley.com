@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2016-10-03
+layout: ../../layouts/post.astro
 title:  "Forward Ferret, an open source tool for UK election data"
 ---
 

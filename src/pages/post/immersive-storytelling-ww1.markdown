@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-08-31
+layout: ../../layouts/post.astro
 title:  "An alternative take on immersive storytelling"
 ---
 

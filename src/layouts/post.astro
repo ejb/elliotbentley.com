@@ -4,6 +4,8 @@ import Nav from '../components/Nav.astro';
 
 export let content;
 
+console.log(content)
+
 import authorData from '../data/authors.json';
 ---
 
@@ -64,7 +66,6 @@ import authorData from '../data/authors.json';
     <main class="wrapper">
       <h1 class="title">{content.title}</h1>
       <h3 class="description">{content.description}</h3>
-      <img class="img" src={content.image} alt={content.title}>
       <article class="article">
         <slot />
       </article>

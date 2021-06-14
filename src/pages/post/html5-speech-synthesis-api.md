@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2015-06-07
+layout: ../../layouts/post.astro
 title:  "The HTML5 SpeechSynthesis API is rubbish"
 ---
 

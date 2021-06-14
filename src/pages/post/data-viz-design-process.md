@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2016-10-05
+layout: ../../layouts/post.astro
 title:  "Designing an interactive data visualisation, from first sketch to final product"
 ---
 

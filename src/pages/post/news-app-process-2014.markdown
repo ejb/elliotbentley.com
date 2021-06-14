@@ -1,5 +1,6 @@
 ---
-layout: post
+date: 2014-10-05
+layout: ../../layouts/post.astro
 title:  "My 2014 news app development process"
 ---
 
