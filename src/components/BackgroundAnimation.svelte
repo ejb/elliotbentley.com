@@ -1,6 +1,7 @@
 <script>
 import {createAnimation} from './animation.js';
 import { onMount } from 'svelte';
+// import { watchResize } from "svelte-watch-resize";
 
 let animationElement;
 
@@ -21,7 +22,7 @@ onMount(initAnimation);
 
 <style lang="scss">
 .animation {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -44,4 +45,8 @@ onMount(initAnimation);
 
 </style>
 
-<div class="animation" bind:this={animationElement}></div>
+<div
+  class="animation"
+  bind:this={animationElement}
+  xxuse:watchResize={initAnimation}
+></div>

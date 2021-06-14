@@ -15,13 +15,11 @@ function createAnimation(element, colors, speed) {
   const { height, width } = canvas;
 
   const scale = window.devicePixelRatio;
-  canvas.width = Math.floor(width * scale);
-  canvas.height = Math.floor(height * scale);
 
   const ctx = canvas.getContext('2d');
   ctx.scale(scale, scale);
 
-  const columns = 15;
+  const columns = 5;
   const cellSize = width / columns / 2;
   const rows = Math.ceil(height / cellSize / 2);
 

@@ -3,7 +3,9 @@ import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import PostPreview from '../components/PostPreview.astro';
 import Pagination from '../components/Pagination.astro';
+import AssetCarousel from '../components/AssetCarousel.tsx';
 import BackgroundAnimation from '../components/BackgroundAnimation.svelte';
+// import Test from '../components/Test.astro';
 
 // page
 let title = 'Elliot Bentley';
@@ -14,23 +16,27 @@ let description = 'Visual Journalist & Game Dev';
 // so we show a preview of posts here, but actually paginate from $posts.astro
 import authorData from '../data/authors.json';
 
+import portfolio from '../data/portfolio.json';
+const portfolioItems = portfolio.filter(d => d.major).slice(0, 3);
+
 // let allPosts = Astro.fetchContent('./post/*.md');
 let allPosts = [];
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 let firstPage = allPosts.slice(0, 2);
 ---
 
-<style>
+<style lang="sass">
 
   @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
   body {
-    color: white;
+    color: #eee;
     background: #333;
     font-family: 'Crimson Text', serif;
     font-size: 24px;
     text-shadow: 0 1px 2px rgba(20,20,20,0.1);
+    margin: 0;
     
   }
   h2 {
@@ -39,27 +45,42 @@ let firstPage = allPosts.slice(0, 2);
     font-size: 0.85em;
     letter-spacing: 0.1em;
     font-family: 'Jost', sans-serif;
-    opacity: 0.2;
     mix-blend-mode: difference;
     margin-bottom: 1em;
   }
   a, a:visited {
     color: white;
     text-underline-offset: 0.1em;
+    transition: background 200ms;
+  }
+  a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    mix-blend-mode: lighten;
   }
   .wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px;
-    margin-top: 0.7em;
     opacity: 0.75;
   }
+
+  header {
+    position: relative;
+    padding-bottom: 1px;
+  }
   section {
-    margin-bottom: 2.5em;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 0.7em;
+    margin-top: 2.8em;
+    padding: 10px;
+    & + section {
+      margin-top: 0;
+    }
   }
   p {
     margin-top: 0;
     line-height: 1.4em;
+  }
+  .ps-link {
+    font-style: italic;  
   }
   ul, li {
     padding: 0;
@@ -75,13 +96,29 @@ let firstPage = allPosts.slice(0, 2);
   .contact li {
     margin-right: 1em;
   }
-  @media (min-width: 850px) {
-    .portfolios, .blog {
-      width: 50%;
-      display: inline-block;
-      vertical-align: top;
+
+  .portfolios {
+    overflow-x: hidden;
+  }
+
+  .contact {
+    img {
+      width: 40px;
+      height: 40px;
+      filter: invert(100%);
+    }
+    a img {
+      opacity: 0.6;
+      transition: opacity 200ms;
+    }
+    a:hover {
+      background: none;
+      img {
+        opacity: 0.8;
+      }
     }
   }
+
 </style>
 
 <html>
@@ -97,40 +134,58 @@ let firstPage = allPosts.slice(0, 2);
 
   <body>
 
-    <BackgroundAnimation:load />
-
-    <Nav />
 
     <main class="wrapper">
+      <header>
 
-      <section>
-        <p>I'm a <a href="/portfolio">visual journalist</a> and <a href="https://pawprints.itch.io/">amateur game developer</a>. I've worked at The Wall Street Journal’s graphics department since 2014.</p>
-        <p>In 2013 I created <a href="https://otranscribe.com">oTranscribe</a>, a web app for transcription that’s  used by thousands of people. It's now operated by <a href="https://www.muckrock.com">MuckRock</a>.
-      </section>
+        <Nav />
+
+        <section>
+
+          <p>I'm a <a href="/portfolio">visual journalist</a> and <a href="https://pawprints.itch.io/">amateur game developer</a>. I've worked at The Wall Street Journal’s graphics department since 2014.</p>
+          <p>I offer coaching sessions to students and early career journalists as part of the <a href="https://journalismmentors.com/mentors">Media Mentors</a> programme.</p>
+          <p>In 2013 I created <a href="https://otranscribe.com">oTranscribe</a>, a web app for transcription that’s  used by thousands of people. It's now operated by <a href="https://www.muckrock.com">MuckRock</a>.</p>
+
+        </section>
+
+
+        <section class="contact">
+          <ul>
+            <li><a href="mailto:mail@elliotbentley.com">
+              <image src="/images/envelope.svg" alt="Email">
+            </a></li>
+            <li>
+              <a href="https://twitter.com/elliot_bentley">
+                <image src="/images/twitter.svg" alt="Twitter">
+              </a>
+            </li>
+            <li><a href="https://github.com/ejb">
+              <image src="/images/github.svg" alt="GitHub">
+            </a></li>
+          </ul>
+        </section>
+
+
+        <BackgroundAnimation:load />
+
+      </header>
 
       <section class="portfolios">
-        <h2>My Work</h2>
-        <ul>
-          <li><a href="/portfolio">Visual journalism</a></li>
-          <li><a href="https://pawprints.itch.io/">Game development</a></li>
-        </ul>
+        <h2>Visual journalism</h2>
+
+        <p>I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations. <a href="/portfolio" class="ps-link">View full portfolio »</a></p>
+
+        <AssetCarousel assets={portfolioItems.map(p => p.media.find(m => m.type === 'video'))} />
+
       </section>
 
       <section class="blog">
-        <h2>Blog</h2>
+        <h2>Blog Posts</h2>
         <ul>
-          <li>Latest post: <a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
-          <li><a href="/blog">More blog posts »</a></li>
-        </ul>
-      </section>
-
-      <section class="contact">
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="https://twitter.com/elliot_bentley">Twitter</a></li>
-          <li><a href="https://github.com/ejb">GitHub</a></li>
-          <li><a href="">LinkedIn</a></li>
-          <li><a href="mailto:mail@elliotbentley.com">Email</a></li>
+          <li><a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
+          <li><a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
+          <li><a href="">Designing a unique dataviz for ‘Women’s Work’</a></li>
+          <li><a href="/blog" class="ps-link">More blog posts »</a></li>
         </ul>
       </section>
 
