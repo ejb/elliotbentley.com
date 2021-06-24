@@ -1,0 +1,85 @@
+---
+import Nav from '../components/Nav.astro';
+import MainHead from '../components/MainHead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+let title = 'Elliot’s Blog';
+let description = 'tktk';
+
+let allPosts = Astro.fetchContent('./blog/*.md');
+allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const years = [...new Set(allPosts.map(p => p.date.slice(0, 4)))];
+const postsByYear = years.map(year => {
+  return {
+    year,
+    posts: allPosts.filter(p => p.date.slice(0,4) === year)
+  };
+});
+
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+    <MainHead
+      title={title}
+      description={description}
+      image={''}
+      canonicalURL={Astro.request.canonicalURL.href}
+    />
+
+    <style lang="sass">
+      :global(body) {
+        background: white;
+      }
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 10px 4em;
+      }
+      h2 {
+        color: var(--black);
+        margin-top: 2em;
+        margin-bottom: 0;
+      }
+      li, p {
+        font-family: 'Crimson Text', serif;
+        font-size: 1.4em;
+      }
+      a {
+        color: inherit;  
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <Nav subtitle="Blog" sublink="/blog" />
+
+    <main class="wrapper">
+
+      <div>
+        <p>I write blog posts, occasionally. It’s a dying art.</p>
+      </div>
+
+      {postsByYear.map(({ year, posts }) => {
+        return (
+          <div>
+            <h2>{year}</h2>
+            <ul>
+              {posts.map(post => {
+                return (<li><a href={post.url}>{post.title}</a></li>);
+              })}
+            </ul>
+          </div>
+        );
+      })}
+
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

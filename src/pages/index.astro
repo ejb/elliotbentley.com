@@ -1,78 +1,64 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
-import PostPreview from '../components/PostPreview.astro';
-import Pagination from '../components/Pagination.astro';
 import AssetCarousel from '../components/AssetCarousel.tsx';
 import BackgroundAnimation from '../components/BackgroundAnimation.svelte';
-// import Test from '../components/Test.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 // page
 let title = 'Elliot Bentley';
 let description = 'Visual Journalist & Game Dev';
 
-// collection
-// note: we want to show first 3 posts here, but we don’t want to paginate at /1, /2, /3, etc.
-// so we show a preview of posts here, but actually paginate from $posts.astro
-import authorData from '../data/authors.json';
-
 import portfolio from '../data/portfolio.json';
-const portfolioItems = portfolio.filter(d => d.major).slice(0, 3);
+const portfolioItems = portfolio.filter(d => d.major).slice(0, 5);
 
-let allPosts = Astro.fetchContent('./post/*.md');
+let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 let firstPage = allPosts.slice(0, 2);
 ---
 
 <style lang="sass">
 
-  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-
   body {
-    color: #eee;
-    background: #333;
+    color: var(--white);
+    background: var(--black);
     font-family: 'Crimson Text', serif;
     font-size: 24px;
     text-shadow: 0 1px 2px rgba(20,20,20,0.1);
     margin: 0;
     
   }
-  h2 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.85em;
-    letter-spacing: 0.1em;
-    font-family: 'Jost', sans-serif;
-    mix-blend-mode: difference;
-    margin-bottom: 1em;
-  }
   a, a:visited {
-    color: white;
-    text-underline-offset: 0.1em;
+    color: var(--white);
     transition: background 200ms;
-  }
-  a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    mix-blend-mode: lighten;
-  }
-  .wrapper {
-    opacity: 0.75;
   }
 
   header {
     position: relative;
     padding-bottom: 1px;
+    min-height: 100vh;
   }
+
+  :global(.title) {
+    color: var(--white) !important;
+    a {
+      opacity: 0.5;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+  }
+
   section {
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 0.7em;
-    margin-top: 2.8em;
     padding: 10px;
-    & + section {
-      margin-top: 0;
-    }
+    margin-top: 0.8em;
+  }
+  header {
+    // margin-top: 2.8em;
   }
   p {
     margin-top: 0;
@@ -97,7 +83,9 @@ let firstPage = allPosts.slice(0, 2);
   }
 
   .portfolios {
-    overflow-x: hidden;
+    @media (max-width: 900px) {
+      overflow-x: hidden;
+    }
   }
 
   .contact {
@@ -118,6 +106,8 @@ let firstPage = allPosts.slice(0, 2);
     }
   }
 
+
+
 </style>
 
 <html>
@@ -126,7 +116,7 @@ let firstPage = allPosts.slice(0, 2);
     <MainHead
       title={title}
       description={description}
-      image={}
+      image={''}
       canonicalURL={Astro.request.canonicalURL.href}
     />
   </head>
@@ -174,26 +164,26 @@ let firstPage = allPosts.slice(0, 2);
 
         <p>I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations. <a href="/portfolio" class="ps-link">View full portfolio »</a></p>
 
-        <AssetCarousel assets={portfolioItems.map(p => p.media.find(m => m.type === 'video'))} />
+        <AssetCarousel assets={portfolioItems.map(p => p.media.find(m => m.type === 'image'))} />
 
       </section>
 
       <section class="blog">
-        <h2>Blog Posts</h2>
-        <ul>
-          {firstPage.map(p => {
-            return (<li>
-              <a href={p.url}>{p.title}</a>
-            </li>)
-          })}
-          <li><a href="/blog" class="ps-link">More blog posts »</a></li>
-        </ul>
+        <div class="inner">
+          <h2>Blog Posts</h2>
+          <ul>
+            {firstPage.map(p => {
+              return (<li>
+                <a href={p.url}>{p.title}</a>
+              </li>)
+            })}
+            <li><a href="/blog" class="ps-link">More blog posts »</a></li>
+          </ul>
+        </div>
       </section>
 
     </main>
 
-    <footer>
-      Made in Brooklyn with &lt;3
-    </footer>
+    <SiteFooter />
   </body>
 </html>

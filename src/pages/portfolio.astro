@@ -1,0 +1,144 @@
+---
+import Nav from '../components/Nav.astro';
+import MainHead from '../components/MainHead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+let title = 'Elliot Bentley --> Portfolio';
+let description = 'tktk';
+
+import portfolio from '../data/portfolio.json';
+const majorItems = portfolio.filter(d => d.major);
+const minorItems = portfolio.filter(d => !d.major);
+
+import { ScreenshotGallery } from '../components/ScreenshotGallery.jsx';
+import AssetCarousel from '../components/AssetCarousel.tsx';
+
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+    <MainHead
+      title={title}
+      description={description}
+      image={''}
+      canonicalURL={Astro.request.canonicalURL.href}
+    />
+
+    <style lang="sass">
+      :global(body) {
+        background: var(--black);
+      }
+      :global(nav .title) {
+        color: var(--white) !important;
+      }
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 10px 4em;
+        overflow-x: hidden;
+      }
+      h2 {
+        color: var(--white);
+        margin-top: 2em;
+        margin-bottom: 0;
+      }
+      li, p {
+        font-family: 'Crimson Text', serif;
+        color: var(--white);
+        font-size: 1.2em;
+      }
+      .intro-text {
+        font-size: 1.4em;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        line-height: 1.4;
+        margin-bottom: 0.8em;
+      }
+      :global(a) {
+        color: inherit;
+      }
+
+      .full-width-link {
+        color: var(--white);
+      }
+
+      .portfolio-piece {
+        margin-top: 4em;
+        position: relative;
+      }
+
+      .p-link {
+        font-size: 14px;
+        text-transform: uppercase;
+        display: inline-block;
+        font-family: 'Jost', serif;
+        border: 1px solid var(--white);
+        padding: 4px 8px;
+        border-radius: 3px;
+        text-decoration: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0.5;
+        transition: opacity 200ms;
+        &:hover {
+          opacity: 1;
+        }
+        @media (max-width: 800px) {
+          opacity: 1;
+          position: static;
+        }
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <Nav subtitle="Portfolio" sublink="/portfolio" />
+
+    <main class="wrapper">
+
+      <p class="intro-text">I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations.</p>
+
+      <AssetCarousel assets={majorItems.slice(0,5).map(p => p.media.find(m => m.type === 'image'))} />
+
+
+      {majorItems.map(piece  => {
+        return (
+          <section class="portfolio-piece">
+            <h2>{ piece.title }</h2>
+            <p>{piece.description}</p>
+            <p><a class="p-link" href={piece.url}>View on WSJ.com</a></p>
+            
+            <ScreenshotGallery media={piece.media} />
+
+          </section>
+        );
+      })}
+
+      <section class="portfolio-piece">
+      <h2>Other stories</h2>
+        <ul>
+          {minorItems.map(piece  => {
+            return (
+                  <li>
+                    <a href={piece.url}>{ piece.title }</a>
+                  </li>
+            );
+          })}
+        </ul>
+      </section>
+
+
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

@@ -1,9 +1,10 @@
 <script>
 import {createAnimation} from './animation.js';
 import { onMount } from 'svelte';
-// import { watchResize } from "svelte-watch-resize";
+import { debounce } from './debounce';
 
 let animationElement;
+let getRequestID;
 
 function initAnimation() {
   const colors = [
@@ -14,10 +15,17 @@ function initAnimation() {
   
   const element = animationElement;
   const speed = 0.5;
-  createAnimation(element, colors, speed);
+  getRequestID = createAnimation(element, colors, speed);
 }
 
 onMount(initAnimation);
+
+if (globalThis && 'addEventListener' in globalThis) {
+  globalThis.addEventListener('resize', debounce(() => {
+    window.cancelAnimationFrame(getRequestID());
+    initAnimation();
+  }));
+}
 </script>
 
 <style lang="scss">
@@ -48,5 +56,4 @@ onMount(initAnimation);
 <div
   class="animation"
   bind:this={animationElement}
-  xxuse:watchResize={initAnimation}
 ></div>

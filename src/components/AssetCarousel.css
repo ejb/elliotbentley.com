@@ -1,11 +1,11 @@
 .portfolio-assets {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 1em;
 }
 
 .portfolio-asset {
-
+  margin: 0 -25%;
 }
 
 .portfolio-asset video,
@@ -17,6 +17,8 @@
 
 @media (max-width: 600px) {
   .portfolio-asset {
-    margin-right: -60%;
+    grid-column-gap: 0.1em;
+    margin-left: -2em;
+    margin-right: -2em;
   }  
 }

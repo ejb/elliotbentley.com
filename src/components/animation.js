@@ -53,6 +53,8 @@ function createAnimation(element, colors, speed) {
     });  
   }
 
+  let requestId;
+
   const update = (ts = 0) => {
     grid.forEach((cell, i) => {
 
@@ -65,10 +67,12 @@ function createAnimation(element, colors, speed) {
     });
 
     render();
-    window.requestAnimationFrame(update);
+    requestId = window.requestAnimationFrame(update);
   }
 
   update();
+
+  return () => requestId;
 }
 
 export {createAnimation};

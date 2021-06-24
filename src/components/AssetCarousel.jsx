@@ -18,11 +18,15 @@ const assetTypes = {video, image};
 
 export default AssetPortfolio = props => {
   console.log(props.assets)
-  const assetMarkup = props.assets.map(asset => (
-    <div class="portfolio-asset">
-      {assetTypes[asset.type](asset)}
-    </div>
-  ));
+  const assetMarkup = props.assets.map((asset, i, arr) => {
+    const zIndex = Math.abs(i - Math.floor(arr.length/2)) * -1;
+    const scale = 50 / (Math.abs(zIndex) + 50);
+    return (
+      <div class="portfolio-asset" style={{zIndex, transform: `scale(${scale})`}}>
+        {assetTypes[asset.type](asset)}
+      </div>
+    )
+  });
 
   return (
     <div class="portfolio-assets">

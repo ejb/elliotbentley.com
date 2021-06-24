@@ -3,18 +3,15 @@
 export let title: string;
 export let description: string;
 export let image: string | undefined;
-export let type: string | undefined;
-export let next: string | undefined;
-export let prev: string | undefined;
 export let canonicalURL: string | undefined;
 ---
 
 <!-- Common -->
 <meta charset="UTF-8">
 <title>{title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content={description}>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/global.css">
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml">
@@ -23,8 +20,6 @@ export let canonicalURL: string | undefined;
 
 <!-- SEO -->
 <link rel="canonical" href={canonicalURL}>
-{next && <link rel="next" href={new URL(next, canonicalURL).href}>}
-{prev && <link rel="prev" href={new URL(prev, canonicalURL).href}>}
 
 <!-- OpenGraph -->
 <meta property="og:title" content={title}>
@@ -33,7 +28,7 @@ export let canonicalURL: string | undefined;
 
 <!-- Twitter -->
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'}>
-<meta name="twitter:site" content="@astro">
+<meta name="twitter:site" content="@elliot_bentley">
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
 {image && (<meta name="twitter:image" content={image}>)}

@@ -1,5 +1,7 @@
 ---
-export let title;
+export let title = 'Elliot Bentley';
+export let subtitle;
+export let sublink;
 ---
 
 <style lang="scss">
@@ -13,18 +15,35 @@ export let title;
   text-transform: uppercase;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0.7em 0;
-  mix-blend-mode: difference;
-  opacity: 0.2;
+  padding: 0.7em 10px;
+  color: var(--black);
+  user-select: none;
   a {
-    color: white;
+    color: inherit;
     text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 200ms;
+    &:hover {
+      opacity: 0.8;
+    }
   }
+  .divider {
+    opacity: 0.2;
+  }
+  .subtitle {
+
+}
   @media (max-width: 600px) {
-    font-size: 2.1em;
+    font-size: 1.4em;
     line-height: 1.2em;
     margin-top: 0;
     margin-bottom: 0;
+    text-align: left;
+    
+    .divider:before {
+      content: '';
+      display: block;
+    }
   }
 }
 
@@ -47,5 +66,8 @@ li {
 </style>
 
 <nav class="header">
-  <h1 class="title"><a href="/">Elliot Bentley</a></h1>
+  <h1 class="title">
+    <a href="/">{title}</a>
+    {subtitle ? (<span><span class="divider"> ⟶ </span><a class="subtitle" href={sublink}>{subtitle}</a></span>) : ''}  
+  </h1>
 </nav>

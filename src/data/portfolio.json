@@ -1,22 +1,51 @@
 [
   {
+    "url": "https://www.wsj.com/articles/covid-19-vaccines-vs-infections-in-one-chart-11620293401",
+    "title": "Covid-19 Vaccines vs. Infections",
+    "description": "A timely analysis of Covid-19 vaccination rates across the U.S. I used the Python library Pandas to analyse the data and produce a static draft for editing. Once the contents were locked down, I coded this animated version, which uses D3 and an internal scrollytelling framework, Storyboard.",
+    "major": true,
+    "media": [{
+      "type": "image",
+      "url": "/images/portfolio/covid-1.png"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/covid-2.png"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/covid-3.png"
+    }]
+  },
+  {
+    "url": "https://www.wsj.com/articles/the-spac-boom-visualized-in-one-chart-11612962000",
+    "title": "The SPAC Boom, Visualized",
+    "description": "This quick-hit graphic was published around the top of the 2020/21 SPAC boom. I produced it using a combination of D3, Adobe Illustrator and ai2html.",
+    "major": true,
+    "media": [{
+      "type": "image",
+      "url": "/images/portfolio/spacboom-1.png"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/spacboom-2.png"
+    }]
+  },
+  {
     "title": "How Money Flowed (and Ebbed) at GE",
     "url": "https://www.wsj.com/graphics/how-money-flowed-and-ebbed-at-ge/",
     "description": "A giant, vertical streamograph rendered using D3. I’m most proud of this piece for the mobile-friendly solution to incorporating annotations into such a dense chart.",
     "major": true,
     "media": [{
       "type": "video",
-      "url": "/assets/portfolio/ge-video",
-      "poster": "/assets/portfolio/ge-1.jpg"
+      "url": "/images/portfolio/ge-video",
+      "poster": "/images/portfolio/ge-1.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/ge-2.jpg"
+      "url": "/images/portfolio/ge-2.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/ge-3.jpg"
+      "url": "/images/portfolio/ge-3.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/ge-4.jpg"
+      "url": "/images/portfolio/ge-4.jpg"
     }]
   },
   {
@@ -26,17 +55,17 @@
     "major": true,
     "media": [{
       "type": "video",
-      "url": "/assets/portfolio/elex18-video",
-      "poster": "/assets/portfolio/elex18-1.jpg"
+      "url": "/images/portfolio/elex18-video",
+      "poster": "/images/portfolio/elex18-1.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/elex18-2.jpg"
+      "url": "/images/portfolio/elex18-2.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/elex18-3.jpg"
+      "url": "/images/portfolio/elex18-3.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/elex18-4.jpg"
+      "url": "/images/portfolio/elex18-4.jpg"
     }]
   },
   {
@@ -46,17 +75,17 @@
     "major": true,
     "media": [{
       "type": "video",
-      "url": "/assets/portfolio/musk-video",
-      "poster": "/assets/portfolio/musk-1.jpg"
+      "url": "/images/portfolio/musk-video",
+      "poster": "/images/portfolio/musk-1.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/musk-2.jpg"
+      "url": "/images/portfolio/musk-2.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/musk-3.jpg"
+      "url": "/images/portfolio/musk-3.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/musk-4.jpg"
+      "url": "/images/portfolio/musk-4.jpg"
     }]
   },
   {
@@ -66,22 +95,17 @@
     "description": "This interactive explainer uses a JavaScript library called <a href='https://github.com/auduno/clmtrackr'>clmtracker</a> for live face-tracking and rudimentary emotion detection. It uses web media APIs that were cutting-edge at the time and so may no longer work correctly in some browsers.",
     "media": [{
       "type": "image",
-      "url": "/assets/portfolio/facerec-1.jpg"
+      "url": "/images/portfolio/facerec-1.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/facerec-2.jpg"
+      "url": "/images/portfolio/facerec-2.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/facerec-3.jpg"
+      "url": "/images/portfolio/facerec-3.jpg"
     }, {
       "type": "image",
-      "url": "/assets/portfolio/facerec-4.jpg"
+      "url": "/images/portfolio/facerec-4.jpg"
     }]
-  },
-  {
-    "url": "https://www.wsj.com/articles/the-spac-boom-visualized-in-one-chart-11612962000",
-    "title": "The SPAC Boom, Visualized",
-    "description": "See how the blank-check company craze has surpassed traditional IPOs over the past couple of years"
   },
   {
     "url": "https://www.wsj.com/articles/airbnbs-road-to-ipo-mounting-valuation-and-costs-11607601609",
