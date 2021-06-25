@@ -46,7 +46,7 @@ import { format as formatDate } from 'date-fns';
         margin: 3rem 0;
         font-size: 3.5em;
         text-align: center;
-        font-family: 'Jost', sans-serif;
+        font-family: var(--sans-serif);
         font-weight: 600;
         color: var(--black);
 
@@ -77,13 +77,16 @@ import { format as formatDate } from 'date-fns';
         line-height: 1.3em;
         max-width: 600px;
         margin: 0 auto;
+        margin-bottom: 4em;
         color: var(--black);
-        font-family: 'Crimson Text', serif;
+        font-family: var(--serif);
         font-size: 1.3em;
         line-height: 1.8;
 
         :global(p) {
           margin-bottom: 1em;
+          font-weight: 500;
+          line-height: 1.6;
         }
 
         :global(h2) {
@@ -95,6 +98,7 @@ import { format as formatDate } from 'date-fns';
       .publish-date {
         color: var(--grey);;
       }
+      
 
       
     </style>

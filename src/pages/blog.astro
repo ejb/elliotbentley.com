@@ -18,7 +18,6 @@ const postsByYear = years.map(year => {
 });
 
 ---
-
 <html>
   <head>
     <title>{title}</title>
@@ -44,8 +43,9 @@ const postsByYear = years.map(year => {
         margin-bottom: 0;
       }
       li, p {
-        font-family: 'Crimson Text', serif;
+        font-family: var(--serif);
         font-size: 1.4em;
+        margin-bottom: 0.2em;
       }
       a {
         color: inherit;  
@@ -69,7 +69,7 @@ const postsByYear = years.map(year => {
         return (
           <div>
             <h2>{year}</h2>
-            <ul>
+            <ul class="bullets">
               {posts.map(post => {
                 return (<li><a href={post.url}>{post.title}</a></li>);
               })}

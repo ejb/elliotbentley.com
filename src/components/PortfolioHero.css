@@ -11,6 +11,7 @@
 .portfolio-asset video,
 .portfolio-asset img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 1px 0px 8px rgba(50,50,50,0.8);
 }

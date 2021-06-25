@@ -1,7 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
-import AssetCarousel from '../components/AssetCarousel.tsx';
+import { PortfolioHero } from '../components/PortfolioHero.tsx';
 import BackgroundAnimation from '../components/BackgroundAnimation.svelte';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -14,7 +14,7 @@ const portfolioItems = portfolio.filter(d => d.major).slice(0, 5);
 
 let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-let firstPage = allPosts.slice(0, 2);
+let firstPage = allPosts.slice(0, 3);
 ---
 
 <style lang="sass">
@@ -22,7 +22,7 @@ let firstPage = allPosts.slice(0, 2);
   body {
     color: var(--white);
     background: var(--black);
-    font-family: 'Crimson Text', serif;
+    font-family: var(--serif);
     font-size: 24px;
     text-shadow: 0 1px 2px rgba(20,20,20,0.1);
     margin: 0;
@@ -63,17 +63,14 @@ let firstPage = allPosts.slice(0, 2);
   p {
     margin-top: 0;
     line-height: 1.4em;
+    font-weight: 300;
   }
   .ps-link {
     font-style: italic;  
-  }
-  ul, li {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+    font-weight: 500;
   }
   li {
-    margin-bottom: 0.7em;
+    font-weight: 300;
   }
   .contact ul {
     display: flex;
@@ -110,7 +107,7 @@ let firstPage = allPosts.slice(0, 2);
 
 </style>
 
-<html>
+<html lang='en'>
   <head>
     <title>{title}</title>
     <MainHead
@@ -155,7 +152,7 @@ let firstPage = allPosts.slice(0, 2);
         </section>
 
 
-        <BackgroundAnimation:load />
+        <BackgroundAnimation:idle />
 
       </header>
 
@@ -164,14 +161,14 @@ let firstPage = allPosts.slice(0, 2);
 
         <p>I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations. <a href="/portfolio" class="ps-link">View full portfolio »</a></p>
 
-        <AssetCarousel assets={portfolioItems.map(p => p.media.find(m => m.type === 'image'))} />
+        <PortfolioHero assets={portfolioItems.map(p => p.media.find(m => m.type === 'image'))} />
 
       </section>
 
       <section class="blog">
         <div class="inner">
           <h2>Blog Posts</h2>
-          <ul>
+          <ul class="bullets">
             {firstPage.map(p => {
               return (<li>
                 <a href={p.url}>{p.title}</a>
