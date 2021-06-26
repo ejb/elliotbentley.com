@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "astro dev",
-    "build": "astro build"
+    "build": "astro build && cp _redirects dist/"
   },
   "devDependencies": {
     "astro": "^0.13.0",
