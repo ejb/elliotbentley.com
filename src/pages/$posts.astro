@@ -16,8 +16,8 @@ return {
     pageSize: 2,
     /** Generate RSS feed (only for main /posts/ feed) */
     rss: {
-      title,
-      description,
+      title: 'Elliot Bentley’s Blog',
+      description: '',
       customData: `<language>en-gb</language>`,
       item: (item) => ({
         title: item.title,
