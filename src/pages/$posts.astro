@@ -21,7 +21,7 @@ return {
       customData: `<language>en-gb</language>`,
       item: (item) => ({
         title: item.title,
-        description: item.description,
+        description: item.description || '',
         link: item.url,
         pubDate: item.date,
       }),
