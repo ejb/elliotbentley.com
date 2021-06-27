@@ -17,11 +17,11 @@ return {
     /** Generate RSS feed (only for main /posts/ feed) */
     rss: {
       title: 'Elliot Bentley’s Blog',
-      description: '',
+      description: 'Occasional posts on interactive graphics and web development.',
       customData: `<language>en-gb</language>`,
       item: (item) => ({
         title: item.title,
-        description: item.description || '',
+        description: item.description || item.title,
         link: item.url,
         pubDate: item.date,
       }),
