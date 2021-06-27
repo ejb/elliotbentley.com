@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./ScreenshotGallery.css";
 
 const video = asset => {
-  return (<video autoplay loop muted playsinline poster={`${asset.poster}`}>
+  return (<video autoplay="true" loop muted playsinline poster={`${asset.poster}`}>
       <source src={`${asset.url}.webm`} type="video/webm"></source>
       <source src={`${asset.url}.mp4`} type="video/mp4"></source>
     </video>);

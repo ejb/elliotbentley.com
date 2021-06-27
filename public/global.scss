@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 :root {
   --white: #eee;
@@ -10,7 +11,7 @@
   --grey: #aaa;
   --red: #87121C;
   --blue: #053c5e;
-  --serif: 'Cormorant Garamond', serif;
+  --serif: 'Source Serif Pro', serif;
   --sans-serif: 'Jost', sans-serif;
 }
 
@@ -18,7 +19,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--serif);
-  font-weight: 500;
+  font-weight: 300;
+  line-height: 1.6;
 }
 h2 {
   text-transform: uppercase;
@@ -27,6 +29,12 @@ h2 {
   letter-spacing: 0.1em;
   font-family: var(--sans-serif);
   margin-bottom: 1em;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 a {
   text-underline-offset: 0.1em;
@@ -36,7 +44,7 @@ ul {
   list-style-type: none;
   padding-left: 0;
 }
-ul.bullets {
+ul.bullets, article ul {
   padding-left: 36px;
   list-style-type: disc;
   li {

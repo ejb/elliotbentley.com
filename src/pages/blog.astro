@@ -3,8 +3,8 @@ import Nav from '../components/Nav.astro';
 import MainHead from '../components/MainHead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-let title = 'Elliot’s Blog';
-let description = 'tktk';
+let title = 'Elliot Bentley ⟶ Blog';
+let description = 'Occasional posts on interactive graphics and web development.';
 
 let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -20,7 +20,6 @@ const postsByYear = years.map(year => {
 ---
 <html>
   <head>
-    <title>{title}</title>
     <MainHead
       title={title}
       description={description}
@@ -46,6 +45,7 @@ const postsByYear = years.map(year => {
         font-family: var(--serif);
         font-size: 1.4em;
         margin-bottom: 0.2em;
+        line-height: 1.6;
       }
       a {
         color: inherit;  
@@ -62,7 +62,7 @@ const postsByYear = years.map(year => {
     <main class="wrapper">
 
       <div>
-        <p>I write blog posts, occasionally. It’s a dying art.</p>
+        <p>{description}</p>
       </div>
 
       {postsByYear.map(({ year, posts }) => {

@@ -6,21 +6,22 @@ import SiteFooter from '../components/SiteFooter.astro';
 
 export let content;
 
+let title = `${content.title} | Elliot Bentley ⟶ Blog`;
+
 import { format as formatDate } from 'date-fns';
 
 ---
 
 <html>
   <head>
-    <title>{content.title}</title>
-    <MainHead title={content.title} description={content.description} image={content.image} canonicalURL={Astro.request.canonicalURL} />
+    <MainHead title={title} description={content.description} image={content.image} canonicalURL={Astro.request.canonicalURL} />
     <link rel="stylesheet" href="/code-theme.css">
     <style lang="scss">
 
-  :global(nav) {
-    text-align: center;
-    padding: 0 14px;
-  }
+  // :global(nav) {
+  //   text-align: center;
+  //   padding: 0 14px;
+  // }
 
   :global(body) {
     background: white;
@@ -85,8 +86,7 @@ import { format as formatDate } from 'date-fns';
 
         :global(p) {
           margin-bottom: 1em;
-          font-weight: 500;
-          line-height: 1.6;
+          font-weight: 400;
         }
 
         :global(h2) {

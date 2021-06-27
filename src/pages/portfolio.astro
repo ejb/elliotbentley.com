@@ -3,8 +3,8 @@ import Nav from '../components/Nav.astro';
 import MainHead from '../components/MainHead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-let title = 'Elliot Bentley --> Portfolio';
-let description = 'tktk';
+let title = 'Elliot Bentley ⟶ Portfolio';
+let description = 'Data vizualisations and interactive graphics';
 
 import portfolio from '../data/portfolio.json';
 const majorItems = portfolio.filter(d => d.major);
@@ -17,7 +17,6 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
 
 <html>
   <head>
-    <title>{title}</title>
     <MainHead
       title={title}
       description={description}
@@ -37,6 +36,7 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
         margin: 0 auto;
         padding: 0 10px 4em;
         overflow-x: hidden;
+        font-size: 22.4px;
       }
       h2 {
         color: var(--white);
@@ -48,7 +48,8 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
         color: var(--white);
       }
       .intro-text {
-        font-size: 1.4em;
+        // font-size: 1.4em;
+        font-size: 20x;
       }
       li {
         font-family: var(--serif);
@@ -66,28 +67,6 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
         position: relative;
       }
 
-      .p-link {
-        font-size: 14px;
-        text-transform: uppercase;
-        display: inline-block;
-        font-family: var(--sans-serif);
-        border: 1px solid var(--white);
-        padding: 4px 8px;
-        border-radius: 3px;
-        text-decoration: none;
-        position: absolute;
-        right: 0;
-        top: 0;
-        opacity: 0.5;
-        transition: opacity 200ms;
-        &:hover {
-          opacity: 1;
-        }
-        @media (max-width: 800px) {
-          opacity: 1;
-          position: static;
-        }
-      }
 
     </style>
 
@@ -108,9 +87,10 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
       {majorItems.map(piece  => {
         return (
           <section class="portfolio-piece">
-            <h2>{ piece.title }</h2>
+            <h2><a href={piece.url}>
+              { piece.title }  
+            </a></h2>
             <p>{piece.description}</p>
-            <p><a class="p-link" href={piece.url}>View on WSJ.com</a></p>
             
             <ScreenshotGallery media={piece.media} />
 
