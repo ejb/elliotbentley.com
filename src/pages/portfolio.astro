@@ -15,6 +15,53 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
 
 ---
 
+
+<style lang="sass">
+  :global(body) {
+    background: var(--black);
+  }
+  :global(nav .title) {
+    color: var(--white) !important;
+  }
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px 4em;
+    overflow-x: hidden;
+    font-size: 22.4px;
+  }
+  h2 {
+    color: var(--white);
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+  li, p {
+    font-family: var(--serif);
+    color: var(--white);
+  }
+  .intro-text {
+    // font-size: 1.4em;
+    font-size: 20x;
+  }
+  li {
+    font-family: var(--serif);
+  }
+  :global(a) {
+    color: inherit;
+  }
+
+  .full-width-link {
+    color: var(--white);
+  }
+
+  .portfolio-piece {
+    margin-top: 4em;
+    position: relative;
+  }
+
+
+</style>
+
 <html>
   <head>
     <MainHead
@@ -23,52 +70,6 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
       image={''}
       canonicalURL={Astro.request.canonicalURL.href}
     />
-
-    <style lang="sass">
-      :global(body) {
-        background: var(--black);
-      }
-      :global(nav .title) {
-        color: var(--white) !important;
-      }
-      .wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 10px 4em;
-        overflow-x: hidden;
-        font-size: 22.4px;
-      }
-      h2 {
-        color: var(--white);
-        margin-top: 2em;
-        margin-bottom: 0;
-      }
-      li, p {
-        font-family: var(--serif);
-        color: var(--white);
-      }
-      .intro-text {
-        // font-size: 1.4em;
-        font-size: 20x;
-      }
-      li {
-        font-family: var(--serif);
-      }
-      :global(a) {
-        color: inherit;
-      }
-
-      .full-width-link {
-        color: var(--white);
-      }
-
-      .portfolio-piece {
-        margin-top: 4em;
-        position: relative;
-      }
-
-
-    </style>
 
   </head>
 
@@ -84,7 +85,7 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
       />
 
 
-      {majorItems.map(piece  => {
+      {majorItems.map((piece, i)  => {
         return (
           <section class="portfolio-piece">
             <h2><a href={piece.url}>
@@ -92,7 +93,7 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
             </a></h2>
             <p>{piece.description}</p>
             
-            <ScreenshotGallery media={piece.media} />
+            <ScreenshotGallery:load media={piece.media} slug={i} />
 
           </section>
         );
@@ -103,9 +104,9 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
         <ul class="bullets">
           {minorItems.map(piece  => {
             return (
-                  <li>
-                    <a href={piece.url}>{ piece.title }</a>
-                  </li>
+              <li>
+                <a href={piece.url}>{ piece.title }</a>
+              </li>
             );
           })}
         </ul>

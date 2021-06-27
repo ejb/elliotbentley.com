@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
+import LazyLoad from 'react-lazyload';
 import "./ScreenshotGallery.css";
 
-const video = asset => {
-  return (<video autoplay="true" loop muted playsinline poster={`${asset.poster}`}>
-      <source src={`${asset.url}.webm`} type="video/webm"></source>
-      <source src={`${asset.url}.mp4`} type="video/mp4"></source>
+const video = (asset) => {
+  return (<video autoPlay loop muted playsInline poster={`${asset.poster}`}>
+      <source data-src={`${asset.url}.webm`} type="video/webm"></source>
+      <source data-src={`${asset.url}.mp4`} type="video/mp4"></source>
     </video>);
 }
 
-const image = asset => {
+const image = (asset) => {
   return (
       <img src={asset.url} />
   );
 }
 
-export const ScreenshotGallery = ({ media }) => {
+const assetTypes = { video, image};
 
-  return <div class="screenshot-gallery">
-    <ul class="screenshot-gallery-inner">
-      {media.slice(0, 3).map(asset => {
-        if (asset.type === 'video') {
-          return (<li>{video(asset)}</li>)
-        }
-        return (<li>{image(asset)}</li>)
-      })}
-    </ul>
+export const ScreenshotGallery = ({ media, slug }) => {
+  return <div className="screenshot-gallery" >
+    <LazyLoad height={200} offset={100} once={true} classNamePrefix={slug.toString()}>
+      <ul className="screenshot-gallery-inner">
+        {media.slice(0, 3).map((asset, i) => {
+          return (<li key={i}>
+            {assetTypes[asset.type](asset)}
+          </li>);
+        })}
+      </ul>
+    </LazyLoad>
   </div>
 }
 

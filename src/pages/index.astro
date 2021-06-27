@@ -26,6 +26,9 @@ let firstPage = allPosts.slice(0, 3);
     font-size: 22.4px;
     text-shadow: 0 1px 2px rgba(20,20,20,0.1);
     margin: 0;
+    @media (max-width: 800px) {
+      font-size: 16px;
+    }
     
   }
   a, a:visited {
@@ -41,6 +44,7 @@ let firstPage = allPosts.slice(0, 3);
 
   :global(.title) {
     color: var(--white) !important;
+    font-size: 48px !important;
     a {
       opacity: 0.5;
       &:hover {
@@ -72,8 +76,13 @@ let firstPage = allPosts.slice(0, 3);
   li {
     font-weight: 300;
   }
+  .contact {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
   .contact ul {
     display: flex;
+    margin-top: 0;
   }
   .contact li {
     margin-right: 1em;
