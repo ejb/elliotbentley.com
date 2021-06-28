@@ -34,7 +34,7 @@ Combined, these problems are a nightmare that cost me hours of valuable time dur
 [^1]: Factiva is a Dow Jones product that provides access to articles from thousands of different publications. I'm not sure if the API is publicly available.
 [^2]: A while back, I used the SpeechRecognition API in [Kanji Voice Quiz](https://kanjivoice.s3.amazonaws.com/index.htm). It worked OK with recognising set phrases -- so could work well for voice commands -- but I certainly wouldn't attempt to use it for transcribing arbitrary speech.
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(function(){
   if (window.speechSynthesis)
