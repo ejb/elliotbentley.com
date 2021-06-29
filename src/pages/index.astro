@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
+import SiteHeader from '../components/SiteHeader.svelte';
 import { PortfolioHero } from '../components/PortfolioHero.tsx';
 import BackgroundAnimation from '../components/BackgroundAnimation.svelte';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -26,7 +26,7 @@ let firstPage = allPosts.slice(0, 3);
     font-size: 22.4px;
     text-shadow: 0 1px 2px rgba(20,20,20,0.1);
     margin: 0;
-    @media (max-width: 800px) {
+    @media (max-width: 500px) {
       font-size: 16px;
     }
     
@@ -39,7 +39,7 @@ let firstPage = allPosts.slice(0, 3);
   header {
     position: relative;
     padding-bottom: 1px;
-    min-height: 100vh;
+    // min-height: 100vh;
   }
 
   :global(.title) {
@@ -58,6 +58,9 @@ let firstPage = allPosts.slice(0, 3);
     max-width: 800px;
     padding: 10px;
     margin: 2em auto;
+    @media (min-width: 500px) {
+      padding: 10px 40px;
+    }
   }
   header {
     section {
@@ -76,6 +79,13 @@ let firstPage = allPosts.slice(0, 3);
   li {
     font-weight: 300;
   }
+
+  .portfolios {
+    @media (max-width: 900px) {
+      overflow-x: hidden;
+    }
+  }
+ 
   .contact {
     margin-top: 0 !important;
     padding-top: 0 !important;
@@ -86,12 +96,6 @@ let firstPage = allPosts.slice(0, 3);
   }
   .contact li {
     margin-right: 1em;
-  }
-
-  .portfolios {
-    @media (max-width: 900px) {
-      overflow-x: hidden;
-    }
   }
 
   .contact {
@@ -133,7 +137,7 @@ let firstPage = allPosts.slice(0, 3);
     <main class="wrapper">
       <header>
 
-        <Nav />
+        <SiteHeader:load />
 
         <section>
 

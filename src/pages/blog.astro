@@ -1,5 +1,5 @@
 ---
-import Nav from '../components/Nav.astro';
+import SiteHeader from '../components/SiteHeader.svelte';
 import MainHead from '../components/MainHead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -35,6 +35,10 @@ const postsByYear = years.map(year => {
         max-width: 800px;
         margin: 0 auto;
         padding: 0 10px 4em;
+        @media (min-width: 500px) {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
       }
       h2 {
         color: var(--black);
@@ -57,7 +61,7 @@ const postsByYear = years.map(year => {
   </head>
 
   <body>
-    <Nav subtitle="Blog" sublink="/blog" />
+    <SiteHeader:load subtitle="Blog" sublink="/blog" theme="light" />
 
     <main class="wrapper">
 

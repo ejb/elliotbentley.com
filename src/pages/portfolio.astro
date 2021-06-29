@@ -1,5 +1,5 @@
 ---
-import Nav from '../components/Nav.astro';
+import SiteHeader from '../components/SiteHeader.svelte';
 import MainHead from '../components/MainHead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -74,7 +74,7 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
   </head>
 
   <body>
-    <Nav subtitle="Portfolio" sublink="/portfolio" />
+    <SiteHeader:load subtitle="Portfolio" sublink="/portfolio" />
 
     <main class="wrapper">
 

@@ -1,6 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
+import SiteHeader from '../components/SiteHeader.svelte';
 import BalancedText from '../components/BalancedText.svelte';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -40,7 +40,10 @@ import { format as formatDate } from 'date-fns';
     max-width: 60rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 14px;
+    padding: 0 10px;
+    @media (min-width: 500px) {
+      padding: 0 40px;
+    }
   }
 
       .title {
@@ -105,7 +108,7 @@ import { format as formatDate } from 'date-fns';
   </head>
 
   <body>
-    <Nav subtitle="Blog" sublink="/blog"  />
+    <SiteHeader:load subtitle="Blog" sublink="/blog"  />
 
     <main class="wrapper">
       <h1 class="title">
