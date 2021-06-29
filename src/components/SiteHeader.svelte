@@ -107,7 +107,7 @@ li {
   color: var(--white);
   padding: 40px;
   transition: transform 200ms;
-  transform: translateY(100%);
+  transform: translateY(120%);
   border-top: 1px solid var(--grey);
 
   &.menu-visible {
