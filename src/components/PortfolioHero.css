@@ -1,0 +1,25 @@
+.portfolio-assets {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+}
+
+.portfolio-asset {
+  margin: 0 -25%;
+}
+
+.portfolio-asset video,
+.portfolio-asset img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 1px 0px 8px rgba(50,50,50,0.8);
+}
+
+@media (max-width: 600px) {
+  .portfolio-asset {
+    grid-column-gap: 0.1em;
+    margin-left: -2em;
+    margin-right: -2em;
+  }  
+}

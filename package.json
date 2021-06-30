@@ -1,0 +1,27 @@
+{
+  "name": "@astrojs/example-blog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build && cp _redirects dist/"
+  },
+  "devDependencies": {
+    "astro": "^0.13.0",
+    "date-fns": "^2.22.1"
+  },
+  "snowpack": {
+    "workspaceRoot": "../.."
+  },
+  "dependencies": {
+    "d3-array": "^3.0.1",
+    "d3-color": "^3.0.1",
+    "d3-interpolate": "^3.0.1",
+    "d3-scale": "^4.0.0",
+    "d3-scale-chromatic": "^3.0.0",
+    "react-lazyload": "^3.2.0",
+    "react-responsive-carousel": "^3.2.18",
+    "svelte-watch-resize": "^1.0.3",
+    "text-balancer": "^1.0.5"
+  }
+}

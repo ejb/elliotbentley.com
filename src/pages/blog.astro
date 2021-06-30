@@ -1,0 +1,86 @@
+---
+import SiteHeader from '../components/SiteHeader.svelte';
+import MainHead from '../components/MainHead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+let title = 'Elliot Bentley ⟶ Blog';
+let description = 'Occasional posts on interactive graphics and web development.';
+
+let allPosts = Astro.fetchContent('./blog/*.md');
+allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const years = [...new Set(allPosts.map(p => p.date.slice(0, 4)))];
+const postsByYear = years.map(year => {
+  return {
+    year,
+    posts: allPosts.filter(p => p.date.slice(0,4) === year)
+  };
+});
+
+---
+<html>
+  <head>
+    <MainHead
+      title={title}
+      description={description}
+      image={''}
+      canonicalURL={Astro.request.canonicalURL.href}
+    />
+
+    <style lang="sass">
+      :global(body) {
+        background: white;
+      }
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 10px 4em;
+        @media (min-width: 500px) {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+      h2 {
+        color: var(--black);
+        margin-top: 2em;
+        margin-bottom: 0;
+      }
+      li, p {
+
+      }
+      a {
+        color: inherit;  
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <SiteHeader:load subtitle="Blog" sublink="/blog" theme="light" />
+
+    <main class="wrapper">
+
+      <div>
+        <p>{description}</p>
+      </div>
+
+      {postsByYear.map(({ year, posts }) => {
+        return (
+          <div>
+            <h2>{year}</h2>
+            <ul class="bullets">
+              {posts.map(post => {
+                return (<li><a href={post.url}>{post.title}</a></li>);
+              })}
+            </ul>
+          </div>
+        );
+      })}
+
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

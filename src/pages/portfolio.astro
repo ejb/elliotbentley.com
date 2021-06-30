@@ -1,0 +1,114 @@
+---
+import SiteHeader from '../components/SiteHeader.svelte';
+import MainHead from '../components/MainHead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+let title = 'Elliot Bentley ⟶ Portfolio';
+let description = 'Data vizualisations and interactive graphics';
+
+import portfolio from '../data/portfolio.json';
+const majorItems = portfolio.filter(d => d.major);
+const minorItems = portfolio.filter(d => !d.major);
+
+import { ScreenshotGallery } from '../components/ScreenshotGallery.jsx';
+import { PortfolioHero } from '../components/PortfolioHero.tsx';
+
+---
+
+
+<style lang="sass">
+  :global(body) {
+    background: var(--black);
+  }
+  :global(nav .title) {
+    color: var(--white) !important;
+  }
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px 4em;
+    overflow-x: hidden;
+    @media (min-width: 500px) {
+      padding: 10px 40px;
+    }
+  }
+  h2 {
+    color: var(--white);
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+  li, p {
+    color: var(--white);
+  }
+  :global(a) {
+    color: inherit;
+  }
+
+  .full-width-link {
+    color: var(--white);
+  }
+
+  .portfolio-piece {
+    margin-top: 4em;
+    position: relative;
+  }
+
+
+</style>
+
+<html>
+  <head>
+    <MainHead
+      title={title}
+      description={description}
+      image={''}
+      canonicalURL={Astro.request.canonicalURL.href}
+    />
+
+  </head>
+
+  <body>
+    <SiteHeader:load subtitle="Portfolio" sublink="/portfolio" />
+
+    <main class="wrapper">
+
+      <p class="intro-text">I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations.</p>
+
+      <PortfolioHero
+        assets={majorItems.slice(0,5).map(p => p.media.find(m => m.type === 'image'))}
+      />
+
+
+      {majorItems.map((piece, i)  => {
+        return (
+          <section class="portfolio-piece">
+            <h2><a href={piece.url}>
+              { piece.title }  
+            </a></h2>
+            <p>{piece.description}</p>
+            
+            <ScreenshotGallery:load media={piece.media} slug={i} />
+
+          </section>
+        );
+      })}
+
+      <section class="portfolio-piece other-stories">
+      <h2>Other stories</h2>
+        <ul class="bullets">
+          {minorItems.map(piece  => {
+            return (
+              <li>
+                <a href={piece.url}>{ piece.title }</a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

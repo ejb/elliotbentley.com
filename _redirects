@@ -1,0 +1,34 @@
+# Redirects from what the browser requests to what we serve
+/portfolio.html /portfolio
+/blog.html  /blog
+/feed.xml  /feed/posts.xml
+# Blog post redirect 2021
+/2013/09/24/glass.html    /blog/glass
+/2013/10/03/otranscribe.html    /blog/otranscribe
+/2014/01/29/otranscribe-twelve-weeks.html    /blog/otranscribe-twelve-weeks
+/2014/01/31/progressor.html    /blog/progressor
+/2014/03/09/mobile-maps.html    /blog/mobile-maps
+/2014/08/31/immersive-storytelling-ww1.html    /blog/immersive-storytelling-ww1
+/2014/10/05/news-app-process-2014.html    /blog/news-app-process-2014
+/2014/10/19/crowdtip-at-build-the-news.html    /blog/crowdtip-at-build-the-news
+/2014/11/02/otranscribe-is-one-year-old.html    /blog/otranscribe-is-one-year-old
+/2015/02/22/you-should-start-a-meetup.html    /blog/you-should-start-a-meetup
+/2015/03/21/pinpoint-maps-at-wsj.html    /blog/pinpoint-maps-at-wsj
+/2015/03/24/the-meta-tag-checker.html    /blog/the-meta-tag-checker
+/2015/03/30/labour-dynamic-promo-images.html    /blog/labour-dynamic-promo-images
+/2015/05/08/2015-election-live-election-graphic.html    /blog/2015-election-live-election-graphic
+/2015/06/07/html5-speech-synthesis-api.html    /blog/html5-speech-synthesis-api
+/2015/10/10/accelerated-mobile-pages.html    /blog/accelerated-mobile-pages
+/2016/05/09/how-my-code-has-changed-since-2014.html    /blog/how-my-code-has-changed-since-2014
+/2016/05/23/a-better-way-to-structure-d3-code.html    /blog/a-better-way-to-structure-d3-code
+/2016/07/01/brexit-live-election-graphic.html    /blog/brexit-live-election-graphic
+/2016/10/03/forward-ferret.html    /blog/forward-ferret
+/2016/10/05/data-viz-design-process.html    /blog/data-viz-design-process
+/2017/06/17/excitement-and-terror-of-a-successful-side-project.html    /blog/excitement-and-terror-of-a-successful-side-project
+/2017/06/25/trading-bot-sketches.html    /blog/trading-bot-sketches
+/2017/08/09/a-better-way-to-structure-d3-code-es6-version.html    /blog/a-better-way-to-structure-d3-code-es6-version
+/2018/06/03/interactives.html    /blog/interactives
+/2018/07/15/otranscribe-new-home.html    /blog/otranscribe-new-home
+/2018/08/05/otranscribe-muckrock-documentcloud.html    /blog/otranscribe-muckrock-documentcloud
+/2019/01/30/2019-redesign.html    /blog/2019-redesign
+/2019/10/30/2019-womens-work-dataviz.html    /blog/womens-work-dataviz
