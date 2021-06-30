@@ -52,3 +52,18 @@ ul.bullets, article ul {
     margin-bottom: 5px;
   }
 }
+li, p {
+  font-family: var(--serif);
+  font-size: 22.4px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.6;
+  font-weight: 400;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin-bottom: 20px;
+}

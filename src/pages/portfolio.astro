@@ -28,7 +28,9 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
     margin: 0 auto;
     padding: 0 10px 4em;
     overflow-x: hidden;
-    font-size: 22.4px;
+    @media (min-width: 500px) {
+      padding: 10px 40px;
+    }
   }
   h2 {
     color: var(--white);
@@ -36,15 +38,7 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
     margin-bottom: 0;
   }
   li, p {
-    font-family: var(--serif);
     color: var(--white);
-  }
-  .intro-text {
-    // font-size: 1.4em;
-    font-size: 20x;
-  }
-  li {
-    font-family: var(--serif);
   }
   :global(a) {
     color: inherit;
