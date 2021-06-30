@@ -22,9 +22,9 @@ The `.astro` file format is the real hero, a mix between HTML, Markdown and JSX 
 
 Astro is definitely not yet ready for the faint of heart. The global variable `window` didn't seem to be available for client-side compoentns, regardless of library. I was able to use `globalThis` as a workaround, but that wasn't an option for third-party libraries like [svelte-watch-resize](https://www.npmjs.com/package/svelte-watch-resize).
 
-When these issues arrived, they weren't helped by error messages being hard to track down. Sometimes they appear on the page itself, sometimes in the terminal, sometimes in the developer tools, and on occasion nowhere at all when a component fails silently.
+When issues like this arised, they weren't helped by error messages being hard to track down. Sometimes they appear on the page itself, sometimes in the terminal, sometimes in the developer tools, and on occasion nowhere at all when a component fails silently.
 
-Astro also doesn't yet provide any ways to reroute pages [the way Jekyll does](). I ended up having to migrate from GitHub Pages to Netlify in order to prevent old blog URLs from breaking. Can't risk losing my SEO on ["d3 es6"](https://www.google.com/search?q=d3+es6) after all!
+Astro also doesn't yet provide any ways to reroute pages [the way Jekyll does](https://github.com/jekyll/jekyll-redirect-from). I ended up having to migrate from GitHub Pages to Netlify in order to prevent old blog URLs from breaking. Can't risk losing my SEO on ["d3 es6"](https://www.google.com/search?q=d3+es6) after all!
 
 ## To the moon!
 
