@@ -14,7 +14,7 @@ function createAnimation(element, colors, speed) {
 
   const { height, width } = canvas;
 
-  const scale = window.devicePixelRatio;
+  const scale = 2;
 
   const ctx = canvas.getContext('2d');
   ctx.scale(scale, scale);
