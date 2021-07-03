@@ -4,8 +4,8 @@ import "./ScreenshotGallery.css";
 
 const video = (asset) => {
   return (<video autoPlay loop muted playsInline poster={`${asset.poster}`}>
-      <source data-src={`${asset.url}.webm`} type="video/webm"></source>
-      <source data-src={`${asset.url}.mp4`} type="video/mp4"></source>
+      <source src={`${asset.url}.webm`} type="video/webm"></source>
+      <source src={`${asset.url}.mp4`} type="video/mp4"></source>
     </video>);
 }
 

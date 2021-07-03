@@ -1,7 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import SiteHeader from '../components/SiteHeader.svelte';
-import BalancedText from '../components/BalancedText.svelte';
 import SiteFooter from '../components/SiteFooter.astro';
 
 export let content;
@@ -100,7 +99,7 @@ import { format as formatDate } from 'date-fns';
 
     <main class="wrapper">
       <h1 class="title">
-        <BalancedText:load text={content.title} />
+        { content.title }
       </h1>
       <article class="article">
         <slot />
