@@ -2,16 +2,28 @@ import React, { useState } from 'react';
 import './PortfolioHero.css';
 
 export const PortfolioHero = props => {
-  const assetMarkup = props.assets.filter(asset => asset.type === 'image').map((asset, i, arr) => {
-    const zIndex = Math.abs(i - Math.floor(arr.length/2)) * -1;
-    const scale = 50 / (Math.abs(zIndex) + 50);
+
+  console.log(props.pieces)
+
+  const pieces = props.pieces.slice(0,5).map(p => ({
+    image: p.media.find(asset => asset.type === 'image'),
+    slug: p.slug,
+  }));
+
+  console.log(pieces)
+  
+  const assetMarkup = pieces.map((piece, i, arr) => {
+    const zIndex = (Math.abs(i - Math.floor(arr.length/2)) * -1) + 2;
+    const scale = 50 / (Math.abs(zIndex - 2) + 50);
     return (
       <div className="portfolio-asset" style={{zIndex, transform: `scale(${scale})`}} key={i}>
-        <img src={asset.url} alt='' width="1125" height="2436" />
+        <a href={`/portfolio#${piece.slug}`}>
+          <img src={piece.image.url} alt='' width="1125" height="2436" />
+        </a>
       </div>
     )
   });
-
+  
   return (
     <div class="portfolio-assets">
       {assetMarkup}

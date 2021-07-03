@@ -11,6 +11,7 @@ let description = 'Visual journalist and developer';
 
 import portfolio from '../data/portfolio.json';
 const portfolioItems = portfolio.filter(d => d.major).slice(0, 5);
+portfolioItems.forEach(p => p.slug = p.title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
 
 let allPosts = Astro.fetchContent('./blog/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -170,7 +171,7 @@ let firstPage = allPosts.slice(0, 3);
 
         <p>I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations. <a href="/portfolio" class="ps-link">View full portfolio »</a></p>
 
-        <PortfolioHero assets={portfolioItems.map(p => p.media.find(m => m.type === 'image'))} />
+        <PortfolioHero pieces={portfolioItems} />
 
       </section>
 

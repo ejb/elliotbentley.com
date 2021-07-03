@@ -14,6 +14,11 @@
   height: auto;
   border-radius: 10px;
   box-shadow: 1px 0px 8px rgba(50,50,50,0.8);
+  transition: transform 500ms;
+  transform: translateY(0);
+}
+.portfolio-asset img:hover {
+  transform: translateY(-5px);
 }
 
 @media (max-width: 600px) {
