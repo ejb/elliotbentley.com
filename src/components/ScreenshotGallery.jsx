@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import LazyLoad from 'react-lazyload';
 import "./ScreenshotGallery.css";
 
 const video = (asset) => {
-  return (<video autoPlay loop muted playsInline poster={`${asset.poster}`}>
+  const vidRef = useRef(null);
+  const onClick = () => {
+    const v = vidRef.current;
+    v.paused ? v.play() : v.pause();
+  }
+  return (<video autoPlay loop muted playsInline poster={`${asset.poster}`} onClick={onClick} ref={vidRef}>
       <source src={`${asset.url}.webm`} type="video/webm"></source>
       <source src={`${asset.url}.mp4`} type="video/mp4"></source>
     </video>);
@@ -19,7 +24,7 @@ const assetTypes = { video, image};
 
 export const ScreenshotGallery = ({ media, slug }) => {
   return <div className="screenshot-gallery" >
-    <LazyLoad height={200} offset={100} once={true} classNamePrefix={slug.toString()}>
+    <LazyLoad height={550} offset={500} once={true} classNamePrefix={slug.toString()}>
       <ul className="screenshot-gallery-inner">
         {media.slice(0, 3).map((asset, i) => {
           return (<li key={i}>

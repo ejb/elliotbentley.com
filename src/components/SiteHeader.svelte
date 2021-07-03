@@ -7,9 +7,7 @@ export let parentTheme = 'dark';
 
 let menuVisible = false;
 const toggleMenu = () => {
-  console.log('xx')
   menuVisible = !menuVisible;
-  console.log(menuVisible)
 }
 </script>
 

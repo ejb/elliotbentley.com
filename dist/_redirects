@@ -1,6 +1,7 @@
 # Redirects from what the browser requests to what we serve
 /portfolio.html /portfolio
 /blog.html  /blog
+/feed.xml  /feed/posts.xml
 # Blog post redirect 2021
 /2013/09/24/glass.html    /blog/glass
 /2013/10/03/otranscribe.html    /blog/otranscribe

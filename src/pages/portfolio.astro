@@ -8,7 +8,6 @@ let description = 'Data vizualisations and interactive graphics';
 
 import portfolio from '../data/portfolio.json';
 portfolio.forEach(p => p.slug = p.title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
-console.log(portfolio)
 const majorItems = portfolio.filter(d => d.major);
 const minorItems = portfolio.filter(d => !d.major);
 
