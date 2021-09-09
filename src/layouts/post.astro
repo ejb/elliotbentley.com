@@ -1,113 +1,112 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import SiteHeader from '../components/SiteHeader.svelte';
-import SiteFooter from '../components/SiteFooter.astro';
+import MainHead from "../components/MainHead.astro";
+import SiteHeader from "../components/SiteHeader.svelte";
+import SiteFooter from "../components/SiteFooter.astro";
 
 const { content } = Astro.props;
 
 let title = `${content.title} | Elliot Bentley ⟶ Blog`;
 
-import { format as formatDate } from 'date-fns';
-
+import { format as formatDate } from "date-fns";
 ---
 
 <html lang="en">
   <head>
-    <MainHead title={title} description={content.description} image={content.image} canonicalURL={Astro.request.canonicalURL} />
-    <link rel="stylesheet" href="/code-theme.css">
+    <MainHead
+      title={title}
+      description={content.description}
+      image={content.image}
+      canonicalURL={Astro.request.canonicalURL}
+    />
+    <link rel="stylesheet" href="/code-theme.css" />
     <style lang="scss">
+      // :global(nav) {
+      //   text-align: center;
+      //   padding: 0 14px;
+      // }
 
-  // :global(nav) {
-  //   text-align: center;
-  //   padding: 0 14px;
-  // }
+      :global(body) {
+        // background: white;
+      }
 
-  :global(body) {
-    background: white;
-  }
+      :global(a) {
+        color: inherit;
+      }
 
-  :global(a) {
-    color: inherit;
-  }
+      :global(img) {
+        max-width: 100%;
+        height: auto;
+      }
 
-  :global(img) {
-    max-width: 100%;
-    height: auto;
-  }
+      .wrapper {
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 10px;
+        @media (min-width: 500px) {
+          padding: 0 40px;
+        }
+      }
 
-  .wrapper {
-    max-width: 60rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
-    @media (min-width: 500px) {
-      padding: 0 40px;
-    }
-  }
+      .title {
+        margin: 3rem 0;
+        font-size: 3.5em;
+        text-align: center;
+        font-family: var(--sans-serif);
+        font-weight: 600;
+        color: var(--black);
 
-  .title {
-    margin: 3rem 0;
-    font-size: 3.5em;
-    text-align: center;
-    font-family: var(--sans-serif);
-    font-weight: 600;
-    color: var(--black);
+        @media (max-width: 800px) {
+          font-size: 2.5em;
+          text-align: left;
+          margin: 1rem 0;
+        }
+      }
 
-    @media (max-width: 800px) {
-      font-size: 2.5em;
-      text-align: left;
-      margin: 1rem 0;
-    }
-  }
+      .description {
+        margin-bottom: 4rem;
+        text-align: justify;
+        text-transform: uppercase;
+      }
 
-  .description {
-    margin-bottom: 4rem;
-    text-align: justify;
-    text-transform: uppercase;
-  }
+      .img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
 
-  .img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+      .article {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 4em;
+        color: var(--black);
 
-  .article {
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 4em;
-    color: var(--black);
+        :global(h2) {
+          margin-top: 2em;
+        }
+      }
 
-    :global(h2) {
-      margin-top: 2em;
-    }
-
-  }
-
-  .publish-date {
-    color: var(--grey);;
-  }
-  
-
-      
+      .publish-date {
+        color: var(--grey);
+      }
     </style>
   </head>
 
   <body>
-    <SiteHeader client:load subtitle="Blog" sublink="/blog"  />
+    <SiteHeader client:load subtitle="Blog" sublink="/blog" />
 
     <main class="wrapper">
       <h1 class="title">
-        { content.title }
+        {content.title}
       </h1>
       <article class="article">
         <slot />
         <p class="publish-date">
-          Published <time datetime={content.date.slice(0,10)}>
-            {formatDate(new Date(content.date), 'PPP')}
-            </time>.
-          </p>
+          Published <time datetime={content.date.slice(0, 10)}>
+            {formatDate(new Date(content.date), "PPP")}
+          </time>.
+        </p>
       </article>
     </main>
 

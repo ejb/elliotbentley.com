@@ -1,3 +1,4 @@
+import 'astro/jsx-runtime'
 import React, { useState } from 'react';
 import './PortfolioHero.css';
 

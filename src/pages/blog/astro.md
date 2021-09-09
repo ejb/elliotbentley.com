@@ -1,7 +1,7 @@
 ---
-date: 2021-06-29
+pubDate: 2021-06-29
 layout: ../../layouts/post.astro
-title:  "Rebuilding elliotbentley.com with shiny new Astro"
+title: "Rebuilding elliotbentley.com with shiny new Astro"
 ---
 
 After failing to recompile this site for 18 months, I figured it was probably time to move away from [Jekyll](https://jekyllrb.com), the influential but aging Ruby-based static site generator.
@@ -28,6 +28,6 @@ Astro also doesn't yet provide any ways to reroute pages [the way Jekyll does](h
 
 ## To the moon!
 
-Work on Astro is ongoing and I'm hopeful that these kinks will be smoothed out over time. The developers are already aware of the redirect limitation, for example, and [appear to be working on a solution](https://github.com/snowpackjs/astro/issues/80). Similarly, [a bug](https://github.com/snowpackjs/astro/issues/405) in the `.astro` syntax’s handling of JSX was quickly fixed. 
+Work on Astro is ongoing and I'm hopeful that these kinks will be smoothed out over time. The developers are already aware of the redirect limitation, for example, and [appear to be working on a solution](https://github.com/snowpackjs/astro/issues/80). Similarly, [a bug](https://github.com/snowpackjs/astro/issues/405) in the `.astro` syntax’s handling of JSX was quickly fixed.
 
-Overall, Astro feels like a genuinely modern tool, one that's exciting to use and liberating in its fleibility. I wouldn't recommend it to inexperienced coders just yet, but I can't wait to see how high it goes.
+Overall, Astro feels like a genuinely modern tool, one that's exciting to use and liberating in its flexibility. I wouldn't recommend it to inexperienced coders just yet, but I can't wait to see how high it goes.

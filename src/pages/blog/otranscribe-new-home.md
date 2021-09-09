@@ -1,5 +1,5 @@
 ---
-date: 2018-07-15
+pubDate: 2018-07-15
 layout: ../../layouts/post.astro
 title: "oTranscribe needs a new home"
 author: elliotbentley

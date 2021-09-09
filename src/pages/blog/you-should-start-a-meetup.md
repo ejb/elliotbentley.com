@@ -1,7 +1,7 @@
 ---
-date: 2015-02-22
+pubDate: 2015-02-22
 layout: ../../layouts/post.astro
-title:  "You should start a meetup group."
+title: "You should start a meetup group."
 ---
 
 Too many people want to go to [Hacks/Hackers London](http://www.meetup.com/HacksHackersLondon/). Despite catering for hundreds of people each month, tickets are snapped up in a matter of minutes. Its organisers [simply can't meet the demand](http://www.meetup.com/HacksHackersLondon/messages/boards/thread/48742998/0/#127748520) (and no wonder, because it's always a bloody brilliant night).

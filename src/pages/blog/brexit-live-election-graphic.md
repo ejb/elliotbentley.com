@@ -1,7 +1,7 @@
 ---
-date: 2016-07-01
+pubDate: 2016-07-01
 layout: ../../layouts/post.astro
-title:  "Further lessons from building a live referendum results graphic"
+title: "Further lessons from building a live referendum results graphic"
 ---
 
 [![Screenshot of live referendum graphic](/assets/live-results-graphic-2/referendum-2016.png)](http://graphics.wsj.com/brexit-uk-referendum-live-results/)
@@ -36,13 +36,13 @@ Some modules, such as the charts and map, followed the [object-oriented construc
 ```js
 // create new map
 var map = new ResultsMap({
-    element: $('.map-container')[0],
-    view: 'areas'
+  element: $(".map-container")[0],
+  view: "areas",
 });
 
 // load in geojson asynchronously
-$.getJSON('data/brexit_382.geo.json', function(uk) {
-    map.setGeo(uk);
+$.getJSON("data/brexit_382.geo.json", function (uk) {
+  map.setGeo(uk);
 });
 ```
 
@@ -51,16 +51,16 @@ Others worked just as a plain function. When the 'Results Bar' was passed a new 
 ```js
 // after an ajax call for the data
 setResultsBar({
-    element: $('.results-container')[0],
-    data: data
+  element: $(".results-container")[0],
+  data: data,
 });
 ```
 
 Similarly, the data-fetching modules (which were all contained in an object called `getData`) would return [JavaScript promises](http://www.mattgreer.org/articles/promises-in-wicked-detail/) (specifically, [jQuery deferred objects](http://api.jquery.com/category/deferred-object/) for the controller script to resolve.[^1]
 
 ```js
-getData.results().then(function(d) {
-    map.setData(d);
+getData.results().then(function (d) {
+  map.setData(d);
 });
 ```
 
@@ -85,13 +85,13 @@ var seats = 0;
 var processed = [];
 var filtered = [];
 for (var i = 0; i < data.length; i++) {
-    var d = data[i];
-    d.seatsPc = (d.seats / 320) * 100;
-    processed.push(d);
-    seats += d.seats;
-    if (d.visible === true) {
-        filtered.push(d);
-    }
+  var d = data[i];
+  d.seatsPc = (d.seats / 320) * 100;
+  processed.push(d);
+  seats += d.seats;
+  if (d.visible === true) {
+    filtered.push(d);
+  }
 }
 ```
 
@@ -105,19 +105,19 @@ Efficient, perhaps -- but it's difficult to read because it mixes functionality.
 
 ```js
 // calculate percentages for each item
-var processed = data.map(function(d,i) {
-    d.seatsPc = (d.seats / 320) * 100;
-    return d;
+var processed = data.map(function (d, i) {
+  d.seatsPc = (d.seats / 320) * 100;
+  return d;
 });
 
 // count total seats
-var seats = data.reduce(function(prev,curr) {
-    return prev + curr.seats;
+var seats = data.reduce(function (prev, curr) {
+  return prev + curr.seats;
 });
 
 // create new filtered array
-var filtered = processed.filter(function(d,i) {
-    return d.visible;
+var filtered = processed.filter(function (d, i) {
+  return d.visible;
 });
 ```
 
@@ -127,16 +127,16 @@ If you're in a position to use next-generation "ES6" JavaScript (perhaps in a No
 
 ```js
 // calculate percentages for each item
-const processed = data.map(d => {
-    d.seatsPc = (d.seats / 320) * 100;
-    return d;
+const processed = data.map((d) => {
+  d.seatsPc = (d.seats / 320) * 100;
+  return d;
 });
 
 // count total seats
-const seats = data.reduce((prev,curr) => prev + curr.seats);
+const seats = data.reduce((prev, curr) => prev + curr.seats);
 
 // create new filtered array
-const filtered = processed.filter(d => d.visible);
+const filtered = processed.filter((d) => d.visible);
 ```
 
 Crazy, right? ES6 is a whole new world.
@@ -161,14 +161,15 @@ How on earth can one test all of these permutations, especially on a deadline? I
 
 _Thanks to Palani Kumanan and Jessia Ma for providing feedback on a draft of this post._
 
-[^1]:  My colleague Palani Kumanan tells me that the ["pub-sub" pattern](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) would work well here. I'm not yet familiar with it, but it's something I intend to learn more about in the near future.
-
-[^2]: You might expect these additional loops to impact performance, but in [a simple test](https://gist.github.com/ejb/2c615283474d84ebf171e81b5c79950d) I found array methods to actually provide better performance than a big loop (except for when arrays are short, in which case the difference is trivial). See the chart below, in which shorter bars are better.
+[^1]: My colleague Palani Kumanan tells me that the ["pub-sub" pattern](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) would work well here. I'm not yet familiar with it, but it's something I intend to learn more about in the near future.
+[^2]:
+    You might expect these additional loops to impact performance, but in [a simple test](https://gist.github.com/ejb/2c615283474d84ebf171e81b5c79950d) I found array methods to actually provide better performance than a big loop (except for when arrays are short, in which case the difference is trivial). See the chart below, in which shorter bars are better.
 
     ![Array method performance is generally better than that of a big loop.](/assets/live-results-graphic-2/array-method-performance.png)
 
     [Browser support for these](http://caniuse.com/#feat=es5) is extensive, assuming you're no longer supporting IE9 or below.
 
-[^3]: This idea is admittedly a bit nuts, but it's inspired by a concept in ecology called the [Hutchinsonian niche](https://en.wikipedia.org/wiki/Ecological_niche#Hutchinsonian_niche):
+[^3]:
+    This idea is admittedly a bit nuts, but it's inspired by a concept in ecology called the [Hutchinsonian niche](https://en.wikipedia.org/wiki/Ecological_niche#Hutchinsonian_niche):
 
     > The Hutchinsonian niche is an n-dimensional hypervolume, where the dimensions are environmental conditions and resources, that define the requirements of an individual or a species to practice "its" way of life, more particularly, for its population to persist. The "hypervolume" defines the multi-dimensional space of resources (e.g., light, nutrients, structure, etc.) available to (and specifically used by) organisms, and "all species other than those under consideration are regarded as part of the coordinate system."

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-30
+pubDate: 2019-01-30
 layout: ../../layouts/post.astro
 title: "New year, new look for this site"
 author: elliotbentley

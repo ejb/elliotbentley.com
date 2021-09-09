@@ -1,5 +1,5 @@
 ---
-date: 2016-05-09
+pubDate: 2016-05-09
 layout: ../../layouts/post.astro
 title: "How my JavaScript has changed after two years at the Wall Street Journal"
 ---
@@ -25,26 +25,26 @@ Here's an abstracted version:
 ```js
 var App = {};
 App.config = {
-    // keep config variables up top
+  // keep config variables up top
 };
-App.start = function() {
-    // do stuff
-}
-App.createCharts = function(data) {
-    var chart = new Chart({
-        data: data
-    });
-    // etc
-}
+App.start = function () {
+  // do stuff
+};
+App.createCharts = function (data) {
+  var chart = new Chart({
+    data: data,
+  });
+  // etc
+};
 
-var Chart = function(opts) {
-    this.data = opts.data;
-    this.createSVG();
-    // etc
-}
-Chart.prototype.createSVG = function() {
-    // d3 stuff goes here
-}
+var Chart = function (opts) {
+  this.data = opts.data;
+  this.createSVG();
+  // etc
+};
+Chart.prototype.createSVG = function () {
+  // d3 stuff goes here
+};
 ```
 
 _Update: By popular request, I've since written a [full blog post on using the D3 constructor pattern](http://ejb.github.io/2016/05/23/a-better-way-to-structure-d3-code.html)._
@@ -61,7 +61,7 @@ Occasionally they would take long lists of arguments, which can then be confusin
 
 ```js
 // Taken from: http://graphics.wsj.com/european-elections-2014/
-makeArc('current-poll-arc', eudata, "Tot", (1.65));
+makeArc("current-poll-arc", eudata, "Tot", 1.65);
 ```
 
 Trick question! `height` is actually controlled by a fifth argument, which is absent in this case.
@@ -73,10 +73,10 @@ For functions that take more than a couple of arguments, I pass in objects, whic
 ```js
 // Example from https://github.com/WSJ/scroll-watcher
 scrollWatcher({
-    parent: '.outer',
-    onUpdate: function( scrollPercent, parentElement ){
-        $('.inner').text('Scrolled '+scrollPercent+'% through the parent.');
-    }
+  parent: ".outer",
+  onUpdate: function (scrollPercent, parentElement) {
+    $(".inner").text("Scrolled " + scrollPercent + "% through the parent.");
+  },
 });
 ```
 
@@ -100,19 +100,19 @@ Here's a particularly nasty example. With code like this, it'd be easy to introd
 
 ```js
 // Taken from: http://graphics.wsj.com/european-elections-2014/
-$('.curr-party').each(function() {
-    $this = $(this);
-    var party = $this.find('.curr-party-shortname').text();
-    for (var i = 0; i < eudata.length; i++) {
-        if (eudata[i].Group === party) {
-            $this.find('.seats').text(eudata[i].Tot);
-            var change = eudata[i].Tot - eudata[i].current;
-            if (change > 0) {
-                change = '+' + change;
-            }
-            $this.find('.change').text(change);
-        }
+$(".curr-party").each(function () {
+  $this = $(this);
+  var party = $this.find(".curr-party-shortname").text();
+  for (var i = 0; i < eudata.length; i++) {
+    if (eudata[i].Group === party) {
+      $this.find(".seats").text(eudata[i].Tot);
+      var change = eudata[i].Tot - eudata[i].current;
+      if (change > 0) {
+        change = "+" + change;
+      }
+      $this.find(".change").text(change);
     }
+  }
 });
 ```
 
@@ -122,22 +122,20 @@ The data would sometimes be stored within [HTML data attributes](https://develop
 
 ```js
 // Taken from http://graphics.wsj.com/ecb-meeting-euro-reaction/
-data.forEach(function(row,i){
-    row.date = moment(row.date,'DD/MM/YY HH:mm');
-    row.values = row.values.sort(function(a,b){
-        return a.time - b.time;
-    });
+data.forEach(function (row, i) {
+  row.date = moment(row.date, "DD/MM/YY HH:mm");
+  row.values = row.values.sort(function (a, b) {
+    return a.time - b.time;
+  });
 });
-data = data.filter(function(r){
-    return (r.date.isAfter(showMeetingsSince));
+data = data.filter(function (r) {
+  return r.date.isAfter(showMeetingsSince);
 });
 ```
 
 These are initially a little harder to get one's head around, but eventually result in much clearer code than huge `for` loops with tonnes of `if` statements. Only once these operations are finished do I begin to start generating HTML.
 
 **Next:** If I were to start using ES6, I could make use of ['fat arrow functions'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Arrow_functions) in my anonymous functions (of which there are many when using said array methods). Fat arrow functions not only save a few characters, but also maintain the scope of their parent, which is very handy when using object-oriented programming involving [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
-
-
 
 ## Rendering HTML
 
@@ -148,16 +146,29 @@ Much of the time, however, I would concatenate strings and use jQuery very liber
 ```js
 // Taken from http://graphics.wsj.com/scotland-referendum-results/
 var data = d.overall;
-var ryes = Math.round(data.yesPercent*10)/10;
-var rno = Math.round((data.noPercent)*10)/10;
-html = '<div class="inner-bar" style="width: '+data.yesPercent+'%;"></div>';
-html += '<div class="inner-bar-two" style="width: '+data.unknownPercent+'%;"></div>';
-html += '<div class="yes-text">Yes: <b>'+ryes+'%</b> <div class="vnumber">'+data.yesVotes+' votes</div></div>';
-html += '<div class="no-text">No: <b>'+rno+'%</b> <div class="vnumber">'+data.noVotes+'</div></div>';
-$('.nationwide-results .outer-bar').html(html);
+var ryes = Math.round(data.yesPercent * 10) / 10;
+var rno = Math.round(data.noPercent * 10) / 10;
+html = '<div class="inner-bar" style="width: ' + data.yesPercent + '%;"></div>';
+html +=
+  '<div class="inner-bar-two" style="width: ' +
+  data.unknownPercent +
+  '%;"></div>';
+html +=
+  '<div class="yes-text">Yes: <b>' +
+  ryes +
+  '%</b> <div class="vnumber">' +
+  data.yesVotes +
+  " votes</div></div>";
+html +=
+  '<div class="no-text">No: <b>' +
+  rno +
+  '%</b> <div class="vnumber">' +
+  data.noVotes +
+  "</div></div>";
+$(".nationwide-results .outer-bar").html(html);
 ```
 
-**Now:** I've since learnt the error of my ways: concatenating more than a short string is a recipe for disaster and should be avoided at all costs. Instead, I use the [Mustache](https://github.com/janl/mustache.js/) library with abandon, introducing it early in the project before the temptation to start concatenating becomes too strong. 
+**Now:** I've since learnt the error of my ways: concatenating more than a short string is a recipe for disaster and should be avoided at all costs. Instead, I use the [Mustache](https://github.com/janl/mustache.js/) library with abandon, introducing it early in the project before the temptation to start concatenating becomes too strong.
 
 Here's a Mustache template from [Barrel Breakdown](http://graphics.wsj.com/oil-barrel-breakdown/):
 
@@ -172,15 +183,15 @@ Here's a Mustache template from [Barrel Breakdown](http://graphics.wsj.com/oil-b
 And the corresponding JavaScript:
 
 ```js
-var template = $('#country-item-template').html();
+var template = $("#country-item-template").html();
 var model = {
-    country: country,
-    text: newText,
-    plainText: originalText,
-    factType: factType,
-    fact: fact.toFixed(1)+'% of barrel cost'
+  country: country,
+  text: newText,
+  plainText: originalText,
+  factType: factType,
+  fact: fact.toFixed(1) + "% of barrel cost",
 };
-$t.html( Mustache.render(template, model) );
+$t.html(Mustache.render(template, model));
 ```
 
 I've gotten into the habit of using Mustache over Handlebars because (a) it has a smaller page-weight, (b) the templates can be rendered server-side using the Mustache PHP library if necessary and (c) I don't need most of Handlebars' fancy features.
@@ -194,7 +205,6 @@ I've gotten into the habit of using Mustache over Handlebars because (a) it has 
 **Now:** For better or worse, I now worry less about page weight (much of which is ad scripts and web fonts anyway) and more about saving time and reducing the risk of bugs: hence, more liberal use of libraries. Moment.js and Mustache are essentials.
 
 **Next:** If I were to use a module loader such as Webpack, it might make sense to use a package manager such as npm; but with so few dependencies for each project, it's still more practical to keep them within the repository.
-
 
 ## Charts
 
@@ -210,7 +220,7 @@ My early projects tended to be big on maps, whereas nowadays my projects tend to
 
 **Then:** When I joined WSJ, we had just taken out a [CartoDB](https://cartodb.com/) subscription. It had a slick interface and worked on mobile; what's not to like? Let's use it everywhere!
 
-**Now:** After some struggles with the CartoDB JS API, I realised that it used [Leaflet](http://leafletjs.com/) as a base -- and so *that* library has since become my go-to when I'm in need of an interactive map (indeed, it's the basis of [Pinpoint](http://dowjones.github.io/pinpoint/)). For [choropleth maps](https://en.wikipedia.org/wiki/Choropleth_map), shapefiles rendered standalone using D3 often look better than on a CartoDB basemap.
+**Now:** After some struggles with the CartoDB JS API, I realised that it used [Leaflet](http://leafletjs.com/) as a base -- and so _that_ library has since become my go-to when I'm in need of an interactive map (indeed, it's the basis of [Pinpoint](http://dowjones.github.io/pinpoint/)). For [choropleth maps](https://en.wikipedia.org/wiki/Choropleth_map), shapefiles rendered standalone using D3 often look better than on a CartoDB basemap.
 
 **Next:** We've been making heavy use of [ai2html](http://ai2html.org/) over the past year, especially for maps. Unless they're showing live results or a particularly dense dataset, most maps don't really need to be interactive. Using a custom version of ai2html, our in-house cartographers can apply their existing expertise to produce maps far better-looking and easier to read than those made with Leaflet or otherwise.
 

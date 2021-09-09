@@ -1,30 +1,30 @@
 ---
+import "../styles/global.scss";
 const { canonicalURL, image, description, title } = Astro.props;
 ---
 
 <!-- Common -->
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>{title}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content={description}>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="{Astro.resolve('../styles/global.css')}">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content={description} />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
 <!-- Sitemap -->
-<link rel="sitemap" href="/sitemap.xml">
+<link rel="sitemap" href="/sitemap.xml" />
 <!-- RSS -->
-<link rel="alternate" type="application/rss+xml" href="/feed/posts.xml">
+<link rel="alternate" type="application/rss+xml" href="/feed/posts.xml" />
 
 <!-- SEO -->
-<link rel="canonical" href={canonicalURL}>
+<link rel="canonical" href={canonicalURL} />
 
 <!-- OpenGraph -->
-<meta property="og:title" content={title}>
-<meta property="og:description" content={description}>
-{image && (<meta property="og:image" content={new URL(image, canonicalURL)}>)}
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+{image && <meta property="og:image" content={new URL(image, canonicalURL)} />}
 
 <!-- Twitter -->
-<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'}>
-<meta name="twitter:site" content="@elliot_bentley">
-<meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={description}>
-{image && (<meta name="twitter:image" content={image}>)}
+<meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+<meta name="twitter:site" content="@elliot_bentley" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{image && <meta name="twitter:image" content={image} />}

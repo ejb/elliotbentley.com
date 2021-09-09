@@ -1,6 +1,7 @@
+import 'astro/jsx-runtime'
 import React, { useRef } from 'react';
 import LazyLoad from 'react-lazyload';
-import "./ScreenshotGallery.css";
+import "./ScreenshotGallery.scss";
 
 const video = (asset) => {
   const vidRef = useRef(null);

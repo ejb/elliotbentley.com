@@ -1,5 +1,5 @@
 ---
-date: 2018-08-05
+pubDate: 2018-08-05
 layout: ../../layouts/post.astro
 title: "oTranscribe is joining MuckRock and DocumentCloud"
 author: elliotbentley
@@ -11,4 +11,4 @@ If you are a user of oTranscribe, don’t expect any sudden changes. MuckRock/Do
 
 When I [launched oTranscribe in 2013](http://ejb.github.io/2013/10/03/otranscribe.html), I had no idea how useful it would become to so many people. A project of this scale deserves owners that can lavish the time and attention it deserves. I’m excited to see where MuckRock/DocumentCloud takes it.
 
-[^1]:  This isn’t the first time that Aron Pilhofer has supported one of my side projects; in 2015, he helped me organise a Journocoders event in the Guardian offices.
+[^1]: This isn’t the first time that Aron Pilhofer has supported one of my side projects; in 2015, he helped me organise a Journocoders event in the Guardian offices.

@@ -1,7 +1,7 @@
 ---
-date: 2013-10-03
+pubDate: 2013-10-03
 layout: ../../layouts/post.astro
-title:  "Introducing oTranscribe"
+title: "Introducing oTranscribe"
 ---
 
 For the past few weeks, I've been working on a web app called **[oTranscribe](http://otranscribe.com/)**. It's designed to take the pain out of transcibing recorded interviews by integrating an audio player with a text editor.

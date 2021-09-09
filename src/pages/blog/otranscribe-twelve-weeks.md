@@ -1,7 +1,7 @@
 ---
-date: 2014-01-29
+pubDate: 2014-01-29
 layout: ../../layouts/post.astro
-title:  "oTranscribe, twelve weeks in"
+title: "oTranscribe, twelve weeks in"
 ---
 
 It's been around three months since [I launched oTranscribe](http://ejb.github.io/2013/10/03/otranscribe.html), my first major side project. I developed an ’MVP’ over the course of around a month and then spent a weekend on branding, officially launching the app on November 2, 2013.
@@ -26,15 +26,15 @@ Besides the talk at Hacks/Hackers, occasional tweets and a well-timed email to T
 
 Since the official christening, I've made a large number of additions:
 
-* A text formatting panel on the right-hand side
-* Word count indicator
-* Export to .txt, .md and Google Docs
-* Help page with FAQ
-* Auto-rewind when resuming playback
-* Alternative controls for Chromebooks
-* A tweaked colour scheme
-* Keyboard shortcuts for speed up / slow down
-* On the dev side, I split the source code into multiple files and made a Gruntfile for compilation
+- A text formatting panel on the right-hand side
+- Word count indicator
+- Export to .txt, .md and Google Docs
+- Help page with FAQ
+- Auto-rewind when resuming playback
+- Alternative controls for Chromebooks
+- A tweaked colour scheme
+- Keyboard shortcuts for speed up / slow down
+- On the dev side, I split the source code into multiple files and made a Gruntfile for compilation
 
 Some of these were based off user feedback, while others were things I'd planed but didn't feel essential for the first iteration. The biggest job of the lot was creating the export panel and the related file-generating functions.
 
@@ -46,6 +46,6 @@ Next on my personal to-do list is video support and additional export features. 
 
 Video support, meanwhile, was surprisingly easy to implement - with the notable exception of the progress bar, which I had to [write from scratch](http://GitHub.com/ejb/progressor.js). This is still being tested, but will be rolled out to the main site fairly soon.
 
-Following the app's international growth, I also hope to have the interface translated. Watch this space. 
+Following the app's international growth, I also hope to have the interface translated. Watch this space.
 
 Even without these additions, I think oTranscribe has already proven to be incredibly useful to a large number of people; I've been blown away by the positive feedback the app has received. And for myself personally, It's been a truly fantastic twelve weeks. Thanks to everyone who has helped made it a success so far.

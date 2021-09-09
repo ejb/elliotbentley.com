@@ -1,7 +1,7 @@
 ---
-date: 2017-06-17
+pubDate: 2017-06-17
 layout: ../../layouts/post.astro
-title:  "The 😃 and 😰 of a successful side project"
+title: "The 😃 and 😰 of a successful side project"
 ---
 
 In autumn of 2013, I was working full-time as a reporter but also teaching myself to code. I found the best way to motivate myself was to attempt projects, little apps, most of which went nowhere. One was a web app to help me transcribe audio interviews called oTranscribe. I built it because I needed it in my day job, but also because I knew it might help to raise my own profile – my six-month search for a new job had not been going well.

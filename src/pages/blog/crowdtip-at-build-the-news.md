@@ -1,13 +1,13 @@
 ---
-date: 2014-10-19
+pubDate: 2014-10-19
 layout: ../../layouts/post.astro
-title:  "CrowdTip: Our winning hack at Build The News 2"
+title: "CrowdTip: Our winning hack at Build The News 2"
 redirect_from: "/2014/10/19/btn.html"
 ---
 
 ![Our group presenting. Photo by Matt Taylor](/assets/crowdtip/group.jpg)
 
-*Photo by [Matt Taylor](https://twitter.com/mattietk).*
+_Photo by [Matt Taylor](https://twitter.com/mattietk)._
 
 This weekend I took part in The Times' Build The News hackathon as part of a hastily cobbled together team of student journalists ([Adrián Blanco](https://twitter.com/lapichicera) and [Lukas Rapp](https://twitter.com/luigirappallo)) and WSJ staff (Jovi Juan and myself).
 
@@ -17,7 +17,7 @@ It consists primarily of a widget embedded into news articles, with buttons pres
 
 ![Widget screenshot](/assets/crowdtip/widget.png)
 
-Readers can follow up their initial vote with optional text explanations providing further detail and (if *really* invested in the story) enter their email address to be notified of future coverage.
+Readers can follow up their initial vote with optional text explanations providing further detail and (if _really_ invested in the story) enter their email address to be notified of future coverage.
 
 Votes are then visualised on a separate dashboard, making it easy for editors to understand what their audience would be interested in reading.
 

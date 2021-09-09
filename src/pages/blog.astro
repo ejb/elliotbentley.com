@@ -1,84 +1,95 @@
 ---
-import SiteHeader from '../components/SiteHeader.svelte';
-import MainHead from '../components/MainHead.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from "../components/SiteHeader.svelte";
+import MainHead from "../components/MainHead.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 
-let title = 'Elliot Bentley ⟶ Blog';
-let description = 'Occasional posts on interactive graphics and web development.';
+let title = "Elliot Bentley ⟶ Blog";
+let description =
+  "Occasional posts on interactive graphics and web development.";
 
-let allPosts = Astro.fetchContent('./blog/*.md');
-allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+let allPosts = await Astro.glob("./blog/*.md");
+allPosts.sort(
+  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+);
 
-const years = [...new Set(allPosts.map(p => p.date.slice(0, 4)))];
-const postsByYear = years.map(year => {
+console.log(allPosts[0].frontmatter.date);
+
+const years = [...new Set(allPosts.map((p) => p.frontmatter.date.slice(0, 4)))];
+const postsByYear = years.map((year) => {
   return {
     year,
-    posts: allPosts.filter(p => p.date.slice(0,4) === year)
+    posts: allPosts.filter((p) => p.frontmatter.date.slice(0, 4) === year),
   };
 });
-
 ---
+
 <html lang="en">
   <head>
     <MainHead
       title={title}
       description={description}
-      image={''}
-      canonicalURL={Astro.request.canonicalURL.href}
+      image={""}
+      canonicalURL={Astro.request.url}
     />
 
     <style lang="scss">
       :global(body) {
-        background: white;
+        // background: white;
       }
+
       .wrapper {
         max-width: 800px;
         margin: 0 auto;
         padding: 0 10px 4em;
+
         @media (min-width: 500px) {
           padding-left: 40px;
           padding-right: 40px;
         }
       }
+
       h2 {
         color: var(--black);
         margin-top: 2em;
         margin-bottom: 0;
       }
-      li, p {
 
+      li,
+      p {
       }
+
       a {
-        color: inherit;  
+        color: inherit;
       }
-
-
     </style>
-
   </head>
 
   <body>
-    <SiteHeader:load subtitle="Blog" sublink="/blog" theme="light" />
+    <SiteHeader client:load subtitle="Blog" sublink="/blog" theme="light" />
 
     <main class="wrapper">
-
       <div>
         <p>{description}</p>
       </div>
 
-      {postsByYear.map(({ year, posts }) => {
-        return (
-          <div>
-            <h2>{year}</h2>
-            <ul class="bullets">
-              {posts.map(post => {
-                return (<li><a href={post.url}>{post.title}</a></li>);
-              })}
-            </ul>
-          </div>
-        );
-      })}
-
+      {
+        postsByYear.map(({ year, posts }) => {
+          return (
+            <div>
+              <h2>{year}</h2>
+              <ul class="bullets">
+                {posts.map((post) => {
+                  return (
+                    <li>
+                      <a href={post.url}>{post.frontmatter.title}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })
+      }
     </main>
 
     <SiteFooter />

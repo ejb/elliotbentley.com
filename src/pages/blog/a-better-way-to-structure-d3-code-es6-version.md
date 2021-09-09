@@ -1,5 +1,5 @@
 ---
-date: 2017-08-09
+pubDate: 2017-08-09
 layout: ../../layouts/post.astro
 title: "A better way to structure D3 code (updated with ES6 and D3 v4)"
 ---
@@ -24,14 +24,14 @@ Here's what we're aiming for: being able to create the chart as if it were a Hig
 
 ```js
 const chart = new Chart({
-    element: document.querySelector('.chart-container'),
-    data: [
-        [new Date(2016,0,1), 10],
-        [new Date(2016,1,1), 70],
-        [new Date(2016,2,1), 30],
-        [new Date(2016,3,1), 10],
-        [new Date(2016,4,1), 40]
-    ]
+  element: document.querySelector(".chart-container"),
+  data: [
+    [new Date(2016, 0, 1), 10],
+    [new Date(2016, 1, 1), 70],
+    [new Date(2016, 2, 1), 30],
+    [new Date(2016, 3, 1), 10],
+    [new Date(2016, 4, 1), 40],
+  ],
 });
 ```
 
@@ -39,10 +39,10 @@ Which we could then modify like so:
 
 ```js
 // load in new data
-chart.setData( newData );
+chart.setData(newData);
 
 // change line colour
-chart.setColor( 'blue' );
+chart.setColor("blue");
 
 // redraw chart, perhaps on window resize
 chart.redraw();
@@ -55,7 +55,7 @@ Before we move onto the D3-specific stuff, it's worth learning how to use classe
 You may already be familiar with:
 
 ```js
-const d = new Date(2016,0,1);
+const d = new Date(2016, 0, 1);
 ```
 
 This creates a new object stored in `d`, which is based on (but does not replace) the original `Date` object. `Date` is a class, and `d` is an _instance_ of `Date`.
@@ -64,13 +64,13 @@ We can make our own class like so:
 
 ```js
 class Cat {
-    constructor() {
-        // nothing here yet
-    }
-    cry() {
-        return 'meoww';
-    }
-};
+  constructor() {
+    // nothing here yet
+  }
+  cry() {
+    return "meoww";
+  }
+}
 ```
 
 The `constructor` function is called when a new instance of `Cat` is created. The other functions (in this case, just `cry`) are _instance methods_, and are available to each instance of the `Cat` class. We would call it like so:
@@ -84,27 +84,27 @@ Inside of the class, there is a special variable called `this` which refers to t
 
 ```js
 class Cat {
-    constructor(crySound) {
-        this.crySound = crySound;
-    }
-    cry() {
-        return this.crySound;
-    }
-};
+  constructor(crySound) {
+    this.crySound = crySound;
+  }
+  cry() {
+    return this.crySound;
+  }
+}
 ```
 
 In this case, we are customising the new cat's `crySound`.
 
 ```js
-const bob = new Cat('meoww');
-const noodle = new Cat('miaow');
+const bob = new Cat("meoww");
+const noodle = new Cat("miaow");
 bob.cry(); // => 'meoww'
 noodle.cry(); // => 'miaow'
 ```
 
 Because each instance is a new object, this style of coding is called _object-oriented programming_.
 
-There's a lot more to classes, and if you want to learn more I recommend reading CSS Tricks' *[Understanding JavaScript Constructors](https://css-tricks.com/understanding-javascript-constructors/)* and Douglas Crockford's more hardcore *[Classical Inheritance in JavaScript](http://www.crockford.com/javascript/inheritance.html)* – both of which use the old ES5 'constructor function' syntax.
+There's a lot more to classes, and if you want to learn more I recommend reading CSS Tricks' _[Understanding JavaScript Constructors](https://css-tricks.com/understanding-javascript-constructors/)_ and Douglas Crockford's more hardcore _[Classical Inheritance in JavaScript](http://www.crockford.com/javascript/inheritance.html)_ – both of which use the old ES5 'constructor function' syntax.
 
 ## A chart as a class
 
@@ -112,22 +112,21 @@ Instead of `Cat` -- which is obviously a fairly useless class -- we could instea
 
 ```js
 class Chart {
-    constructor(opts) {
-        // stuff
-    }
-    setColor() {
-        // more stuff
-    }
-    setData() {
-        // even more stuff
-    }
+  constructor(opts) {
+    // stuff
+  }
+  setColor() {
+    // more stuff
+  }
+  setData() {
+    // even more stuff
+  }
 }
 ```
 
 Here's a live example of a chart made using a `Chart` class. Try clicking the buttons below and resizing the window.
 
 _This example is written in ES6 and will only work in the latest versions of Chrome, Firefox and Safari._
-
 
 <!--
 
@@ -194,7 +193,7 @@ https://bl.ocks.org/ejb/774b87bf0f7482599419d1e7da9ed918
     // more info: http://sampsonblog.com/749/simple-throttle-function
     d3.select(window).on('resize', () => chart.draw() );
     </script>
-    
+
 </p>
     
 And here's the corresponding JavaScript for the chart. To see how it's being used, [read the full code on bl.ocks.org](https://bl.ocks.org/ejb/774b87bf0f7482599419d1e7da9ed918).
@@ -219,12 +218,12 @@ What do I mean by that? Inside of the `Chart` class, `this` refers to the `Chart
 
 ```js
 class Chart {
-    constructor(opts) {
-        // here, `this` is the chart
-    }
-    setColor() {
-        // here, `this` is still the chart
-    }
+  constructor(opts) {
+    // here, `this` is the chart
+  }
+  setColor() {
+    // here, `this` is still the chart
+  }
 }
 ```
 
@@ -232,14 +231,13 @@ However, the value of `this` can change when inside an anonymous function:
 
 ```js
 class Chart {
-    // ...
-    example() {
-        // here, `this` is the chart
-        const line = d3.svg.line()
-            .x(function(d) {
-                // but in here, `this` is the SVG line element
-            })
-    }
+  // ...
+  example() {
+    // here, `this` is the chart
+    const line = d3.svg.line().x(function (d) {
+      // but in here, `this` is the SVG line element
+    });
+  }
 }
 ```
 
@@ -247,14 +245,13 @@ There’s a simple solution, which is to use an arrow function instead:
 
 ```js
 class Chart {
-    // ...
-    example() {
-        // here, `this` is the chart
-        const line = d3.svg.line()
-            .x(d => {
-                // and in here, `this` is still the chart
-            })
-    }
+  // ...
+  example() {
+    // here, `this` is the chart
+    const line = d3.svg.line().x((d) => {
+      // and in here, `this` is still the chart
+    });
+  }
 }
 ```
 
@@ -262,16 +259,15 @@ Sometimes you might need the value of the original `this` (aka the chart) _and_ 
 
 ```js
 class Chart {
-    // ...
-    example() {
-        // here, `this` is the chart
-        const that = this;
-        const line = d3.svg.line()
-            .x(function(d) {
-                // in here, `this` is the SVG line element
-                // and `that` is the chart
-            })
-    }
+  // ...
+  example() {
+    // here, `this` is the chart
+    const that = this;
+    const line = d3.svg.line().x(function (d) {
+      // in here, `this` is the SVG line element
+      // and `that` is the chart
+    });
+  }
 }
 ```
 
@@ -292,5 +288,4 @@ I've used this pattern many times now in graphics published on WSJ.com, includin
 _Thanks to [Amelia Bellamy-Royds](https://twitter.com/ameliasbrain) for providing feedback on a draft of this post._
 
 [^1]: In this case, there is no practical difference between the object’s ‘private’ and ‘public’ methods -- they are all accessible from outside of the object. For a list of ways to make pseudo-private or actual private methods, see [this article](https://developer.mozilla.org/en-US/Add-ons/SDK/Guides/Contributor_s_Guide/Private_Properties).
-
 [^2]: If you're feeling especially brave, you could [extend the class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends).

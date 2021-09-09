@@ -1,7 +1,7 @@
 ---
-date: 2015-03-30
+pubDate: 2015-03-30
 layout: ../../layouts/post.astro
-title:  "Dynamic promo image meta tags in Labour's 'voting record' app"
+title: "Dynamic promo image meta tags in Labour's 'voting record' app"
 ---
 
 I noticed a link on Facebook today to [web app from the Labour Party](http://www.labour.org.uk/w/tory-libdem-voting-record/) which dishes up unflattering information about your nearest Tory or Lib Dem MP. Aside from the data capture / propaganda aspect, it’s intriguing because of the customised promo image that appears when you share your result.

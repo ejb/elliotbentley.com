@@ -1,7 +1,7 @@
 ---
-date: 2014-08-31
+pubDate: 2014-08-31
 layout: ../../layouts/post.astro
-title:  "An alternative take on immersive storytelling"
+title: "An alternative take on immersive storytelling"
 ---
 
 ![Screenshot of WW1 feature](/assets/ww1/screen.png)
@@ -12,7 +12,7 @@ At 44,000 words, the WWI feature is far longer than the average "immersive". In 
 
 ![word counts of various novels compared to the WW1 feature](/assets/ww1/wordcounts.png)
 
-*Word count sources: [here](http://indefeasible.wordpress.com/2008/05/03/great-novels-and-word-count/) and [here](https://web.archive.org/web/20130525112600/http://nicolehumphrey.net/word-count-for-famous-novels), neither of which are necessarily reliable.*
+_Word count sources: [here](http://indefeasible.wordpress.com/2008/05/03/great-novels-and-word-count/) and [here](https://web.archive.org/web/20130525112600/http://nicolehumphrey.net/word-count-for-famous-novels), neither of which are necessarily reliable._
 
 Despite its length, the feature has [proved to be far "stickier" than the average article](http://blog.wan-ifra.org/2014/08/01/wsj-bowled-over-by-audience-engagement-with-ww1-interactive). Readers are on average reading for around 10 minutes at a time with a bounce rate of 30%.
 
@@ -31,4 +31,3 @@ The takeaway from this? ‘Immersives’ should be built with cutting-edge tech.
 Well, except for maybe those sorting animations. Couldn't resist those.
 
 <iframe src="https://gfycat.com/ifr/HighPiercingKitten" frameborder="0" scrolling="no" width="640" height="200" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);width: 100%;max-width: 400px; margin: 2em auto; text-align: center; display: block;" >animation</iframe>
-

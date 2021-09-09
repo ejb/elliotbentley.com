@@ -1,12 +1,12 @@
 ---
-date: 2017-06-25
+pubDate: 2017-06-25
 layout: ../../layouts/post.astro
-title:  "Designing an algorithmic trading simulator"
+title: "Designing an algorithmic trading simulator"
 ---
 
 ![](/assets/trading-bot/final-cropped.png)
 
-In May, WSJ published  [_The Quants_](https://www.wsj.com/articles/the-quants-meet-the-new-kings-of-wall-street-1495389163) (requires WSJ subscription), a series around the subject of quantitative trading.
+In May, WSJ published [_The Quants_](https://www.wsj.com/articles/the-quants-meet-the-new-kings-of-wall-street-1495389163) (requires WSJ subscription), a series around the subject of quantitative trading.
 
 My contribution was an algorithmic trading game, [_Build Your Own Trading Bot_](https://www.wsj.com/graphics/build-your-own-trading-bot/) (again, requires subscription), which went through multiple revisions over its four-month-ish development period.[^1]
 
@@ -104,9 +104,6 @@ It was a tonne of work, but I'm pretty proud of the final piece. Here's a full-l
 
 ![](/assets/trading-bot/final.png)
 
-
 [^1]: I began sketching ideas and writing code four months before publication. The actual development time was probably more like a month of full-time work.
-
 [^2]: The simulation takes milliseconds to complete, and the 'playback' the reader sees is artificially slowed down. The speed of that playback was tweaked multiple times throughout development.
-
 [^3]: The "advanced" checkbox stuck around for a while, even after a refactor disabled its functionality. Up until the last minute I was still planning on reimplementing it – until I realised it wouldn't be missed.

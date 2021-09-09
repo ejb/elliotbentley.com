@@ -1,5 +1,5 @@
 ---
-date: 2016-05-23
+pubDate: 2016-05-23
 layout: ../../layouts/post.astro
 title: "A better way to structure D3 code"
 ---
@@ -26,14 +26,14 @@ Here's what we're aiming for: being able to create the chart as if it were a Hig
 
 ```js
 var chart = new Chart({
-    element: document.querySelector('.chart-container'),
-    data: [
-        [new Date(2016,0,1), 10],
-        [new Date(2016,1,1), 70],
-        [new Date(2016,2,1), 30],
-        [new Date(2016,3,1), 10],
-        [new Date(2016,4,1), 40]
-    ]
+  element: document.querySelector(".chart-container"),
+  data: [
+    [new Date(2016, 0, 1), 10],
+    [new Date(2016, 1, 1), 70],
+    [new Date(2016, 2, 1), 30],
+    [new Date(2016, 3, 1), 10],
+    [new Date(2016, 4, 1), 40],
+  ],
 });
 ```
 
@@ -41,10 +41,10 @@ Which we could then modify like so:
 
 ```js
 // load in new data
-chart.setData( newData );
+chart.setData(newData);
 
 // change line colour
-chart.setColor( 'blue' );
+chart.setColor("blue");
 
 // redraw chart, perhaps on window resize
 chart.redraw();
@@ -57,7 +57,7 @@ Before we move onto the D3-specific stuff, it's worth learning how to use constr
 You may already be familiar with:
 
 ```js
-var d = new Date(2016,0,1);
+var d = new Date(2016, 0, 1);
 ```
 
 This creates a new object stored in `d`, which is based on (but does not replace) the original `Date` object. `Date` is a constructor, and `d` is an _instance_ of `Date`.
@@ -65,12 +65,12 @@ This creates a new object stored in `d`, which is based on (but does not replace
 We can make our own constructor functions like so:
 
 ```js
-var Cat = function() {
-    // nothing here yet
+var Cat = function () {
+  // nothing here yet
 };
-Cat.prototype.cry = function() {
-    return 'meoww';
-}
+Cat.prototype.cry = function () {
+  return "meoww";
+};
 ```
 
 The `.prototype` bit defines an _instance method_, which will be available to each instance of the `Cat` constructor. We would call it like so:
@@ -83,41 +83,41 @@ bob.cry(); // => 'meoww'
 Inside of the constructor function, there is a special variable called `this` which refers to the current instance. We can use it to share variables between instance methods.
 
 ```js
-var Cat = function(crySound) {
-    this.crySound = crySound;
+var Cat = function (crySound) {
+  this.crySound = crySound;
 };
-Cat.prototype.cry = function() {
-    return this.crySound;
-}
+Cat.prototype.cry = function () {
+  return this.crySound;
+};
 ```
 
 In this case, we are customising the new cat's `crySound`.
 
 ```js
-var bob = new Cat('meoww');
-var noodle = new Cat('miaow');
+var bob = new Cat("meoww");
+var noodle = new Cat("miaow");
 bob.cry(); // => 'meoww'
 noodle.cry(); // => 'miaow'
 ```
 
 Because each instance is a new object, this style of coding is called _object-oriented programming_.
 
-There's a lot more to constructor functions, and if you want to learn more I recommend reading CSS Tricks' *[Understanding JavaScript Constructors](https://css-tricks.com/understanding-javascript-constructors/)* and Douglas Crockford's more hardcore *[Classical Inheritance in JavaScript](http://www.crockford.com/javascript/inheritance.html)*. 
+There's a lot more to constructor functions, and if you want to learn more I recommend reading CSS Tricks' _[Understanding JavaScript Constructors](https://css-tricks.com/understanding-javascript-constructors/)_ and Douglas Crockford's more hardcore _[Classical Inheritance in JavaScript](http://www.crockford.com/javascript/inheritance.html)_.
 
 ## A chart as a constructor function
 
 Instead of `Cat` -- which is obviously a fairly useless constructor -- we could instead make a constructor for a D3 chart:
 
 ```js
-var Chart = function(opts) {
-    // stuff
-}
-Chart.prototype.setColor = function() {
-    // more stuff
-}
-Chart.prototype.setData = function() {
-    // even more stuff
-}
+var Chart = function (opts) {
+  // stuff
+};
+Chart.prototype.setColor = function () {
+  // more stuff
+};
+Chart.prototype.setData = function () {
+  // even more stuff
+};
 ```
 
 Here's a live example of a chart made using a `Chart` constructor. Try clicking the buttons below and resizing the window.
@@ -189,10 +189,11 @@ https://bl.ocks.org/ejb/79698ac221dbcff637b1930a387a9416
     // in a real-world example, it might be worth ‘throttling’ this
     // more info: http://sampsonblog.com/749/simple-throttle-function
     d3.select(window).on('resize', function(){
-        chart.draw(); 
+        chart.draw();
     });
 
     </script>
+
 </p>
     
 And here's the corresponding JavaScript for the chart. To see how it's being used, [read the full code on bl.ocks.org](https://bl.ocks.org/ejb/79698ac221dbcff637b1930a387a9416).
@@ -218,37 +219,35 @@ The only catch with using constructor functions is that the value of `this` will
 What do I mean by that? Inside of `Chart` or a `Chart.prototype` method, `this` refers to the `Chart` instance, as expected.
 
 ```js
-var Chart = function(opts) {
-    // here, `this` is the chart
-}
-Chart.prototype.setColor = function() {
-    // here, `this` is still the chart
-}
+var Chart = function (opts) {
+  // here, `this` is the chart
+};
+Chart.prototype.setColor = function () {
+  // here, `this` is still the chart
+};
 ```
 
 However, the value of `this` can change when inside an anonymous function:
 
 ```js
-Chart.prototype.example = function() {
-    // here, `this` is the chart
-    var line = d3.svg.line()
-        .x(function(d) {
-            // but in here, `this` is the SVG line element
-        });
-}
+Chart.prototype.example = function () {
+  // here, `this` is the chart
+  var line = d3.svg.line().x(function (d) {
+    // but in here, `this` is the SVG line element
+  });
+};
 ```
 
 There's a simple solution, which is to load `this` into a variable called `_this`:
 
 ```js
-Chart.prototype.example = function() {
-    var _this = this;
-    var line = d3.svg.line()
-        .x(function(d) {
-            // in here, `this` is the SVG line element
-            // but `_this` (with an underscore) is the chart
-        });
-}
+Chart.prototype.example = function () {
+  var _this = this;
+  var line = d3.svg.line().x(function (d) {
+    // in here, `this` is the SVG line element
+    // but `_this` (with an underscore) is the chart
+  });
+};
 ```
 
 Hardly difficult to get around, then, but worth keeping in mind. Some people prefer to use `that` instead of `_this`, which is just as good.[^2]
@@ -272,7 +271,5 @@ Ps. If you enjoyed this, you might like my previous blog post on [how my JavaScr
 _Thanks to [Amelia Bellamy-Royds](https://twitter.com/ameliasbrain) for providing feedback on a draft of this post._
 
 [^1]: In this case, there is no practical difference between the object’s ‘private’ and ‘public’ methods -- they are all accessible from outside of the object. For a list of ways to make pseudo-private or actual private methods, see [this article](https://developer.mozilla.org/en-US/Add-ons/SDK/Guides/Contributor_s_Guide/Private_Properties).
-
 [^2]: `_this` and `that` are both fine, but `self` is not a good option because it may conflict with [`window.self`](https://developer.mozilla.org/en/docs/Web/API/Window/self). Another option, if you're using ES6 (the newest version of JavaScript, which is only supported in the very latest browsers), is ["fat arrow functions"](http://www-db.deis.unibo.it/courses/TW/DOCS/JS/developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions.html), which always inherit the value of `this`.
-
 [^3]: If you're feeling especially brave, they could [inherit from a parent object](https://davidwalsh.name/javascript-objects). I’ve never tried this myself.

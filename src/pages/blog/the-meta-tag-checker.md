@@ -1,7 +1,7 @@
 ---
-date: 2015-03-24
+pubDate: 2015-03-24
 layout: ../../layouts/post.astro
-title:  "Open sourcing The Meta Tag Checker from WSJ"
+title: "Open sourcing The Meta Tag Checker from WSJ"
 ---
 
 I’ve always been surprised by the lack of a good independent validator for meta tags. Facebook has a [debugger](https://developers.facebook.com/tools/debug/) for Open Graph tags, Google has a [Structured Data testing tool](http://www.google.com/webmasters/tools/richsnippets), and Twitter has its [card validator](https://cards-dev.twitter.com/validator). However, there is no one-stop shop for all of these services, nor one that includes 'vanilla' meta tags such as the `description` or `image_src`.
@@ -17,10 +17,3 @@ The app is controlled using a [JSON schema](https://github.com/dowjones/the-meta
 As well as an AngularJS-based frontend, The Meta Tag Checker exposes [an API](https://meta-tag-checker.herokuapp.com/api/?url=http://graphics.wsj.com/how-london-outpaces-the-rest-of-the-uk/) which can be used to check pages programmatically. In the WSJ news graphics department, we plan to use this feature to screen everything that goes through our deployment process.
 
 There is a [live demo of The Meta Tag Checker here](https://the-meta-tag-checker.herokuapp.com) (plus an [example check](https://the-meta-tag-checker.herokuapp.com/?url=http://graphics.wsj.com/how-london-outpaces-the-rest-of-the-uk/)) which checks the most important tags out of [hundreds of potential ones](https://gist.github.com/kevinSuttle/1997924). To roll your own version of The Meta Tag Checker tailored to your needs, you can find the [MIT-licensed source code on GitHub](https://github.com/dowjones/the-meta-tag-checker). Happy checking!
-
-
-
-
-
-
-

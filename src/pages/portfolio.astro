@@ -1,21 +1,25 @@
 ---
-import SiteHeader from '../components/SiteHeader.svelte';
-import MainHead from '../components/MainHead.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from "../components/SiteHeader.svelte";
+import MainHead from "../components/MainHead.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 
-let title = 'Elliot Bentley ⟶ Portfolio';
-let description = 'Data vizualisations and interactive graphics';
+let title = "Elliot Bentley ⟶ Portfolio";
+let description = "Data vizualisations and interactive graphics";
 
-import portfolio from '../data/portfolio.json';
-portfolio.forEach(p => p.slug = p.title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
-const majorItems = portfolio.filter(d => d.major);
-const minorItems = portfolio.filter(d => !d.major);
+import portfolioRaw from "../data/portfolio.json";
+const portfolio = portfolioRaw.map((p) => {
+  const slug = p.title
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+  return { ...p, slug };
+});
+const majorItems = portfolio.filter((d) => d.major);
+const minorItems = portfolio.filter((d) => !d.major);
 
-import { ScreenshotGallery } from '../components/ScreenshotGallery.jsx';
-import { PortfolioHero } from '../components/PortfolioHero.tsx';
-
+import { ScreenshotGallery } from "../components/ScreenshotGallery.jsx";
+import { PortfolioHero } from "../components/PortfolioHero.jsx";
 ---
-
 
 <style lang="scss">
   :global(body) {
@@ -38,7 +42,8 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
     margin-top: 2em;
     margin-bottom: 0;
   }
-  li, p {
+  li,
+  p {
     color: var(--white);
   }
   :global(a) {
@@ -66,62 +71,56 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
       }
     }
   }
-
 </style>
 
-<html lang="en">
-  <head>
-    <MainHead
-      title={title}
-      description={description}
-      image={''}
-      canonicalURL={Astro.request.canonicalURL.href}
-    />
+<MainHead
+  title={title}
+  description={description}
+  image={""}
+  canonicalURL={Astro.request.url}
+/>
 
-  </head>
+<body>
+  <SiteHeader client:load subtitle="Portfolio" sublink="/portfolio" />
 
-  <body>
-    <SiteHeader:load subtitle="Portfolio" sublink="/portfolio" />
+  <main class="wrapper">
+    <p class="intro-text">
+      I joined the Wall Street Journal’s graphics department in 2014 and have
+      produced dozens of graphics in the years since. My speciality is web
+      graphics — interactives, news apps and data visualisations.
+    </p>
 
-    <main class="wrapper">
+    <PortfolioHero pieces={majorItems} />
 
-      <p class="intro-text">I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations.</p>
-
-      <PortfolioHero
-        pieces={majorItems}
-      />
-
-
-      {majorItems.map((piece, i)  => {
+    {
+      majorItems.map((piece, i) => {
         return (
           <section class="portfolio-piece" id={piece.slug}>
-            <h2><a href={piece.url}>
-              { piece.title }  
-            </a></h2>
+            <h2>
+              <a href={piece.url}>{piece.title}</a>
+            </h2>
             <p>{piece.description}</p>
-            
-            <ScreenshotGallery:load media={piece.media} slug={i} />
-
+            <ScreenshotGallery client:idle media={piece.media} slug={i} />
           </section>
         );
-      })}
+      })
+    }
 
-      <section class="portfolio-piece other-stories">
+    <section class="portfolio-piece other-stories">
       <h2>Other stories</h2>
-        <ul class="">
-          {minorItems.map(piece  => {
+      <ul class="">
+        {
+          minorItems.map((piece) => {
             return (
               <li>
-                <a href={piece.url}>{ piece.title }</a>
+                <a href={piece.url}>{piece.title}</a>
               </li>
             );
-          })}
-        </ul>
-      </section>
+          })
+        }
+      </ul>
+    </section>
+  </main>
 
-
-    </main>
-
-    <SiteFooter />
-  </body>
-</html>
+  <SiteFooter />
+</body>

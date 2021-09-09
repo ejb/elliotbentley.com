@@ -1,14 +1,14 @@
 ---
-date: 2016-10-05
+pubDate: 2016-10-05
 layout: ../../layouts/post.astro
-title:  "Designing an interactive data visualisation, from first sketch to final product"
+title: "Designing an interactive data visualisation, from first sketch to final product"
 ---
 
 ![](/assets/oilpoll/oilpoll-in-situ.png)
 
 I recently published [How Oil’s Fall Has Flummoxed Forecasters](http://www.wsj.com/graphics/oil-forecasts-flummoxed-forecasters/) (requires a subscription to _The Wall Street Journal_), an interactive graphic that explores two-and-a-half years' worth of forecasts of the price of oil. Before reaching the final design, I first crash-tested early designs on fellow graphics staffers, and later refined the design with the help of Maryanne Murray and other editors.
 
-*Please note that the data presented in the following sketches are incomplete and, in places, inaccurate. They are presented here only to illustrate the design process.*
+_Please note that the data presented in the following sketches are incomplete and, in places, inaccurate. They are presented here only to illustrate the design process._
 
 My first sketches, made using D3, were an attempt at recreating my colleague Pat Minczeski's [original static design](https://twitter.com/georgikantchev/status/600709372126302208).
 
@@ -38,7 +38,7 @@ We settled on representing the forecasts as horizontal lines, so that they becam
 
 ![](/assets/oilpoll/v6-horizontal-lines.png)
 
-The standard Y-axis was replaced with a minimal version to prevent visual conflict with the forecasts. 
+The standard Y-axis was replaced with a minimal version to prevent visual conflict with the forecasts.
 
 ![](/assets/oilpoll/v7-horizontal-lines-lines-with-text.png)
 

@@ -1,33 +1,42 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import SiteHeader from '../components/SiteHeader.svelte';
-import { PortfolioHero } from '../components/PortfolioHero.tsx';
-import BackgroundAnimation from '../components/BackgroundAnimation.svelte';
-import SiteFooter from '../components/SiteFooter.astro';
+import MainHead from "../components/MainHead.astro";
+import SiteHeader from "../components/SiteHeader.svelte";
+import { PortfolioHero } from "../components/PortfolioHero.jsx";
+import BackgroundAnimation from "../components/BackgroundAnimation.svelte";
+import SiteFooter from "../components/SiteFooter.astro";
 
 // page
-let title = 'Elliot Bentley';
-let description = 'Visual journalist and developer';
+let title = "Elliot Bentley";
+let description = "Visual journalist and developer";
 
-import portfolio from '../data/portfolio.json';
-const portfolioItems = portfolio.filter(d => d.major).slice(0, 5);
-portfolioItems.forEach(p => p.slug = p.title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''));
+import portfolio from "../data/portfolio.json";
+const portfolioItems = portfolio.filter((d) => d.major).slice(0, 5);
+portfolioItems.forEach(
+  (p) =>
+    (p.slug = p.title
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/[^\w-]+/g, ""))
+);
 
-let allPosts = Astro.fetchContent('./blog/*.md');
-allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+let allPosts = await Astro.glob("./blog/*.md");
+allPosts.sort(
+  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+);
 let firstPage = allPosts.slice(0, 3);
 ---
 
 <style lang="scss">
-
-  body {
+  :global(body) {
+    background-color: var(--black);
     color: var(--white);
-    background: var(--black);
     font-family: var(--serif);
-    text-shadow: 0 1px 2px rgba(20,20,20,0.1);
+    text-shadow: 0 1px 2px rgba(20, 20, 20, 0.1);
     margin: 0;
   }
-  a, a:visited {
+
+  a,
+  a:visited {
     color: var(--white);
     transition: background 200ms;
   }
@@ -41,36 +50,40 @@ let firstPage = allPosts.slice(0, 3);
   :global(.title) {
     color: var(--white) !important;
     font-size: 48px !important;
+
     a {
       opacity: 0.5;
+
       &:hover {
         opacity: 0.8;
       }
     }
-
   }
 
   section {
     max-width: 800px;
     padding: 10px;
     margin: 2em auto;
+
     @media (min-width: 500px) {
       padding: 10px 40px;
     }
   }
+
   header {
     section {
       margin-top: 0.8em;
     }
   }
-  @media (max-height: 700px)  {
+
+  @media (max-height: 700px) {
     header {
       min-height: 100vh;
     }
   }
 
   .ps-link {
-    font-style: italic;  
+    font-style: italic;
     font-weight: 400;
     display: inline-block;
   }
@@ -80,15 +93,17 @@ let firstPage = allPosts.slice(0, 3);
       overflow-x: hidden;
     }
   }
- 
+
   .contact {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
+
   .contact ul {
     display: flex;
     margin-top: 0;
   }
+
   .contact li {
     margin-right: 1em;
   }
@@ -99,98 +114,117 @@ let firstPage = allPosts.slice(0, 3);
       height: 40px;
       filter: invert(100%);
     }
+
     a img {
       opacity: 0.6;
       transition: opacity 200ms;
     }
+
     a:hover {
       background: none;
+
       img {
         opacity: 0.8;
       }
     }
   }
-
-
-
 </style>
 
-<html lang='en'>
-  <head>
-    <title>{title}</title>
-    <MainHead
-      title={title}
-      description={description}
-      image={''}
-      canonicalURL={Astro.request.canonicalURL.href}
-    />
-  </head>
+<title>{title}</title>
+<MainHead
+  title={title}
+  description={description}
+  image={""}
+  canonicalURL={Astro.request.url.href}
+/>
 
-  <body>
+<body>
+  <main class="wrapper">
+    <header>
+      <SiteHeader client:load />
 
+      <section>
+        <p>
+          I'm a <a href="/portfolio">visual journalist</a> and <a
+            href="https://pawprints.itch.io/"
+            >amateur game developer
+          </a>. I've worked at The Wall Street Journal’s graphics department
+          since 2014.
+        </p>
 
-    <main class="wrapper">
-      <header>
+        <p>
+          In 2013 I created <a href="https://otranscribe.com">oTranscribe</a>, a
+          widely-used web app for transcribing interviews. It's now operated by <a
+            href="https://www.muckrock.com"
+            >MuckRock
+          </a>.
+        </p>
 
-        <SiteHeader client:load />
-
-        <section>
-
-          <p>I'm a <a href="/portfolio">visual journalist</a> and <a href="https://pawprints.itch.io/">amateur game developer</a>. I've worked at The Wall Street Journal’s graphics department since 2014.</p>
-          
-          <p>In 2013 I created <a href="https://otranscribe.com">oTranscribe</a>, a widely-used web app for transcribing interviews. It's now operated by <a href="https://www.muckrock.com">MuckRock</a>.</p>
-
-          <p>I offer coaching sessions to students and early career journalists as part of the <a href="https://journalismmentors.com/mentors">Media Mentors</a> programme.</p>
-
-        </section>
-
-
-        <section class="contact">
-          <ul>
-            <li><a href="mailto:mail@elliotbentley.com">
-              <image src="/images/envelope.svg" alt="Email">
-            </a></li>
-            <li>
-              <a href="https://twitter.com/elliot_bentley">
-                <image src="/images/twitter.svg" alt="Twitter">
-              </a>
-            </li>
-            <li><a href="https://github.com/ejb">
-              <image src="/images/github.svg" alt="GitHub">
-            </a></li>
-          </ul>
-        </section>
-
-
-        <BackgroundAnimation client:idle />
-
-      </header>
-
-      <section class="portfolios">
-        <h2><a href="/portfolio">Visual journalism</a></h2>
-
-        <p>I joined the Wall Street Journal’s graphics department in 2014 and have produced dozens of graphics in the years since. My speciality is web graphics — interactives, news apps and data visualisations. <a href="/portfolio" class="ps-link">View full portfolio »</a></p>
-
-        <PortfolioHero pieces={portfolioItems} />
-
+        <p>
+          I offer coaching sessions to students and early career journalists as
+          part of the <a href="https://journalismmentors.com/mentors"
+            >Media Mentors
+          </a> programme.
+        </p>
       </section>
 
-      <section class="blog">
-        <div class="inner">
-          <h2><a href="/blog">Blog posts</a></h2>
-          <ul class="bullets">
-            {firstPage.map(p => {
-              return (<li>
-                <a href={p.url}>{p.title}</a>
-              </li>)
-            })}
-            <li><a href="/blog" class="ps-link">More blog posts »</a></li>
-          </ul>
-        </div>
+      <section class="contact">
+        <ul>
+          <li>
+            <a href="mailto:mail@elliotbentley.com">
+              <img src="/images/envelope.svg" alt="Email" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/elliot_bentley">
+              <img src="/images/twitter.svg" alt="Twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ejb">
+              <img src="/images/github.svg" alt="GitHub" />
+            </a>
+          </li>
+        </ul>
       </section>
 
-    </main>
+      <BackgroundAnimation client:idle />
+    </header>
 
-    <SiteFooter />
-  </body>
-</html>
+    <section class="portfolios">
+      <h2><a href="/portfolio">Visual journalism</a></h2>
+
+      <p>
+        I joined the Wall Street Journal’s graphics department in 2014 and have
+        produced dozens of graphics in the years since. My speciality is web
+        graphics — interactives, news apps and data visualisations. <a
+          href="/portfolio"
+          class="ps-link"
+          >View full portfolio »
+        </a>
+      </p>
+
+      <PortfolioHero pieces={portfolioItems} />
+    </section>
+
+    <section class="blog">
+      <div class="inner">
+        <h2><a href="/blog">Blog posts</a></h2>
+        <ul class="bullets">
+          {
+            firstPage.map((p) => {
+              return (
+                <li>
+                  <a href={p.url}>{p.frontmatter.title}</a>
+                </li>
+              );
+            })
+          }
+          <li><a href="/blog" class="ps-link">More blog posts »</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</body>

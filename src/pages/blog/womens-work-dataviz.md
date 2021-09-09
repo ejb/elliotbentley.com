@@ -1,5 +1,5 @@
 ---
-date: 2019-10-30
+pubDate: 2019-10-30
 layout: ../../layouts/post.astro
 title: "Designing a unique dataviz for ‘Women’s Work’"
 author: elliotbentley

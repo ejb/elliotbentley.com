@@ -1,5 +1,5 @@
 ---
-date: 2018-06-03
+pubDate: 2018-06-03
 layout: ../../layouts/post.astro
 title: "What interactives can do (that articles can’t)"
 image: "/assets/interactives/measles.png"
@@ -92,7 +92,7 @@ Sometimes interactives go beyond just borrowing videogame mechanics, and try to 
 
 ![](/assets/interactives/uber.png)
 
-I also love Nicky Case's ['Explorable Explanations'](http://explorabl.es) (my favourite being 
+I also love Nicky Case's ['Explorable Explanations'](http://explorabl.es) (my favourite being
 ['We Become What We Behold'](https://ncase.itch.io/wbwwb)), which explain complex subject matter through games based on interlinking systems.
 
 Game development is hard — both in terms of technical ability needed, and getting editors and reporters on board with a radical idea. I once attended a talk by the developers of the BBC's ['Syrian Journey: Choose your own escape route'](http://www.bbc.com/news/world-middle-east-32057601), who flat-out refused to call it a 'game' because the term was so loaded (although that didn't prevent [criticism of the format](http://www.dailymail.co.uk/news/article-3027174/BBC-bosses-blasted-making-computer-game-called-Syria-Journey-refugees-fleeing-war-torn-country.html)).

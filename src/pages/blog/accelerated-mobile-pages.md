@@ -1,7 +1,7 @@
 ---
-date: 2015-10-10
+pubDate: 2015-10-10
 layout: ../../layouts/post.astro
-title:  "How Google Accelerated Mobile Pages work: best practices and Google's might"
+title: "How Google Accelerated Mobile Pages work: best practices and Google's might"
 ---
 
 You may have read about ["Accelerated Mobile Pages"](https://www.ampproject.org), or AMP, an initiative by Google to speed up the mobile web. There are several writeups, including a particularly good [Nieman Lab one](http://www.niemanlab.org/2015/10/get-ampd-heres-what-publishers-need-to-know-about-googles-new-plan-to-speed-up-your-website/), but in an attempt to get my own head around the subject, wrote up this quick FAQ.
