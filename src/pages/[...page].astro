@@ -13,12 +13,12 @@ export async function getStaticPaths({rss}) {
     title: 'Elliot Bentley’s Blog',
     description: 'Occasional posts on interactive graphics and web development.',
     customData: `<language>en-gb</language>`,
-    item: (item) => ({
+    items: allPosts.map(item => ({
       title: item.title,
       description: item.description || item.title,
       link: item.url,
       pubDate: item.date,
-    }),
+    })),
     dest: "/feed/posts.xml",
   });
 
