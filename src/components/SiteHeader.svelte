@@ -3,7 +3,7 @@ export let title = 'Elliot Bentley';
 export let subtitle = null;
 export let sublink = null;
 export let reducedSize = !!sublink;
-export let parentTheme = 'dark';
+export let theme = 'dark';
 
 let menuVisible = false;
 const toggleMenu = () => {
@@ -194,7 +194,7 @@ li {
     {/if} 
   </h1>
 
-  <div class="menu-toggle-holder theme-{parentTheme}" class:reduced-size="{reducedSize}" >
+  <div class="menu-toggle-holder theme-{theme}" class:reduced-size="{reducedSize}" >
     <img src="/images/bars-solid.svg" alt="Show menu" class="menu-toggle"  on:click={toggleMenu} />
   </div>
 
