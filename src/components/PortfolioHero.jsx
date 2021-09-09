@@ -21,7 +21,7 @@ export const PortfolioHero = props => {
   });
   
   return (
-    <div class="portfolio-assets">
+    <div className="portfolio-assets">
       {assetMarkup}
     </div>
   );

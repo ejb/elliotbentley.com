@@ -18,8 +18,8 @@ const postsByYear = years.map(year => {
 });
 
 ---
-<html>
-  <html lang="en">
+<html lang="en">
+  <head>
     <MainHead
       title={title}
       description={description}
@@ -27,7 +27,7 @@ const postsByYear = years.map(year => {
       canonicalURL={Astro.request.canonicalURL.href}
     />
 
-    <style lang="sass">
+    <style lang="scss">
       :global(body) {
         background: white;
       }

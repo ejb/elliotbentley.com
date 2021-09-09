@@ -18,7 +18,7 @@ allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 let firstPage = allPosts.slice(0, 3);
 ---
 
-<style lang="sass">
+<style lang="scss">
 
   body {
     color: var(--white);
@@ -132,7 +132,7 @@ let firstPage = allPosts.slice(0, 3);
     <main class="wrapper">
       <header>
 
-        <SiteHeader:load />
+        <SiteHeader client:load />
 
         <section>
 
@@ -162,7 +162,7 @@ let firstPage = allPosts.slice(0, 3);
         </section>
 
 
-        <BackgroundAnimation:idle />
+        <BackgroundAnimation client:idle />
 
       </header>
 

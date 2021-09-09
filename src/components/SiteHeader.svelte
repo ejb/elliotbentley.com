@@ -1,7 +1,7 @@
 <script>
 export let title = 'Elliot Bentley';
-export let subtitle;
-export let sublink;
+export let subtitle = null;
+export let sublink = null;
 export let reducedSize = !!sublink;
 export let parentTheme = 'dark';
 

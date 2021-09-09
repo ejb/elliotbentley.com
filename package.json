@@ -1,13 +1,13 @@
 {
-  "name": "@astrojs/example-blog",
-  "version": "0.0.1",
+  "name": "elliotbentley.com",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "astro dev",
     "build": "astro build && cp _redirects dist/"
   },
   "devDependencies": {
-    "astro": "^0.13.0",
+    "astro": "0.20.4",
     "date-fns": "^2.22.1"
   },
   "snowpack": {

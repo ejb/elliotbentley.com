@@ -1,9 +1,5 @@
 ---
-// props
-export let title: string;
-export let description: string;
-export let image: string | undefined;
-export let canonicalURL: string | undefined;
+const { canonicalURL, image, description, title } = Astro.props;
 ---
 
 <!-- Common -->
@@ -12,7 +8,7 @@ export let canonicalURL: string | undefined;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content={description}>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="/global.css">
+<link rel="stylesheet" href="{Astro.resolve('../styles/global.css')}">
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml">
 <!-- RSS -->

@@ -3,7 +3,7 @@ import MainHead from '../components/MainHead.astro';
 import SiteHeader from '../components/SiteHeader.svelte';
 import SiteFooter from '../components/SiteFooter.astro';
 
-export let content;
+const { content } = Astro.props;
 
 let title = `${content.title} | Elliot Bentley ⟶ Blog`;
 
@@ -95,7 +95,7 @@ import { format as formatDate } from 'date-fns';
   </head>
 
   <body>
-    <SiteHeader:load subtitle="Blog" sublink="/blog"  />
+    <SiteHeader client:load subtitle="Blog" sublink="/blog"  />
 
     <main class="wrapper">
       <h1 class="title">
