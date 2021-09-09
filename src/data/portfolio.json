@@ -1,12 +1,30 @@
 [
   {
+    "url": "https://www.wsj.com/articles/how-the-9-11-attacks-remade-new-york-citys-financial-district-11630501200",
+    "title": "How the 9/11 Attacks Remade New York City’s Financial District",
+    "description": "A richly-reported visual essay on how lower Manhattan has changed, for the 20th anniversary of the attacks. Made using three.js.",
+    "major": true,
+    "media": [{
+      "type": "video",
+      "url": "/images/portfolio/sept11-video",
+      "poster": "/images/portfolio/sept11-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/sept11-2.jpg"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/sept11-3.jpg"
+    }]
+  },
+  {
     "url": "https://www.wsj.com/articles/covid-19-vaccines-vs-infections-in-one-chart-11620293401",
     "title": "Covid-19 Vaccines vs. Infections",
     "description": "A timely analysis of Covid-19 vaccination rates across the U.S. I used the Python library Pandas to analyse the data and produce a static draft for editing. Once the contents were locked down, I coded this animated version, which uses D3 and an internal scrollytelling framework, Storyboard.",
     "major": true,
     "media": [{
-      "type": "image",
-      "url": "/images/portfolio/covid-1.jpg"
+      "type": "video",
+      "url": "/images/portfolio/covid-video",
+      "poster": "/images/portfolio/covid-1.jpg"
     }, {
       "type": "image",
       "url": "/images/portfolio/covid-2.jpg"
@@ -106,6 +124,11 @@
       "type": "image",
       "url": "/images/portfolio/facerec-4.jpg"
     }]
+  },
+  {
+    "title": "Bezos in Space: What the Blue Origin Flight Will Be Like",
+    "url": "https://www.wsj.com/articles/jeff-bezos-in-space-what-the-10-minute-blue-origin-flight-will-be-like-11626372013",
+    "description": "An interactive, animated, illustrated guide to Blue Origin's first crewed mission."
   },
   {
     "url": "https://www.wsj.com/articles/airbnbs-road-to-ipo-mounting-valuation-and-costs-11607601609",

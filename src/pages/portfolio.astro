@@ -54,6 +54,18 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
     position: relative;
   }
 
+  .other-stories {
+    li {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
 </style>
 
@@ -96,7 +108,7 @@ import { PortfolioHero } from '../components/PortfolioHero.tsx';
 
       <section class="portfolio-piece other-stories">
       <h2>Other stories</h2>
-        <ul class="bullets">
+        <ul class="">
           {minorItems.map(piece  => {
             return (
               <li>

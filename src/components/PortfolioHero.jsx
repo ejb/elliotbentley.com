@@ -3,10 +3,20 @@ import './PortfolioHero.css';
 
 export const PortfolioHero = props => {
 
-  const pieces = props.pieces.slice(0,5).map(p => ({
+  let pieces = props.pieces.slice(0,5).map((p, i) => ({
     image: p.media.find(asset => asset.type === 'image'),
     slug: p.slug,
+    index: i,
   }));
+
+  // newest out front
+  pieces = [
+    pieces[3],
+    pieces[1],
+    pieces[0],
+    pieces[2],
+    pieces[4],
+  ]
   
   const assetMarkup = pieces.map((piece, i, arr) => {
     const zIndex = (Math.abs(i - Math.floor(arr.length/2)) * -1) + 2;

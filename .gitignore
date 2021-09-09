@@ -16,3 +16,6 @@ yarn-error.log*
 
 # macOS-specific files
 .DS_Store
+
+# source files
+public/images/portfolio-original
