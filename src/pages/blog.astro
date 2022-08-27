@@ -9,16 +9,14 @@ let description =
 
 let allPosts = await Astro.glob("./blog/*.md");
 allPosts.sort(
-  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  (a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)
 );
 
-console.log(allPosts[0].frontmatter.date);
-
-const years = [...new Set(allPosts.map((p) => p.frontmatter.date.slice(0, 4)))];
+const years = [...new Set(allPosts.map((p) => p.frontmatter.pubDate.slice(0, 4)))];
 const postsByYear = years.map((year) => {
   return {
     year,
-    posts: allPosts.filter((p) => p.frontmatter.date.slice(0, 4) === year),
+    posts: allPosts.filter((p) => p.frontmatter.pubDate.slice(0, 4) === year),
   };
 });
 ---

@@ -1,6 +1,5 @@
 import 'astro/jsx-runtime'
 import React, { useRef } from 'react';
-import LazyLoad from 'react-lazyload';
 import "./ScreenshotGallery.scss";
 
 const video = (asset) => {
@@ -23,9 +22,8 @@ const image = (asset) => {
 
 const assetTypes = { video, image};
 
-export const ScreenshotGallery = ({ media, slug }) => {
+export function ScreenshotGallery ({ media, slug }) {
   return <div className="screenshot-gallery" >
-    <LazyLoad height={550} offset={500} once={true} classNamePrefix={slug.toString()}>
       <ul className="screenshot-gallery-inner">
         {media.slice(0, 3).map((asset, i) => {
           return (<li key={i}>
@@ -33,7 +31,6 @@ export const ScreenshotGallery = ({ media, slug }) => {
           </li>);
         })}
       </ul>
-    </LazyLoad>
   </div>
 }
 

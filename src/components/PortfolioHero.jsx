@@ -1,8 +1,8 @@
 import 'astro/jsx-runtime'
-import React, { useState } from 'react';
+import React from 'react';
 import './PortfolioHero.css';
 
-export const PortfolioHero = props => {
+export function PortfolioHero (props) {
 
   let pieces = props.pieces.slice(0,5).map((p, i) => ({
     image: p.media.find(asset => asset.type === 'image'),

@@ -1,8 +1,6 @@
-import {scaleSequential, scaleLinear} from "d3-scale";
+import {scaleLinear} from "d3-scale";
 import { rgb } from 'd3-color';
-import {interpolateRainbow} from "d3-scale-chromatic";
-import { interpolateHcl, interpolateHsl, interpolateCubehelix} from 'd3-interpolate';
-import { range, extent } from 'd3-array';
+import { interpolateHcl} from 'd3-interpolate';
 
 function createAnimation(element, colors, speed) {
 

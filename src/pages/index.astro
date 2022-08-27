@@ -21,7 +21,7 @@ portfolioItems.forEach(
 
 let allPosts = await Astro.glob("./blog/*.md");
 allPosts.sort(
-  (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  (a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)
 );
 let firstPage = allPosts.slice(0, 3);
 ---
@@ -135,7 +135,7 @@ let firstPage = allPosts.slice(0, 3);
   title={title}
   description={description}
   image={""}
-  canonicalURL={Astro.request.url.href}
+  canonicalURL={Astro.request.url}
 />
 
 <body>
