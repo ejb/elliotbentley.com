@@ -1,5 +1,22 @@
 [
   {
+    "url": "https://www.wsj.com/articles/u-s-nears-one-million-covid-19-deaths-11650838998",
+    "title": "U.S. Surpasses One Million Covid-19 Deaths",
+    "description": "A sombre data visualisation to mark the millionth (recorded) Covid-19 death in the US. Collaboration with Jon Kamp and Stephanie Stamm",
+    "major": true,
+    "media": [{
+      "type": "video",
+      "url": "/images/portfolio/covid-1m-video-1",
+      "poster": "/images/portfolio/covid-1m-video-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/covid-1m-1.jpg"
+    }, {
+      "type": "image",
+      "url": "/images/portfolio/covid-1m-2.jpg"
+    }]
+  },
+  {
     "url": "https://www.wsj.com/articles/how-the-9-11-attacks-remade-new-york-citys-financial-district-11630501200",
     "title": "How the 9/11 Attacks Remade New York City’s Financial District",
     "description": "A richly-reported visual essay on how lower Manhattan has changed, for the 20th anniversary of the attacks. Made using three.js.",
