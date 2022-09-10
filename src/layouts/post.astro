@@ -103,9 +103,7 @@ import { format as formatDate } from "date-fns";
       <article class="article">
         <slot />
         <p class="publish-date">
-          Published <time datetime={content.pubDate.slice(0, 10)}>
-            {formatDate(new Date(content.pubDate), "PPP")}
-          </time>.
+          Published <time datetime={content.pubDate.slice(0, 10)}>{formatDate(new Date(content.pubDate), "PPP")}</time>.
         </p>
       </article>
     </main>
