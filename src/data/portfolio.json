@@ -1,8 +1,18 @@
 [
   {
+    "url": "https://www.wsj.com/articles/how-chinas-national-security-law-silences-hong-kong-11656673119",
+    "title": "How China’s National Security Law Silences Hong Kong",
+    "description": "Jailed pro-democracy leaders are being ground down by months without trial and the fear they will spend the rest of their lives behind bars"
+  },
+  {
+    "url": "https://www.wsj.com/articles/the-supply-chain-crunch-is-like-a-traffic-jam-allow-us-to-explain-11640786401",
+    "title": "The Supply-Chain Crunch Is Like a Traffic Jam. Allow Us to Explain.",
+    "description": "A congested roadway can be eased by creative detours, something that companies are doing to fix their logistical problems"
+  },
+  {
     "url": "https://www.wsj.com/articles/u-s-nears-one-million-covid-19-deaths-11650838998",
     "title": "U.S. Surpasses One Million Covid-19 Deaths",
-    "description": "A sombre data visualisation to mark the millionth (recorded) Covid-19 death in the US. Collaboration with Jon Kamp and Stephanie Stamm",
+    "description": "A sombre data visualisation to mark the millionth (recorded) Covid-19 death in the US. Part of a broader story produced with Jon Kamp and Stephanie Stamm.",
     "major": true,
     "media": [{
       "type": "video",

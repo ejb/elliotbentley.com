@@ -99,7 +99,7 @@ import { PortfolioHero } from "../components/PortfolioHero.jsx";
             <h2>
               <a href={piece.url}>{piece.title}</a>
             </h2>
-            <p>{piece.description}</p>
+            <p set:html={piece.description}></p>
             <ScreenshotGallery client:idle media={piece.media} slug={i} />
           </section>
         );
