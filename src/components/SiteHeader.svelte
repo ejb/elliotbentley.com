@@ -49,7 +49,7 @@
         </a>
       </li>
       <li>
-        <a href="https://vis.social/@ejb">
+        <a href="https://vis.social/@ejb" rel="me">
           <img src="/images/mastodon.svg" alt="Mastodon" />
         </a>
       </li>
