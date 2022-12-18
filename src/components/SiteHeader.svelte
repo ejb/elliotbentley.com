@@ -49,8 +49,8 @@
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/elliot_bentley">
-          <img src="/images/twitter.svg" alt="Twitter" />
+        <a href="https://vis.social/@ejb">
+          <img src="/images/mastodon.svg" alt="Mastodon" />
         </a>
       </li>
       <li>
