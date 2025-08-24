@@ -41,11 +41,18 @@
    letter-spacing: -0.2em;
    content: '\00a0';
  }
+
+ .astro-code {
+     padding: 1em;
+     border-radius: 0.3em;
+
+ }
  
  code,
  :not(pre) > code[class*='language-'],
  pre[class*='language-'] {
-   background: #f7f7f7;
+   /* background: #f7f7f7; */
+
  }
  
  :not(pre) > code[class*='language-'] {
