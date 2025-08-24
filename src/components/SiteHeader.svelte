@@ -145,6 +145,7 @@
     li {
       margin-right: 1em;
       text-align: center;
+      min-width: 60px;
     }
     img {
       width: 40px;
