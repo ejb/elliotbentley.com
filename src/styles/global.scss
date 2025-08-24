@@ -1,18 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
 :root {
   --white: #eee;
   --black: #333;
   --grey: #aaa;
-  --red: #87121C;
+  --red: #87121c;
   --blue: #053c5e;
-  --serif: 'Source Serif Pro', serif;
-  --sans-serif: 'Jost', sans-serif;
+  --serif: "Source Serif Pro", serif;
+  --sans-serif: "Oswald", sans-serif;
 }
 
 body {
@@ -24,8 +20,8 @@ body {
 }
 h2 {
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 24px;
   letter-spacing: 0.1em;
   font-family: var(--sans-serif);
   margin-bottom: 1em;
@@ -44,7 +40,8 @@ ul {
   list-style-type: none;
   padding-left: 0;
 }
-ul.bullets, article ul {
+ul.bullets,
+article ul {
   padding-left: 36px;
   list-style-type: disc;
   li {
@@ -52,7 +49,8 @@ ul.bullets, article ul {
     margin-bottom: 5px;
   }
 }
-li, p {
+li,
+p {
   font-family: var(--serif);
   font-size: 22.4px;
   margin-top: 0;

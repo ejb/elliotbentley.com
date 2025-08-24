@@ -46,19 +46,29 @@
       <li>
         <a href="mailto:mail@elliotbentley.com">
           <img src="/images/envelope.svg" alt="Email" />
+          <div>Email</div>
         </a>
       </li>
       <li>
-        <a href="https://vis.social/@ejb" rel="me">
+        <a href="https://bsky.app/profile/elliotbentley.com">
+          <img src="/images/bluesky.svg" alt="Bluesky" />
+          <div>Bluesky</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://vis.social/@ejb">
           <img src="/images/mastodon.svg" alt="Mastodon" />
+          <div>Mastodon</div>
         </a>
       </li>
       <li>
         <a href="https://github.com/ejb">
           <img src="/images/github.svg" alt="GitHub" />
+          <div>GitHub</div>
         </a>
       </li>
     </ul>
+
 
     <div class="menu-toggle-holder menu-toggle-holder-close">
       <img
@@ -73,7 +83,7 @@
 
 <style lang="scss">
   .title {
-    font-family: "Jost", sans-serif;
+    font-family: var(--sans-serif);
     font-size: 1.8em;
     text-transform: uppercase;
     font-weight: 600;
@@ -131,22 +141,27 @@
 
   .external-links {
     display: flex;
-    margin-top: 0.5em;
+    margin-top: 3em;
     li {
       margin-right: 1em;
+      text-align: center;
     }
     img {
       width: 40px;
       height: 40px;
       filter: invert(100%);
     }
-    a img {
+    div {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+    }
+    a img, a div {
       opacity: 0.6;
       transition: opacity 200ms;
     }
     a:hover {
       background: none;
-      img {
+      img, div {
         opacity: 0.8;
       }
     }

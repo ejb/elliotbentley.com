@@ -109,6 +109,12 @@ let firstPage = allPosts.slice(0, 3);
   }
 
   .contact {
+    text-align: center;
+
+    li {
+      min-width: 60px;
+    }
+
     img {
       width: 40px;
       height: 40px;
@@ -120,12 +126,25 @@ let firstPage = allPosts.slice(0, 3);
       transition: opacity 200ms;
     }
 
+    a {
+      text-decoration: none;
+    }
+
     a:hover {
       background: none;
 
-      img {
+      img, div {
         opacity: 0.8;
       }
+    }
+
+    a div {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-align: center;
+      font-family: var(--sans-serif);
+      text-transform: uppercase;
+      opacity: 0.6;
     }
   }
 </style>
@@ -158,7 +177,7 @@ let firstPage = allPosts.slice(0, 3);
 
         <p>
           I offer coaching sessions to students and early career journalists as
-          part of the <a href="https://journalismmentors.com/mentors">Media Mentors</a> programme.
+          part of the <a href="https://journalismmentors.com/media-mentors/elliot-bentley/">Media Mentors</a> programme.
         </p>
       </section>
 
@@ -167,16 +186,25 @@ let firstPage = allPosts.slice(0, 3);
           <li>
             <a href="mailto:mail@elliotbentley.com">
               <img src="/images/envelope.svg" alt="Email" />
+              <div>Email</div>
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/elliotbentley.com">
+              <img src="/images/bluesky.svg" alt="Bluesky" />
+              <div>Bluesky</div>
             </a>
           </li>
           <li>
             <a href="https://vis.social/@ejb">
               <img src="/images/mastodon.svg" alt="Mastodon" />
+              <div>Mastodon</div>
             </a>
           </li>
           <li>
             <a href="https://github.com/ejb">
               <img src="/images/github.svg" alt="GitHub" />
+              <div>GitHub</div>
             </a>
           </li>
         </ul>
